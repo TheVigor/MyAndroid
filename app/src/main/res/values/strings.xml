@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MyAndroid</string>
+
+    <string name="home">Home</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="board">Board</string>
+    <string name="hardware">Hardware</string>
+    <string name="serial_no">Serial Number</string>
+    <string name="android_id">Android ID</string>
+    <string name="screen_resolution">Screen resolution</string>
+    <string name="boot_loader">Boot loader</string>
+    <string name="user">User</string>
+    <string name="host">Host</string>
+    <string name="model">Model</string>
+    <string name="device">Device</string>
 </resources>
