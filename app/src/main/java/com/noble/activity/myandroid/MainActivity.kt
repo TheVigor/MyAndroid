@@ -1,189 +1,327 @@
 package com.noble.activity.myandroid
 
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Rect
+import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.support.design.widget.BottomSheetBehavior
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
+import android.support.v7.widget.GridLayoutManager
+import android.view.MotionEvent
 import android.view.View
-import com.noble.activity.myandroid.extensions.clearBackStackFragmets
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.widget.CompoundButton
+import android.widget.RelativeLayout
+import android.widget.Switch
+import com.noble.activity.myandroid.adapters.DashboardAdapter
+import com.noble.activity.myandroid.extensions.avoidDoubleClicks
+import com.noble.activity.myandroid.extensions.clearBackStackFragments
+import com.noble.activity.myandroid.extensions.removeAllFragmentExceptDashboard
 import com.noble.activity.myandroid.extensions.replaceFragment
-import com.noble.activity.myandroid.fragments.HomeFragment
+import com.noble.activity.myandroid.fragments.DashboardFragment
+import com.noble.activity.myandroid.helpers.LocaleHelper
+import com.noble.activity.myandroid.helpers.ThemeHelper
+import com.noble.activity.myandroid.models.DashboardInfo
+import com.noble.activity.myandroid.models.LanguageInfo
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.nav_header.*
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
-    private var animationDrawable: AnimationDrawable? = null
+    private lateinit var pm: PackageManager
 
-    private var navItemIndex = 0
-    private var lastSelectedPosition = -1
+    private lateinit var drawable: AnimatedVectorDrawable
+    private lateinit var drawableBack: AnimatedVectorDrawable
+
+    private lateinit var behavior: BottomSheetBehavior<*>
+
+    private var isLang: Boolean = false
+
+    private lateinit var list: MutableList<DashboardInfo>
+    private lateinit var languageInfoList: MutableList<LanguageInfo>
+
+    private var dashboardAdapter: DashboardAdapter? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupNavigationView()
-        drawer_layout.setStatusBarBackground(R.color.colorPrimaryDark)
+        pm = packageManager
 
-        //getAppsList()
-        this.clearBackStackFragmets()
-        this.replaceFragment(HomeFragment(), false, true)
+        drawable = (ContextCompat.getDrawable(this, R.drawable.ic_menu_animatable)
+                as AnimatedVectorDrawable?)!!
+        drawableBack = (ContextCompat.getDrawable(this, R.drawable.ic_menu_animatable_back)
+                    as AnimatedVectorDrawable?)!!
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.window.navigationBarColor = ContextCompat.getColor(this, R.color.colorPrimaryDark)
-        }
-    }
-
-    private fun setupNavigationView() {
-
-        navigationView.apply {
-            menu.getItem(0).isChecked = true
-            itemIconTintList = null
-        }
-
-//        animationDrawable = ll_nav_header_parent.background as AnimationDrawable?
-//
-//        animationDrawable?.apply {
-//            setEnterFadeDuration(10000)
-//            setExitFadeDuration(5000)
-//            start()
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            val decor = window.decorView
+//            if (!ThemeHelper.isNightModeEnabled(baseContext, false))
+//                decor.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 //        }
 
+        behavior = BottomSheetBehavior.from<RelativeLayout>(bottom_sheet)
 
-        drawerlistener()
-        //device_name.text = Build.BRAND
-        //model_number.text = Build.MODEL
+        //fragmentUtil = FragmentUtil(this@MainActivity)
 
-        navigationView.setNavigationItemSelectedListener { menuItem ->
+        iv_bottomsheet_category_icon.setImageDrawable(drawable)
 
-            navItemIndex = when (menuItem.itemId) {
-                R.id.nav_device -> 0
-                else -> 0
+        //getAppList().execute()
+
+        clearBackStackFragments()
+        replaceFragment(DashboardFragment(), false, true)
+
+
+        getFragmentData()
+        //setLanguageList()
+
+        val anim = AlphaAnimation(0.0f, 1.0f)
+        anim.duration = 1500
+        anim.startOffset = 20
+        anim.repeatMode = Animation.REVERSE
+        anim.repeatCount = Animation.INFINITE
+        ivBlinkView.startAnimation(anim)
+
+        val fadeIn = AlphaAnimation(0f, 1f)
+        fadeIn.interpolator = AccelerateDecelerateInterpolator() // add this
+        fadeIn.duration = 1500
+
+        val fadeOut = AlphaAnimation(1f, 0f)
+        fadeOut.interpolator = AccelerateDecelerateInterpolator() // add this
+        fadeOut.duration = 1500
+
+        behavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when (newState) {
+                    BottomSheetBehavior.STATE_EXPANDED -> {
+                        if (!isLang) {
+                            tv_bottomsheet_category_name.animation = fadeOut
+                            tv_bottomsheet_category_name.setText(R.string.hide_category)
+                            tv_bottomsheet_category_name.animation = fadeIn
+                        }
+                            iv_bottomsheet_category_icon.setImageDrawable(drawable)
+                            drawable.start()
+                    }
+                    BottomSheetBehavior.STATE_COLLAPSED -> {
+
+                        tv_bottomsheet_category_name.animation = fadeOut
+                        tv_bottomsheet_category_name.setText(R.string.view_category)
+                        tv_bottomsheet_category_name.animation = fadeIn
+
+                        if (isLang) {
+                            isLang = false
+
+                            ivBlinkView.visibility = View.VISIBLE
+                            ivBlinkView.startAnimation(anim)
+
+                            rv_language_list.visibility = View.GONE
+                            llBottomSheetFragments.visibility = View.VISIBLE
+                        }
+
+                        iv_bottomsheet_category_icon.setImageDrawable(drawableBack)
+                        drawableBack.start()
+
+                    }
+                }
             }
 
-            menuItem.isChecked = !menuItem.isChecked
-            menuItem.isChecked = true
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                if (slideOffset >= 0.1 && behavior.state != BottomSheetBehavior.STATE_COLLAPSED)
+                    bg.visibility = View.VISIBLE
+                else
+                    bg.visibility = View.GONE
+            }
+        })
 
-            loadHomeFragment()
-            true
-        }
-    }
+        cd_bottomsheet.setOnClickListener(this)
+        ivChangeLanguage.setOnClickListener(this)
 
-    private fun drawerlistener() {
-        try {
-            drawer_layout.addDrawerListener(object : DrawerLayout.DrawerListener {
-                override fun onDrawerSlide(p0: View, p1: Float) {
-                }
+        tvAboutUs.setOnClickListener(this)
+        tvRateUs.setOnClickListener(this)
+        tvShareApp.setOnClickListener(this)
 
-                override fun onDrawerOpened(drawerView: View) {
-                    drawer_layout.openDrawer(GravityCompat.START)
-                }
+        cv_dashboard_night_mode.setOnClickListener(this)
 
-                override fun onDrawerClosed(drawerView: View) {
-                    drawer_layout.closeDrawer(GravityCompat.START)
-                }
+        rv_dashboard_contain.setHasFixedSize(true)
+        rv_dashboard_contain.layoutManager = GridLayoutManager(this, 4)
+        dashboardAdapter = DashboardAdapter(this, list)
+        rv_dashboard_contain.adapter = dashboardAdapter
 
-                override fun onDrawerStateChanged(newState: Int) {
+        rv_language_list.setHasFixedSize(true)
+        rv_language_list.layoutManager = GridLayoutManager(this, 3)
 
-                }
+        //val languageAdapter = LanguageAdapter(this, languageInfoList)
+        //rv_language_list.adapter = languageAdapter
 
-            })
-        } catch (e: Exception) {
-            e.printStackTrace()
+        LocaleHelper.setLocale(this, Locale.getDefault().language)
 
-        }
-    }
-
-    private fun selectNavMenu() {
-        navigationView.menu.getItem(navItemIndex).isChecked = true
-    }
-
-
-    private fun loadHomeFragment() {
-        selectNavMenu()
-
-        if (lastSelectedPosition == navItemIndex) {
-            drawer_layout.closeDrawers()
-            return
-        }
-
-        lastSelectedPosition = navItemIndex
-
-        drawer_layout.closeDrawers()
-
-        // Sometimes, when fragment has huge data, screen seems hanging
-        // when switching between navigation menus
-        // So using runnable, the fragment is loaded with cross fade effect
-        // This effect can be seen in GMail app
-
-//        mHandler.postDelayed({
-//            val fragment = getFragmentFromDrawer()
-//            if (fragment != null) {
-//                fragmentUtil.clearBackStackFragmets()
-//                fragmentUtil.replaceFragment(fragment, false, true)
-//            }
-//        }, 300)
-
-        // refresh toolbar menu
-        invalidateOptionsMenu()
-    }
-
-    private fun getFragmentFromDrawer(): Fragment? {
-        return when (navItemIndex) {
-            0 -> HomeFragment.getInstance(0)
-            else -> HomeFragment()
-        }
-    }
-
-
-    fun openDrawer() {
-        //Methods.hideKeyboard(this@MainActivity)
-        drawer_layout.openDrawer(GravityCompat.START)
-    }
-
-    /**
-     * Close drawer
-     */
-    fun closeDrawer() {
-        drawer_layout.closeDrawer(GravityCompat.START)
-    }
-
-    /**
-     * Manage drawer's visibility.
-     */
-    fun disableDrawer(isEnabled: Boolean) {
-        if (isEnabled) {
-            drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        if (ThemeHelper.isNightModeEnabled(baseContext, false)) {
+            ivNightModeIcon.setImageResource(R.mipmap.ic_home)
+            switchNightMode.isChecked = true
+            ivNightModeIconAttachView.setBackgroundColor(
+                ContextCompat.getColor(this, R.color.secondary_text))
         } else {
-            drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+            ivNightModeIcon.setImageResource(R.mipmap.ic_smartphone)
+            switchNightMode.isChecked = false
+            ivNightModeIconAttachView.setBackgroundColor(
+                ContextCompat.getColor(this, R.color.ic_sun_color))
+        }
+
+        switchNightMode.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener {
+                compoundButton, b -> changeNightMode() })
+
+    }
+
+    fun changeNightMode() {
+        if (ThemeHelper.isNightModeEnabled(this, false))
+            ThemeHelper.setTheme(this, false)
+        else
+            ThemeHelper.setTheme(this, true)
+
+        //Methods.setCurrentSelectedFragmentPosition(this, getAdapterPostion())
+
+        val intent = this.intent
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        this.overridePendingTransition(0, 0)
+        this.startActivity(intent)
+        this.finish()
+        this.overridePendingTransition(0, 0)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase))
+    }
+
+    fun getFragment(pos: Int): Fragment {
+        return list[pos].fragment
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+        if (ev.action == MotionEvent.ACTION_DOWN) {
+            if (behavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                val outRect = Rect()
+                bottom_sheet.getGlobalVisibleRect(outRect)
+                if (!outRect.contains(ev.rawX.toInt(), ev.rawY.toInt()))
+                    behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            }
+        }
+
+        return super.dispatchTouchEvent(ev)
+    }
+
+    fun setAdapterPosition(position: Int) {
+        dashboardAdapter?.postion = position
+    }
+
+    fun getAdapterPostion(): Int {
+        return if (dashboardAdapter != null) dashboardAdapter!!.postion else 0
+    }
+
+    fun hideBottomSheet() {
+        behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+    }
+
+    fun bottomSheetDisable(isEnable: Boolean) {
+        if (isEnable) {
+            behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            ll_main_frame.setPadding(0, 0, 0, 0)
+            bottom_sheet.visibility = View.GONE
+        } else {
+            val styledAttributes = this.theme.obtainStyledAttributes(
+                intArrayOf(android.R.attr.actionBarSize)
+            )
+            val mActionBarSize = styledAttributes.getDimension(0, 0f).toInt()
+            styledAttributes.recycle()
+            ll_main_frame.setPadding(0, 0, 0, mActionBarSize)
+            bottom_sheet.visibility = View.VISIBLE
         }
     }
 
-//    fun getAppsList(): List<DeviceInfo> {
-//        val deviceInfos = ArrayList<DeviceInfo>()
-//
-//        val flags = PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES
-//
-//        val pm = packageManager
-//        val applications = pm.getInstalledApplications(flags)
-//
-//        for (appInfo in applications) {
-//            if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 1) {
-//                // System application
-//                val icon = pm.getApplicationIcon(appInfo)
-//                deviceInfos.add(DeviceInfo(1, icon, pm.getApplicationLabel(appInfo).toString(), appInfo.packageName))
-//            } else {
-//                // Installed by User
-//                val icon = pm.getApplicationIcon(appInfo)
-//                deviceInfos.add(DeviceInfo(2, icon, pm.getApplicationLabel(appInfo).toString(), appInfo.packageName))
-//            }
-//        }
-//        return deviceInfos
-//    }
+    override fun onBackPressed() {
+        if (behavior.state == BottomSheetBehavior.STATE_EXPANDED)
+            behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+        else
+            super.onBackPressed()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    fun refreshApps() {
+        //getAppList().execute()
+    }
+
+    fun getFragmentData() {
+        list = ArrayList<DashboardInfo>()
+        list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", DashboardFragment(), 0))
+    }
+
+    fun setLanguageList() {
+        languageInfoList = ArrayList<LanguageInfo>()
+        languageInfoList.add(
+            LanguageInfo(
+                R.mipmap.ic_home,
+                this.resources.getString(R.string.en_us),
+                "en",
+                true,
+                false
+            )
+        )
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.cd_bottomsheet -> {
+                if (bg.visibility == View.VISIBLE) bg.visibility = View.GONE
+
+                avoidDoubleClicks(cd_bottomsheet)
+
+                if (behavior.state == BottomSheetBehavior.STATE_COLLAPSED)
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+                else
+                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+            }
+            R.id.ivChangeLanguage -> {
+                avoidDoubleClicks(ivChangeLanguage)
+                isLang = true
+                ivBlinkView.clearAnimation()
+                ivBlinkView.visibility = View.GONE
+                llBottomSheetFragments.visibility = View.GONE
+                rv_language_list.visibility = View.VISIBLE
+                behavior.state = BottomSheetBehavior.STATE_EXPANDED
+                tv_bottomsheet_category_name.text =
+                    this.resources.getString(R.string.choose_language)
+            }
+            R.id.tvAboutUs -> {
+                avoidDoubleClicks(tvAboutUs)
+
+            }
+            R.id.tvShareApp -> {
+                avoidDoubleClicks(tvShareApp)
+                hideBottomSheet()
+                //Methods.sharing("https://play.google.com/store/apps/details?id")
+            }
+            R.id.tvRateUs -> {
+                avoidDoubleClicks(tvRateUs)
+                hideBottomSheet()
+            }
+        }
+    }
+
 
 
 }

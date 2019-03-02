@@ -1,165 +1,75 @@
 package com.noble.activity.myandroid.extensions
 
+import android.app.Activity
+import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import com.noble.activity.myandroid.R
 
 fun AppCompatActivity.addFragment(fragment: Fragment, isAddToBackStack: Boolean, shouldAnimate: Boolean) {
-    pushFragment(fragment, null, R.id.fragment_container,
-        isAddToBackStack, true, shouldAnimate, false)
+    pushFragment(fragment, R.id.fragment_container, isAddToBackStack, true, shouldAnimate)
 }
 
 fun AppCompatActivity.replaceFragment(fragment: Fragment, isAddToBackStack: Boolean, shouldAnimate: Boolean) {
-    pushFragment(fragment, null, R.id.fragment_container,
-        isAddToBackStack, false, shouldAnimate, false)
+    pushFragment(fragment, R.id.fragment_container, isAddToBackStack, false, shouldAnimate)
 }
-
-fun AppCompatActivity.addFragmentIgnorIfCurrent(fragment: Fragment,
-                                                isAddToBackStack: Boolean, shouldAnimate: Boolean) {
-    pushFragment(fragment, null, R.id.fragment_container,
-        isAddToBackStack, true, shouldAnimate, true)
-}
-
-fun AppCompatActivity.replaceFragmentIgnorIfCurrent(fragment: Fragment,
-                                                    isAddToBackStack: Boolean, shouldAnimate: Boolean) {
-    pushFragment(fragment, null, R.id.fragment_container,
-        isAddToBackStack, false, shouldAnimate, true)
-}
-
-
-fun AppCompatActivity.addChildFragment(
-    fragment: Fragment,
-    parentFragment: Fragment,
-    containerId: Int,
-    isAddToBackStack: Boolean,
-    shouldAnimate: Boolean
-) {
-    pushFragment(fragment, parentFragment, containerId,
-        isAddToBackStack, true, shouldAnimate, false)
-}
-
-fun AppCompatActivity.replaceChildFragment(
-    fragment: Fragment,
-    parentFragment: Fragment,
-    containerId: Int,
-    isAddToBackStack: Boolean,
-    shouldAnimate: Boolean
-) {
-    pushFragment(fragment, parentFragment, containerId,
-        isAddToBackStack, false, shouldAnimate, false)
-}
-
-fun AppCompatActivity.addChildFragmentIgnoreIfCurrent(
-    fragment: Fragment,
-    parentFragment: Fragment,
-    containerId: Int,
-    isAddToBackStack: Boolean,
-    shouldAnimate: Boolean
-) {
-    pushFragment(fragment, parentFragment, containerId,
-        isAddToBackStack, true, shouldAnimate, true)
-}
-
-fun AppCompatActivity.replaceChildFragmentIgnorIfCurrent(
-    fragment: Fragment,
-    parentFragment: Fragment,
-    containerId: Int,
-    isAddToBackStack: Boolean,
-    shouldAnimate: Boolean
-) {
-    pushFragment(fragment, parentFragment, containerId,
-        isAddToBackStack, false, shouldAnimate, true)
-}
-
 
 private fun AppCompatActivity.pushFragment(
     fragment: Fragment?,
-    parentFragment: Fragment?,
     containerId: Int,
     isAddToBackStack: Boolean,
     isJustAdd: Boolean,
-    shouldAnimate: Boolean,
-    ignoreIfCurrent: Boolean
+    shouldAnimate: Boolean
 ) {
-    if (fragment == null)
-        return
+    if (fragment == null) return
+    val fragmentManager: FragmentManager = this.supportFragmentManager
 
-
-    val fragmentManager =
-        parentFragment?.childFragmentManager ?: this.supportFragmentManager// = getSupportFragmentManager();
-
-
-    // Find current visible fragment
     val fragmentCurrent = fragmentManager.findFragmentById(R.id.fragment_container)
-
-    if (ignoreIfCurrent && fragmentCurrent != null) {
-        if (fragment.javaClass.canonicalName.equals(fragmentCurrent.tag!!, ignoreCase = true)) {
-            return
-        }
-    }
-
     val fragmentTransaction = fragmentManager.beginTransaction()
 
-    if (shouldAnimate) {
+    if (shouldAnimate)
         fragmentTransaction.setCustomAnimations(
             android.R.anim.fade_in,
             android.R.anim.fade_out,
             android.R.anim.fade_in,
             android.R.anim.fade_out
         )
-    } else {
+    else
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-    }
 
-    if (fragmentCurrent != null) {
-        fragmentTransaction.hide(fragmentCurrent)
-    }
-
-    if (isAddToBackStack) {
+    if (fragmentCurrent != null) fragmentTransaction.hide(fragmentCurrent)
+    if (isAddToBackStack)
         fragmentTransaction.addToBackStack(fragment.javaClass.canonicalName)
-    }
-
-    if (isJustAdd) {
+    if (isJustAdd)
         fragmentTransaction.add(containerId, fragment, fragment.javaClass.canonicalName)
-    } else {
+    else
         fragmentTransaction.replace(containerId, fragment, fragment.javaClass.canonicalName)
-    }
-
 
     try {
         fragmentTransaction.commitAllowingStateLoss()
-
-        //Methods.hideKeyboard(mActivity)
-
-    } catch (e: Exception) { }
+        this.hideKeyboard()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
 
 }
 
-fun AppCompatActivity.getCurrentFragment(): Fragment? {
-    val fragmentManager = this.supportFragmentManager
-
-    return fragmentManager.findFragmentById(R.id.fragment_container)
-}
-
-fun AppCompatActivity.clearBackStackFragmets() {
-
+fun AppCompatActivity.removeAllFragmentExceptDashboard() {
     try {
-        // in my case I get the support fragment manager, it should work with the native one too
         val fragmentManager = this.supportFragmentManager
 
-        // this will clear the back stack and displays no animation on the screen
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-
-        // fragmentManager.popBackStackImmediate(SplashFragment.class.getCanonicalName(),FragmentManager.POP_BACK_STACK_INCLUSIVE);
         val fragmentList = fragmentManager.fragments
+
         if (fragmentList != null && !fragmentList.isEmpty()) {
             val fragmentTransaction = fragmentManager.beginTransaction()
-            for (fragment in fragmentList) {
-                if (fragment != null) {
-                    fragmentTransaction.remove(fragment!!)
-                }
+            for (i in fragmentList.size - 1 downTo 1) {
+                fragmentTransaction.remove(fragmentList[i])
             }
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             fragmentTransaction.commit()
@@ -170,46 +80,46 @@ fun AppCompatActivity.clearBackStackFragmets() {
 
 }
 
+fun AppCompatActivity.clearBackStackFragments() {
+    try {
+        val fragmentManager = this.supportFragmentManager
 
-fun clearBackStackFragmets(fragmentManager: FragmentManager) {
+        fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        val fragmentList = fragmentManager.fragments
 
-    // in my case I get the support fragment manager, it should work with the native one too
-    //        FragmentManager fragmentManager = getSupportFragmentManager();
-    // this will clear the back stack and displays no animation on the screen
-    fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-    // fragmentManager.popBackStackImmediate(SplashFragment.class.getCanonicalName(),FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
-    val fragmentList = fragmentManager.fragments
-    if (fragmentList != null && !fragmentList.isEmpty()) {
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        for (fragment in fragmentList) {
-            if (fragment != null) {
-                fragmentTransaction.remove(fragment)
+        if (fragmentList != null && !fragmentList.isEmpty()) {
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            for (fragment in fragmentList) {
+                if (fragment != null) {
+                    fragmentTransaction.remove(fragment!!)
+                }
             }
+
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            fragmentTransaction.commit()
         }
-        fragmentTransaction.commit()
-    }
-
-
-}
-
-fun addTabClildFragment(fragmentParent: Fragment?, fragmentChild: Fragment?) {
-    if (fragmentParent != null && fragmentChild != null) {
-        val fragmentManager = fragmentParent.childFragmentManager
-        clearBackStackFragmets(fragmentManager)
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.fragment_container, fragmentChild, fragmentChild.javaClass.canonicalName)
-        fragmentTransaction.commit()
+    } catch (e: Exception) {
+        e.printStackTrace()
     }
 }
 
-fun AppCompatActivity.clearBackStackFragmets(tag: String) {
 
-    // in my case I get the support fragment manager, it should work with the native one too
-    val fragmentManager = this.supportFragmentManager
+fun AppCompatActivity.hideKeyboard() {
+        this.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
 
-    // this will clear the back stack and displays no animation on the screen
-    fragmentManager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        val view = this.currentFocus
 
+        if (view != null) {
+            val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
 
+fun avoidDoubleClicks(view: View) {
+    val DELAY_IN_MS: Long = 400
+    if (!view.isClickable) {
+        return
+    }
+    view.isClickable = false
+    view.postDelayed({ view.isClickable = true }, DELAY_IN_MS)
 }

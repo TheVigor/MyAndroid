@@ -1,0 +1,566 @@
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dashboard_background">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:id="@+id/ll_dashboard_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <FrameLayout
+                    android:id="@+id/flLocationContainer"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp">
+
+                <ImageView
+                        android:id="@+id/iv_dashboard_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_location_off_black_24dp"
+                        android:tint="@color/dashboard_icon_color" />
+            </FrameLayout>
+
+            <com.noble.activity.myandroid.PulsatorLayout
+                    android:id="@+id/pulsator_network"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignBottom="@+id/arc_dashbord_ram"
+                    android:layout_alignParentStart="true"
+                    app:pulse_color="@color/dashboard_pulsator_network"
+                    app:pulse_count="4"
+                    app:pulse_duration="7000"
+                    app:pulse_interpolator="Linear"
+                    app:pulse_repeat="0"
+                    app:pulse_startFromScratch="true">
+
+                <ImageView
+                        android:id="@+id/iv_dashboard_network"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:backgroundTint="@color/dashboard_icon_color"
+                        android:contentDescription="@null"
+                        android:padding="10dp"
+                        android:src="@mipmap/ic_mobile_data"
+                        tools:targetApi="lollipop" />
+
+            </com.noble.activity.myandroid.PulsatorLayout>
+
+            <com.noble.activity.myandroid.ColorArcProgressBar
+                    android:id="@+id/arc_dashbord_ram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:back_color="@color/dashboard_arc_progress_bar_back_color"
+                    app:back_width="2dp"
+                    app:bgArcColor="@color/dark_blue"
+                    app:front_color1="@color/dashboard_arc_progress_bar_color_1"
+                    app:front_color2="@color/dashboard_arc_progress_bar_color_2"
+                    app:front_color3="@color/dashboard_arc_progress_bar_color_3"
+                    app:front_width="7dp"
+                    app:height="170dp"
+                    app:is_need_content="true"
+                    app:is_need_title="true"
+                    app:is_need_unit="true"
+                    app:max_value="100"
+                    app:string_title="RAM"
+                    app:string_unit="%"
+                    app:textColor="@color/dashboard_arc_progress_bar_text_color"
+                    app:textSize="50sp"
+                    app:total_engle="270"
+                    app:width="170dp" />
+
+
+            <FrameLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true">
+
+                <ImageView
+                        android:id="@+id/iv_dashboard_brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@null"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_brightness_medium"
+                        android:tint="@color/dashboard_icon_color"
+                        android:tooltipText="Adjust Brightness"
+                        tools:targetApi="o" />
+            </FrameLayout>
+
+            <com.noble.activity.myandroid.PulsatorLayout
+                    android:id="@+id/pulsator"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignBottom="@+id/arc_dashbord_ram"
+                    android:layout_alignParentEnd="true"
+                    app:pulse_color="@color/dashboard_pulsator_blurtooth"
+                    app:pulse_count="4"
+                    app:pulse_duration="7000"
+                    app:pulse_interpolator="Linear"
+                    app:pulse_repeat="0"
+                    app:pulse_startFromScratch="true">
+
+                <ImageView
+                        android:id="@+id/iv_dashboard_blurtooth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:backgroundTint="@color/dashboard_icon_color"
+                        android:contentDescription="@null"
+                        android:padding="10dp"
+                        android:src="@mipmap/ic_bluetooth"
+                        tools:targetApi="lollipop" />
+
+            </com.noble.activity.myandroid.PulsatorLayout>
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/tv_dashboard_device_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_dashboard_model_number"
+                android:layout_centerHorizontal="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:text="@string/view_category"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp"
+                tools:ignore="MissingPrefix"
+                tools:targetApi="jelly_bean" />
+
+        <TextView
+                android:id="@+id/tv_dashboard_model_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ll_dashbord_chart"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="@string/view_category"
+                android:textAlignment="center"
+                android:textColor="@color/secondary_text"
+                android:textSize="14sp"
+                tools:targetApi="jelly_bean" />
+
+        <LinearLayout
+                android:id="@+id/ll_dashbord_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_dashboard_top"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cardNetwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="1dp">
+
+                <RelativeLayout
+                        android:id="@+id/rl_network"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/dashboard_network_cardview">
+
+                    <ImageView
+                            android:id="@+id/iv_dashboard_processor_network_image"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:contentDescription="@null"
+                            android:padding="2dp"
+                            android:src="@mipmap/ic_mobile_data"
+                            android:tint="@color/white" />
+
+
+                    <TextView
+                            android:id="@+id/tv_network_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/iv_dashboard_processor_network_image"
+                            android:background="@android:color/transparent"
+                            android:gravity="center|start"
+                            android:paddingStart="5dp"
+                            android:text="@string/network"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                    <TextView
+                            android:id="@+id/tv_network_not_available"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_below="@+id/tv_network_name"
+                            android:layout_centerInParent="true"
+                            android:background="@color/dashboard_network_cardview"
+                            android:gravity="center"
+                            android:text="@string/no_traffic_state_monitoring_support"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                    <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/linechart_net"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_below="@+id/tv_network_name" />
+
+                    <TextView
+                            android:id="@+id/tv_network_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_network_name"
+                            android:layout_marginStart="20dp"
+                            android:includeFontPadding="false"
+                            android:text="@string/network_data"
+                            android:textColor="@color/dashboard_text"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cardProcessor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="1dp">
+
+
+                <RelativeLayout
+                        android:id="@+id/rl_processor"
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_weight="1"
+                        android:background="@color/dashboard_processor_cardview"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:id="@+id/tv_dashboard_processor_title_image"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:contentDescription="@null"
+                            android:padding="2dp"
+                            android:src="@mipmap/ic_processor"
+                            android:tint="@color/white" />
+
+
+                    <TextView
+                            android:id="@+id/tv_processor_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/tv_dashboard_processor_title_image"
+                            android:background="@android:color/transparent"
+                            android:drawablePadding="2dp"
+                            android:gravity="center|start"
+                            android:paddingStart="5dp"
+                            android:text="@string/processor_label"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                    <TextView
+                            android:id="@+id/tv_processor_data_not_available"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_below="@+id/tv_processor_name"
+                            android:layout_centerInParent="true"
+                            android:background="@color/dashboard_processor_cardview"
+                            android:gravity="center"
+                            android:text="@string/no_oreo_supports"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+
+                    <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/linechart_cpu"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_below="@+id/tv_processor_name" />
+
+                    <TextView
+                            android:id="@+id/tv_processor_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_processor_name"
+                            android:includeFontPadding="false"
+                            android:paddingStart="20dp"
+                            android:text="@string/processor_data"
+                            android:textColor="@color/dashboard_text"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_dashbord_chart"
+                android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cardBattery"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="1dp">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/dashboard_battery_cardview"
+                        android:paddingEnd="10dp"
+                        tools:ignore="RtlSymmetry">
+
+                    <ImageView
+                            android:id="@+id/tv_dashboard_battery_title_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="7dp"
+                            android:contentDescription="@null"
+                            android:padding="2dp"
+                            android:src="@mipmap/ic_battery"
+                            android:tint="@color/white" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_battery_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/tv_dashboard_battery_title_image"
+                            android:paddingStart="5dp"
+                            android:text="@string/battery"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_battery_percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_dashboard_battery_title"
+                            android:paddingStart="20dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/dashboard_text"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                    <FrameLayout
+                            android:id="@+id/batteryContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_dashboard_battery_title"
+                            android:layout_marginBottom="6dp"
+                            android:layout_toEndOf="@+id/tv_dashboard_battery_percentage">
+
+                        <ProgressBar
+                                android:id="@+id/pb_dashboard_battery"
+                                style="@style/MyProgressBarTwo"
+                                android:layout_width="50dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginTop="3dp"
+                                android:indeterminateOnly="false"
+                                android:max="100" />
+
+                        <ImageView
+                                android:id="@+id/iv_battery"
+                                android:layout_width="8dp"
+                                android:layout_height="9dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:background="@drawable/custom_battery_attach_view"
+                                android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_temp_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/batteryContainer"
+                            android:paddingStart="10dp"
+                            android:text="@string/voltage"
+                            android:textColor="#c9f0f1f1" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_temp_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/batteryContainer"
+                            android:layout_toEndOf="@id/tv_dashboard_volt_name"
+                            android:paddingStart="5dp"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#c9f0f1f1" />
+
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_volt_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_dashboard_temp_name"
+                            android:paddingStart="10dp"
+                            android:text="@string/temperature"
+                            android:textColor="#c9f0f1f1" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_volt_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_dashboard_temp_name"
+                            android:layout_toEndOf="@id/tv_dashboard_volt_name"
+                            android:paddingStart="5dp"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#c9f0f1f1" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_health_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_dashboard_volt_name"
+                            android:paddingStart="10dp"
+                            android:text="@string/battery_health"
+                            android:textColor="#c9f0f1f1" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_health_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_dashboard_volt_name"
+                            android:layout_toEndOf="@id/tv_dashboard_volt_name"
+                            android:paddingStart="5dp"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#c9f0f1f1" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cardSensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="1dp">
+
+
+                <RelativeLayout
+                        android:id="@+id/rl_compass"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        android:background="@color/dashboard_compass_cardview"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp">
+
+                    <ImageView
+                            android:id="@+id/tv_dashboard_sensor_title_image"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="5dp"
+                            android:contentDescription="@null"
+                            android:padding="2dp"
+                            android:src="@mipmap/ic_compass"
+                            android:tint="@color/white" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_compass_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/tv_dashboard_sensor_title_image"
+                            android:drawablePadding="2dp"
+                            android:paddingStart="5dp"
+                            android:text="@string/compass"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                    <TextView
+                            android:id="@+id/tv_dashboard_compass_degree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/dashboard_text"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="RelativeOverlap" />
+
+                    <TextView
+                            android:id="@+id/tv_compass_data_not_available"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_below="@id/tv_dashboard_compass_title"
+                            android:layout_centerInParent="true"
+                            android:background="@color/dashboard_compass_cardview"
+                            android:gravity="center"
+                            android:text="@string/no_magnection_senscer"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                    <ImageView
+                            android:id="@+id/iv_dashboard_compass"
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_below="@id/tv_dashboard_compass_title"
+                            android:layout_centerHorizontal="true"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@null"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/ic_compass" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/flMainDoNotTouch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

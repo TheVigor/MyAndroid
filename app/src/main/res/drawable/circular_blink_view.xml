@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <size
+            android:width="10dp"
+            android:height="10dp" />
+    <corners android:radius="5dp" />
+    <gradient
+            android:centerColor="@color/blink_color_3"
+            android:endColor="@color/blink_color_2"
+            android:gradientRadius="10dp"
+            android:startColor="@color/blink_color_1"
+            android:type="radial" />
+</shape>

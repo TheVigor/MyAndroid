@@ -57,7 +57,6 @@ class HomeFragment : Fragment() {
         iv_menu.visibility = View.VISIBLE
         iv_back.visibility = View.GONE
         tv_title.setText((R.string.device))
-        iv_menu.setOnClickListener { (activity as MainActivity).openDrawer() }
     }
 
     private fun getDeviceInfo() {

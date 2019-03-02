@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@android:id/background"
+            android:width="100dp"
+            android:height="20dp"
+            android:gravity="center_vertical|fill_horizontal"
+            tools:ignore="UnusedAttribute">
+        <shape android:shape="rectangle" android:useLevel="true">
+            <corners android:radius="4dp" />
+            <size
+                    android:width="90dp"
+                    android:height="20dp" />
+            <stroke
+                    android:width="2dp"
+                    android:color="@color/battery_drawable" />
+        </shape>
+    </item>
+    <item
+            android:id="@android:id/progress"
+            android:gravity="center_vertical|fill_horizontal">
+        <scale android:scaleWidth="100%">
+            <shape
+                    android:shape="rectangle"
+                    android:useLevel="true">
+                <solid android:color="@color/battery_drawable"/>
+                <corners android:radius="4dp" />
+                <size android:height="20dp"
+                      android:width="90dp"/>
+            </shape>
+        </scale>
+    </item>
+</layer-list>

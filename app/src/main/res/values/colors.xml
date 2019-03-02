@@ -5,11 +5,42 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
     <color name="dark_blue">#131a60</color>
 
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
+
+    <color name="dashboard_background">#F9F9F9</color>
+    <color name="bottom_sheet_background">#FFFFff</color>
+
+    <color name="blink_color_2">#b0de338b</color>
+    <color name="blink_color_3">#45ef89be</color>
+    <color name="blink_color_1">#cee21467</color>
+
+    <color name="bottomsheet_card_bg">#F4F8FA</color>
+    <color name="card_view_bg">#FFFFFF</color>
+
+    <color name="ic_sun_color">#ffd45c</color>
+
+    <color name="dashboard_icon_color">#757575</color>
+    <color name="dashboard_network_cardview">#81c784</color>
+    <color name="dashboard_text">#153d55</color>
+    <color name="dashboard_processor_cardview">#7986cb</color>
+    <color name="dashboard_battery_cardview">#4dd0e1</color>
+    <color name="dashboard_compass_cardview">#dce775</color>
+
+    <color name="dashboard_pulsator_network">#f8bbd0</color>
+    <color name="dashboard_pulsator_blurtooth">#bb52efc9</color>
+
+    <color name="dashboard_arc_progress_bar_color_1">#9850b7</color>
+    <color name="dashboard_arc_progress_bar_color_2">#e44597</color>
+    <color name="dashboard_arc_progress_bar_color_3">#f9582e</color>
+    <color name="dashboard_arc_progress_bar_back_color">#bac8d5</color>
+    <color name="dashboard_arc_progress_bar_text_color">#000000</color>
+
+    <color name="battery_drawable">#7986cb</color>
 
 
 </resources>

@@ -13,4 +13,24 @@
     <string name="host">Host</string>
     <string name="model">Model</string>
     <string name="device">Device</string>
+    <string name="view_category">Category</string>
+    <string name="change_theme">Change theme</string>
+    <string name="about_us">About us</string>
+    <string name="share">Share</string>
+    <string name="rate_us">Rate us</string>
+    <string name="hide_category">Hide</string>
+    <string name="choose_language">Choose language</string>
+    <string name="en_us">USA</string>
+    <string name="network">Network</string>
+    <string name="no_traffic_state_monitoring_support">No traffic state monitoring support</string>
+    <string name="network_data">Network data</string>
+    <string name="processor_label">Processor</string>
+    <string name="no_oreo_supports">No Oreo supports</string>
+    <string name="processor_data">Processor data</string>
+    <string name="battery">Battery</string>
+    <string name="voltage">Voltage</string>
+    <string name="temperature">Temperature</string>
+    <string name="battery_health">Battery health</string>
+    <string name="compass">Compass</string>
+    <string name="no_magnection_senscer">No magnection sensor</string>
 </resources>
