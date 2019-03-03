@@ -1,7 +1,10 @@
 package com.noble.activity.myandroid.extensions
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
@@ -122,4 +125,20 @@ fun avoidDoubleClicks(view: View) {
     }
     view.isClickable = false
     view.postDelayed({ view.isClickable = true }, DELAY_IN_MS)
+}
+
+
+fun Context.rateUsApp() {
+    val uri = Uri.parse("market://details?id=com.noble.activity.artifactcards")
+    val goToMarket = Intent(Intent.ACTION_VIEW, uri)
+    goToMarket.addFlags(
+        Intent.FLAG_ACTIVITY_NO_HISTORY or
+                Intent.FLAG_ACTIVITY_NEW_DOCUMENT or
+                Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+    try {
+        this.startActivity(goToMarket)
+    } catch (e: ActivityNotFoundException) {
+        this.startActivity(Intent(Intent.ACTION_VIEW,
+            Uri.parse("https://play.google.com/store/apps/details?id=com.noble.activity.artifactcards")))
+    }
 }

@@ -23,15 +23,14 @@ import android.widget.CompoundButton
 import android.widget.RelativeLayout
 import android.widget.Switch
 import com.noble.activity.myandroid.adapters.DashboardAdapter
-import com.noble.activity.myandroid.extensions.avoidDoubleClicks
-import com.noble.activity.myandroid.extensions.clearBackStackFragments
-import com.noble.activity.myandroid.extensions.removeAllFragmentExceptDashboard
-import com.noble.activity.myandroid.extensions.replaceFragment
+import com.noble.activity.myandroid.extensions.*
 import com.noble.activity.myandroid.fragments.DashboardFragment
+import com.noble.activity.myandroid.fragments.HomeFragment
 import com.noble.activity.myandroid.helpers.LocaleHelper
 import com.noble.activity.myandroid.helpers.ThemeHelper
 import com.noble.activity.myandroid.models.DashboardInfo
 import com.noble.activity.myandroid.models.LanguageInfo
+import com.noble.activity.myandroid.utilities.sharing
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -47,7 +46,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     private var isLang: Boolean = false
 
     private lateinit var list: MutableList<DashboardInfo>
-    private lateinit var languageInfoList: MutableList<LanguageInfo>
 
     private var dashboardAdapter: DashboardAdapter? = null
 
@@ -63,15 +61,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         drawableBack = (ContextCompat.getDrawable(this, R.drawable.ic_menu_animatable_back)
                     as AnimatedVectorDrawable?)!!
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            val decor = window.decorView
-//            if (!ThemeHelper.isNightModeEnabled(baseContext, false))
-//                decor.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-//        }
 
         behavior = BottomSheetBehavior.from<RelativeLayout>(bottom_sheet)
-
-        //fragmentUtil = FragmentUtil(this@MainActivity)
 
         iv_bottomsheet_category_icon.setImageDrawable(drawable)
 
@@ -80,16 +71,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         clearBackStackFragments()
         replaceFragment(DashboardFragment(), false, true)
 
-
         getFragmentData()
-        //setLanguageList()
-
-        val anim = AlphaAnimation(0.0f, 1.0f)
-        anim.duration = 1500
-        anim.startOffset = 20
-        anim.repeatMode = Animation.REVERSE
-        anim.repeatCount = Animation.INFINITE
-        ivBlinkView.startAnimation(anim)
 
         val fadeIn = AlphaAnimation(0f, 1f)
         fadeIn.interpolator = AccelerateDecelerateInterpolator() // add this
@@ -120,10 +102,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                         if (isLang) {
                             isLang = false
 
-                            ivBlinkView.visibility = View.VISIBLE
-                            ivBlinkView.startAnimation(anim)
-
-                            rv_language_list.visibility = View.GONE
                             llBottomSheetFragments.visibility = View.VISIBLE
                         }
 
@@ -143,59 +121,17 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         })
 
         cd_bottomsheet.setOnClickListener(this)
-        ivChangeLanguage.setOnClickListener(this)
 
-        tvAboutUs.setOnClickListener(this)
         tvRateUs.setOnClickListener(this)
-        tvShareApp.setOnClickListener(this)
-
-        cv_dashboard_night_mode.setOnClickListener(this)
 
         rv_dashboard_contain.setHasFixedSize(true)
         rv_dashboard_contain.layoutManager = GridLayoutManager(this, 4)
         dashboardAdapter = DashboardAdapter(this, list)
         rv_dashboard_contain.adapter = dashboardAdapter
 
-        rv_language_list.setHasFixedSize(true)
-        rv_language_list.layoutManager = GridLayoutManager(this, 3)
-
-        //val languageAdapter = LanguageAdapter(this, languageInfoList)
-        //rv_language_list.adapter = languageAdapter
-
         LocaleHelper.setLocale(this, Locale.getDefault().language)
-
-        if (ThemeHelper.isNightModeEnabled(baseContext, false)) {
-            ivNightModeIcon.setImageResource(R.mipmap.ic_home)
-            switchNightMode.isChecked = true
-            ivNightModeIconAttachView.setBackgroundColor(
-                ContextCompat.getColor(this, R.color.secondary_text))
-        } else {
-            ivNightModeIcon.setImageResource(R.mipmap.ic_smartphone)
-            switchNightMode.isChecked = false
-            ivNightModeIconAttachView.setBackgroundColor(
-                ContextCompat.getColor(this, R.color.ic_sun_color))
-        }
-
-        switchNightMode.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener {
-                compoundButton, b -> changeNightMode() })
-
     }
 
-    fun changeNightMode() {
-        if (ThemeHelper.isNightModeEnabled(this, false))
-            ThemeHelper.setTheme(this, false)
-        else
-            ThemeHelper.setTheme(this, true)
-
-        //Methods.setCurrentSelectedFragmentPosition(this, getAdapterPostion())
-
-        val intent = this.intent
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-        this.overridePendingTransition(0, 0)
-        this.startActivity(intent)
-        this.finish()
-        this.overridePendingTransition(0, 0)
-    }
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(LocaleHelper.onAttach(newBase))
@@ -253,13 +189,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             super.onBackPressed()
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
 
     fun refreshApps() {
         //getAppList().execute()
@@ -270,18 +199,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", DashboardFragment(), 0))
     }
 
-    fun setLanguageList() {
-        languageInfoList = ArrayList<LanguageInfo>()
-        languageInfoList.add(
-            LanguageInfo(
-                R.mipmap.ic_home,
-                this.resources.getString(R.string.en_us),
-                "en",
-                true,
-                false
-            )
-        )
-    }
 
     override fun onClick(v: View) {
         when (v.id) {
@@ -295,29 +212,11 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 else
                     behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
             }
-            R.id.ivChangeLanguage -> {
-                avoidDoubleClicks(ivChangeLanguage)
-                isLang = true
-                ivBlinkView.clearAnimation()
-                ivBlinkView.visibility = View.GONE
-                llBottomSheetFragments.visibility = View.GONE
-                rv_language_list.visibility = View.VISIBLE
-                behavior.state = BottomSheetBehavior.STATE_EXPANDED
-                tv_bottomsheet_category_name.text =
-                    this.resources.getString(R.string.choose_language)
-            }
-            R.id.tvAboutUs -> {
-                avoidDoubleClicks(tvAboutUs)
 
-            }
-            R.id.tvShareApp -> {
-                avoidDoubleClicks(tvShareApp)
-                hideBottomSheet()
-                //Methods.sharing("https://play.google.com/store/apps/details?id")
-            }
             R.id.tvRateUs -> {
                 avoidDoubleClicks(tvRateUs)
                 hideBottomSheet()
+                rateUsApp()
             }
         }
     }

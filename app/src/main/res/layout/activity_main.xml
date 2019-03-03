@@ -71,29 +71,6 @@
                     android:textSize="16sp"
                     tools:ignore="RelativeOverlap" />
 
-
-            <ImageView
-                    android:id="@+id/ivChangeLanguage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@null"
-                    android:padding="10dp"
-                    android:src="@mipmap/ic_home"
-                    android:tint="@color/font_black" />
-
-            <ImageView
-                    android:id="@+id/ivBlinkView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginTop="14dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/circular_blink_view" />
-
         </RelativeLayout>
 
         <RelativeLayout
@@ -107,132 +84,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.CardView
-                    android:id="@+id/cv_dashboard_night_mode"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_below="@id/rv_dashboard_contain"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="20dp"
-                    app:cardBackgroundColor="@color/bottomsheet_card_bg"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="0.9dp">
-
-                <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-
-                    <TextView
-                            android:id="@+id/tvChangeTheme"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/change_theme"
-                            android:textAlignment="center"
-                            android:textAllCaps="true"
-                            android:textColor="@color/font_black"
-                            android:textSize="12sp" />
-
-                    <ImageView
-                            android:id="@+id/ivNightModeIcon"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_alignEnd="@+id/tvChangeTheme"
-                            android:layout_below="@+id/tvChangeTheme"
-                            android:layout_gravity="center"
-                            android:layout_marginBottom="14dp"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginTop="10dp"
-                            android:contentDescription="@null"
-                            android:src="@mipmap/ic_smartphone" />
-
-                    <Switch
-                            android:id="@+id/switchNightMode"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/tvChangeTheme"
-                            android:layout_marginBottom="14dp"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="10dp" />
-
-                    <ImageView
-                            android:id="@+id/ivNightModeIconAttachView"
-                            android:layout_width="match_parent"
-                            android:layout_height="8dp"
-                            android:layout_below="@+id/switchNightMode"
-                            android:background="@color/ic_sun_color"
-                            android:contentDescription="@null" />
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <TextView
-                    android:id="@+id/tvAboutUs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/rv_dashboard_contain"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:drawablePadding="10dp"
-                    android:drawableStart="@mipmap/ic_left_arrow"
-                    android:drawableTint="@color/colorAccent"
-                    android:gravity="center_vertical"
-                    android:padding="10dp"
-                    android:text="@string/about_us"
-                    android:textAllCaps="true"
-                    android:textSize="14sp"
-                    tools:targetApi="m" />
-
-            <TextView
-                    android:id="@+id/tvShareApp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvAboutUs"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:drawablePadding="10dp"
-                    android:drawableStart="@mipmap/ic_smartphone"
-                    android:drawableTint="@color/colorAccent"
-                    android:gravity="center_vertical"
-                    android:padding="10dp"
-                    android:text="@string/share"
-                    android:textAllCaps="true"
-                    android:textSize="14sp"
-                    tools:targetApi="m" />
-
             <TextView
                     android:id="@+id/tvRateUs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvShareApp"
+                    android:layout_below="@+id/rv_dashboard_contain"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:drawablePadding="10dp"
-                    android:drawableStart="@mipmap/ic_home"
+                    android:drawableStart="@mipmap/ic_rate_us"
                     android:drawableTint="@color/colorAccent"
                     android:gravity="center_vertical"
                     android:padding="10dp"
                     android:text="@string/rate_us"
+                    android:textColor="@color/system"
                     android:textAllCaps="true"
                     android:textSize="14sp"
                     tools:targetApi="m" />
 
         </RelativeLayout>
-
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_language_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/cd_bottomsheet"
-                android:visibility="gone" />
 
     </RelativeLayout>
 
