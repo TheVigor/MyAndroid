@@ -3,56 +3,85 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/dashboard_background"
               android:orientation="vertical"
               tools:context=".MainActivity">
 
     <include layout="@layout/toolbar" />
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            app:cardUseCompatPadding="true">
+            android:orientation="vertical"
+            android:padding="10dp">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@null"
+                android:src="@mipmap/ic_smartphone"
+                android:tint="@color/dashboard" />
+
+        <TextView
+                android:id="@+id/tv_brand_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textAllCaps="true"
+                android:textColor="@color/darkBlue"
+                android:textSize="17sp"
+                tools:ignore="MissingPrefix"
+                tools:targetApi="jelly_bean" />
+
+        <TextView
+                android:id="@+id/tv_model_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_violet_one"
+                android:textSize="14sp"
+                tools:ignore="MissingPrefix"
+                tools:targetApi="jelly_bean" />
 
         <LinearLayout
+                android:id="@+id/root_access"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_smartphone" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
 
             <TextView
-                    android:id="@+id/tv_brand_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:textAllCaps="true"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="17sp"
-                    tools:ignore="MissingPrefix"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/root_access"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
                     tools:targetApi="jelly_bean" />
 
             <TextView
-                    android:id="@+id/tv_model_number"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_root_status"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAllCaps="false"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="14sp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textColor="@color/primary_text"
+                    android:textSize="16sp"
                     tools:ignore="MissingPrefix"
                     tools:targetApi="jelly_bean" />
-
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
     <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -61,6 +90,7 @@
             app:cardUseCompatPadding="true">
 
         <ScrollView
+                android:background="@color/bottomsheet_card_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -75,7 +105,9 @@
                         android:layout_height="match_parent"
                         tools:ignore="UselessParent">
 
-                    <TableRow android:gravity="start">
+                    <TableRow
+                            android:layout_marginTop="10dp"
+                            android:gravity="start">
 
                         <TextView
                                 android:layout_width="wrap_content"
@@ -126,6 +158,72 @@
 
                         <TextView
                                 android:id="@+id/tv_board"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="start"
+                                android:maxEms="4"
+                                android:maxLines="4"
+                                android:textColor="@color/primary_text"
+                                android:textSize="14sp"
+                                tools:ignore="MissingPrefix"
+                                tools:targetApi="jelly_bean" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_marginTop="10dp"
+                            android:gravity="start">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="start"
+                                android:maxEms="5"
+                                android:maxLines="4"
+                                android:text="@string/architecture"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="14sp"
+                                tools:targetApi="jelly_bean" />
+
+                        <TextView
+                                android:id="@+id/tv_architecture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="start"
+                                android:maxEms="4"
+                                android:maxLines="4"
+                                android:textColor="@color/primary_text"
+                                android:textSize="14sp"
+                                tools:ignore="MissingPrefix"
+                                tools:targetApi="jelly_bean" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_marginTop="10dp"
+                            android:gravity="start">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="start"
+                                android:maxEms="5"
+                                android:maxLines="4"
+                                android:text="@string/build_date"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="14sp"
+                                tools:targetApi="jelly_bean" />
+
+                        <TextView
+                                android:id="@+id/tv_build_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -371,6 +469,7 @@
                     </TableRow>
 
                     <TableRow
+                            android:id="@+id/tl_security_patch_level_contain"
                             android:layout_marginTop="10dp"
                             android:gravity="start">
 
@@ -383,13 +482,46 @@
                                 android:gravity="start"
                                 android:maxEms="5"
                                 android:maxLines="4"
-                                android:text="@string/model"
+                                android:text="@string/security_patch_level"
                                 android:textColor="@color/secondary_text"
                                 android:textSize="14sp"
                                 tools:targetApi="jelly_bean" />
 
                         <TextView
-                                android:id="@+id/tv_model"
+                                android:id="@+id/tv_security_patch_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="start"
+                                android:maxEms="4"
+                                android:maxLines="4"
+                                android:textColor="@color/primary_text"
+                                android:textSize="14sp"
+                                tools:ignore="MissingPrefix"
+                                tools:targetApi="jelly_bean" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_marginTop="10dp"
+                            android:gravity="start">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="start"
+                                android:maxEms="5"
+                                android:maxLines="4"
+                                android:text="@string/kernel"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="14sp"
+                                tools:targetApi="jelly_bean" />
+
+                        <TextView
+                                android:id="@+id/tv_kernel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

@@ -2,49 +2,52 @@ package com.noble.activity.myandroid.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.app.Fragment
-import android.support.v7.widget.Toolbar
-import android.util.DisplayMetrics
+import android.support.v4.content.ContextCompat
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.ImageView
-import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.utilities.KeyUtil
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
+import java.security.SecureRandom
+import java.util.*
 
 class HomeFragment : Fragment() {
 
-    private var mode: Int = 0
-
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        val window = activity?.window
-        window?.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window?.statusBarColor = resources.getColor(R.color.colorPrimaryDark)
-        window?.navigationBarColor = resources.getColor(R.color.colorPrimaryDark)
-
-        return view
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         initToolbar()
+        (activity as MainActivity).bottomSheetDisable(true)
+
         getBundleData()
         getDeviceInfo()
+
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+
+    override fun onDestroyView() {
+        activity!!.supportFragmentManager.popBackStack()
+        super.onDestroyView()
+    }
 
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
@@ -54,57 +57,51 @@ class HomeFragment : Fragment() {
     }
 
     private fun initToolbar() {
-        iv_menu.visibility = View.VISIBLE
-        iv_back.visibility = View.GONE
-        tv_title.setText((R.string.device))
+        iv_back.visibility = View.VISIBLE
+        tv_title.text = activity!!.resources.getString(R.string.device)
+        tv_title.setTextColor(activity!!.resources.getColor(R.color.dashboard))
+        iv_back.setColorFilter(ContextCompat.getColor(activity!!, R.color.darkBlue))
+        iv_back.setOnClickListener { activity!!.onBackPressed() }
     }
 
+    @SuppressLint("HardwareIds")
     private fun getDeviceInfo() {
         tv_manufacturer.text = Build.MANUFACTURER
-        tv_manufacturer.text = Build.BRAND
-        tv_model.text = Build.MODEL
+        tv_brand_name.text = Build.BRAND
+        tv_model_number.text = Build.MODEL
         tv_board.text = Build.BOARD
         tv_hardware.text = Build.HARDWARE
-
         tv_serial_no.text = Build.SERIAL
+        tv_architecture.text = Build.CPU_ABI
+        tv_build_date.text =
+            DateFormat.format("MMMM dd, yyyy\nh:mm:ss aa", Date(Build.TIME)).toString()
+        tv_kernel.text = System.getProperty("os.version")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            tv_security_patch_level.text = "" + Build.VERSION.SECURITY_PATCH
+        else
+            tl_security_patch_level_contain.visibility = View.GONE
 
         @SuppressLint("HardwareIds") val androidID =
-            Settings.Secure.getString(context?.contentResolver, Settings.Secure.ANDROID_ID)
-        tv_android_id.text = androidID
+            Settings.Secure.getString(activity!!.contentResolver, Settings.Secure.ANDROID_ID)
+        tv_android_id.text = "" + androidID
 
-        val wm = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val display = wm.defaultDisplay
-        val metrics = DisplayMetrics()
-        display.getMetrics(metrics)
-        val width = metrics.widthPixels
-        val height = metrics.heightPixels
+        val wm = activity!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val size = Point()
 
-        tv_screen_resolution.text = "$width * $height Pixels"
+        wm.defaultDisplay.getRealSize(size)
+
+        tv_screen_resolution.text = size.x.toString() + " * " + size.y + " " + "Pixels"
         tv_boot_loader.text = Build.BOOTLOADER
         tv_host.text = Build.HOST
         tv_user.text = Build.USER
     }
 
-    /**
-     * Get data from bundle
-     */
     private fun getBundleData() {
         val bundle = arguments
         if (bundle != null) {
             if (bundle.containsKey(KeyUtil.KEY_MODE)) {
-                mode = bundle.getInt(KeyUtil.KEY_MODE)
+                val mode = bundle.getInt(KeyUtil.KEY_MODE)
             }
-        }
-    }
-
-    companion object {
-        fun getInstance(mode: Int): HomeFragment {
-            val homeFragment = HomeFragment()
-            val bundle = Bundle()
-            bundle.putInt(KeyUtil.KEY_MODE, mode)
-            homeFragment.arguments = bundle
-
-            return homeFragment
         }
     }
 }

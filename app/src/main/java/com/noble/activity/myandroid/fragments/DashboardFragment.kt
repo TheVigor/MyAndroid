@@ -481,12 +481,12 @@ class DashboardFragment : Fragment() {
 
         tv_dashboard_device_name.setOnClickListener {
             avoidDoubleClicks(tv_dashboard_device_name)
-            //fragmentUtil.addFragment(HomeFragment(), true, true)
+            activity!!.addFragment(HomeFragment(), true, true)
         }
 
         tv_dashboard_model_number.setOnClickListener {
             avoidDoubleClicks(tv_dashboard_model_number)
-            //fragmentUtil.addFragment(HomeFragment(), true, true)
+            activity!!.addFragment(HomeFragment(), true, true)
         }
 
         iv_dashboard_brightness.setOnClickListener {
