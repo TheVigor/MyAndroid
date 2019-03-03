@@ -23,7 +23,10 @@ import com.noble.activity.myandroid.helpers.ThemeHelper
 
 import com.github.mikephil.charting.components.YAxis.YAxisLabelPosition.INSIDE_CHART
 
-fun Context.addEntry(flag: Int, event: Float, mChart: LineChart) {
+fun Context.addEntry(flag: Int, event: Float, mChart: LineChart?) {
+
+    if (mChart == null) return
+
     val data = mChart.data
     if (data != null) {
         var set: ILineDataSet? = data.getDataSetByIndex(0)
@@ -161,7 +164,9 @@ class MyYAxisValueFormatterCpu internal constructor() : IAxisValueFormatter {
     }
 }
 
-fun Context.setupGradient(mChart: LineChart, color1: Int, color2: Int) {
+fun Context.setupGradient(mChart: LineChart?, color1: Int, color2: Int) {
+    if (mChart == null) return
+
     val paint = mChart.renderer.paintRender
     val height = mChart.width
     val linGrad = LinearGradient(

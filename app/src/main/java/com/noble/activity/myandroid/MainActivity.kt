@@ -24,6 +24,7 @@ import android.widget.RelativeLayout
 import android.widget.Switch
 import com.noble.activity.myandroid.adapters.DashboardAdapter
 import com.noble.activity.myandroid.extensions.*
+import com.noble.activity.myandroid.fragments.AndroidOSFragment
 import com.noble.activity.myandroid.fragments.DashboardFragment
 import com.noble.activity.myandroid.fragments.HomeFragment
 import com.noble.activity.myandroid.helpers.LocaleHelper
@@ -195,8 +196,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun getFragmentData() {
-        list = ArrayList<DashboardInfo>()
+        list = ArrayList()
         list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", DashboardFragment(), 0))
+        list.add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
     }
 
 

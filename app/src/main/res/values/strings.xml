@@ -53,4 +53,26 @@
     <string name="build_date">Build date</string>
     <string name="security_patch_level">Security</string>
     <string name="kernel">Kernel</string>
+    <string name="version">Version</string>
+    <string name="version_name">Version Name</string>
+    <string name="product">Product</string>
+    <string name="api_level">API level</string>
+    <string name="build_id">Build ID</string>
+    <string name="build_time">Build time</string>
+    <string name="fingerprint">Fingerprint</string>
+    <string name="os_label">Operating system</string>
+
+    <!-- OS version names -->
+    <string name="honeycomb">Honeycomb</string>
+    <string name="release_date">Release Date:\u0020</string>
+    <string name="ics">Ice Cream Sandwich</string>
+    <string name="jellybean">Jelly Bean</string>
+    <string name="kitkat">Kitkat</string>
+    <string name="lollipop">Lollipop</string>
+    <string name="marshmallow">Marshmallow</string>
+    <string name="nougat">Nougat</string>
+    <string name="oreo">Oreo</string>
+    <string name="pie">Pie</string>
+    <string name="unknown_version">Unknown version</string>
+
 </resources>

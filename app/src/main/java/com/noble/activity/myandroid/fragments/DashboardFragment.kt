@@ -89,7 +89,7 @@ class DashboardFragment : Fragment() {
                     styledString.length,
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
-                tv_processor_data.text = styledString
+                tv_processor_data?.text = styledString
             } catch (e: IOException) {
                 e.printStackTrace()
             } finally {
@@ -133,7 +133,7 @@ class DashboardFragment : Fragment() {
                         "B"
                     ), x.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
-                tv_network_data.text = styledString
+                tv_network_data?.text = styledString
                 mStartRX = rxBytes
                 mStartTX = txBytes
             }
@@ -148,35 +148,35 @@ class DashboardFragment : Fragment() {
             val activeNetwork = cm!!.activeNetworkInfo
             if (activeNetwork != null) {
 
-                linechart_net.visibility = View.VISIBLE
-                tv_network_data.visibility = View.VISIBLE
-                tv_network_not_available.visibility = View.GONE
+                linechart_net?.visibility = View.VISIBLE
+                tv_network_data?.visibility = View.VISIBLE
+                tv_network_not_available?.visibility = View.GONE
 
                 if (activeNetwork.type == ConnectivityManager.TYPE_WIFI) {
-                    iv_dashboard_network.setImageResource(R.drawable.ic_brightness_low)
-                    pulsator_network.start()
-                    iv_dashboard_processor_network_image.setImageResource(R.drawable.ic_brightness_high)
-                    iv_dashboard_network.setColorFilter(
+                    iv_dashboard_network?.setImageResource(R.drawable.ic_brightness_low)
+                    pulsator_network?.start()
+                    iv_dashboard_processor_network_image?.setImageResource(R.drawable.ic_brightness_high)
+                    iv_dashboard_network?.setColorFilter(
                         activity!!.resources.getColor(R.color.dashboard_icon_color))
                     networkStatus = 1
                 } else if (activeNetwork.type == ConnectivityManager.TYPE_MOBILE) {
-                    iv_dashboard_processor_network_image.setImageResource(R.drawable.ic_brightness_low)
-                    iv_dashboard_network.setImageResource(R.drawable.ic_brightness_high)
-                    iv_dashboard_network.setColorFilter(activity!!.resources.getColor(R.color.dashboard_icon_color))
-                    pulsator_network.start()
+                    iv_dashboard_processor_network_image?.setImageResource(R.drawable.ic_brightness_low)
+                    iv_dashboard_network?.setImageResource(R.drawable.ic_brightness_high)
+                    iv_dashboard_network?.setColorFilter(activity!!.resources.getColor(R.color.dashboard_icon_color))
+                    pulsator_network?.start()
                     networkStatus = 2
                 }
                 return true
             } else {
-                linechart_net.visibility = View.GONE
-                tv_network_data.visibility = View.GONE
-                tv_network_not_available.visibility = View.VISIBLE
-                tv_network_not_available.setText(R.string.no_internet_connection)
-                pulsator_network.stop()
+                linechart_net?.visibility = View.GONE
+                tv_network_data?.visibility = View.GONE
+                tv_network_not_available?.visibility = View.VISIBLE
+                tv_network_not_available?.setText(R.string.no_internet_connection)
+                pulsator_network?.stop()
                 networkStatus = 0
-                iv_dashboard_network.setColorFilter(
+                iv_dashboard_network?.setColorFilter(
                     activity!!.resources.getColor(R.color.dashboard_icon_color))
-                iv_dashboard_network.setImageResource(R.drawable.ic_brightness_high)
+                iv_dashboard_network?.setImageResource(R.drawable.ic_brightness_high)
                 return false
             }
 
@@ -190,16 +190,16 @@ class DashboardFragment : Fragment() {
                 val state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR)
                 when (state) {
                     BluetoothAdapter.STATE_ON -> {
-                        iv_dashboard_blurtooth.setImageResource(R.drawable.ic_brightness_high)
-                        iv_dashboard_blurtooth.setColorFilter(
+                        iv_dashboard_blurtooth?.setImageResource(R.drawable.ic_brightness_high)
+                        iv_dashboard_blurtooth?.setColorFilter(
                             activity!!.resources.getColor(R.color.dashboard_icon_color))
-                        pulsator!!.start()
+                        pulsator?.start()
                     }
                     BluetoothAdapter.STATE_OFF -> {
-                        iv_dashboard_blurtooth.setImageResource(R.drawable.ic_brightness_low)
-                        iv_dashboard_blurtooth.setColorFilter(
+                        iv_dashboard_blurtooth?.setImageResource(R.drawable.ic_brightness_low)
+                        iv_dashboard_blurtooth?.setColorFilter(
                             activity!!.resources.getColor(R.color.dashboard_icon_color))
-                        pulsator!!.stop()
+                        pulsator?.stop()
                     }
                 }
             }
@@ -216,24 +216,24 @@ class DashboardFragment : Fragment() {
 
             try {
                 //set Battery Info
-                tv_dashboard_volt_data.text =
+                tv_dashboard_volt_data?.text =
                     "" + temperature.toString() + activity!!.resources.getString(R.string.c_symbol)
-                tv_dashboard_volt_data.text = "" + (voltage.toString() + "mV")
+                tv_dashboard_volt_data?.text = "" + (voltage.toString() + "mV")
 
                 val value = activity!!.getBatteryCapacity()!!.toInt()
                 if (value != -1) {
-                    tv_dashboard_health_name.setText(R.string.battery_capacity)
-                    tv_dashboard_health_data.text = value.toString() + "mAh"
+                    tv_dashboard_health_name?.setText(R.string.battery_capacity)
+                    tv_dashboard_health_data?.text = value.toString() + "mAh"
                 } else {
-                    tv_dashboard_health_name.setText(R.string.battery_health)
+                    tv_dashboard_health_name?.setText(R.string.battery_health)
                     when (health) {
-                        1 -> tv_dashboard_health_data.text = activity!!.resources.getString(R.string.unknown)
-                        2 -> tv_dashboard_health_data.text = activity!!.resources.getString(R.string.good)
-                        3 -> tv_dashboard_health_data.text = activity!!.resources.getString(R.string.over_heated)
-                        4 -> tv_dashboard_health_data.text = activity!!.resources.getString(R.string.dead)
-                        5 -> tv_dashboard_health_data!!.text = activity!!.resources.getString(R.string.over_voltage)
-                        6 -> tv_dashboard_health_data!!.text = activity!!.resources.getString(R.string.failed)
-                        else -> tv_dashboard_health_data!!.text = activity!!.resources.getString(R.string.cold)
+                        1 -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.unknown)
+                        2 -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.good)
+                        3 -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.over_heated)
+                        4 -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.dead)
+                        5 -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.over_voltage)
+                        6 -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.failed)
+                        else -> tv_dashboard_health_data?.text = activity!!.resources.getString(R.string.cold)
                     }
                 }
                 val styledString = SpannableString("$level%")
@@ -243,8 +243,8 @@ class DashboardFragment : Fragment() {
                     styledString.length,
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
-                tv_dashboard_battery_percentage.text = styledString
-                pb_dashboard_battery.progress = level
+                tv_dashboard_battery_percentage?.text = styledString
+                pb_dashboard_battery?.progress = level
 
             } catch (e: NullPointerException) {
                 e.printStackTrace()
@@ -435,7 +435,7 @@ class DashboardFragment : Fragment() {
         val handler = Handler()
         val runnable = object : Runnable {
             override fun run() {
-                arc_dashbord_ram.setCurrentValues(
+                arc_dashbord_ram?.setCurrentValues(
                     calculatePercentage(
                         (total - activity!!.freeRamMemorySize()).toDouble(),
                         total.toDouble()
@@ -553,11 +553,11 @@ class DashboardFragment : Fragment() {
 
     private fun changeBrightnessImageViewIcon(progress: Int) {
         if (progress <= 50)
-            iv_dashboard_brightness.setImageResource(R.drawable.ic_brightness_low)
+            iv_dashboard_brightness?.setImageResource(R.drawable.ic_brightness_low)
         else if (progress >= 200)
-            iv_dashboard_brightness.setImageResource(R.drawable.ic_brightness_high)
+            iv_dashboard_brightness?.setImageResource(R.drawable.ic_brightness_high)
         else
-            iv_dashboard_brightness.setImageResource(R.drawable.ic_brightness_medium)
+            iv_dashboard_brightness?.setImageResource(R.drawable.ic_brightness_medium)
     }
 
     private fun showChangeBrightnessDialog() {
@@ -661,9 +661,9 @@ class DashboardFragment : Fragment() {
         }
 
         if (!gps_enabled && !network_enabled)
-            iv_dashboard_location.setImageResource(R.drawable.ic_brightness_low)
+            iv_dashboard_location?.setImageResource(R.drawable.ic_brightness_low)
         else
-            iv_dashboard_location.setImageResource(R.drawable.ic_brightness_high)
+            iv_dashboard_location?.setImageResource(R.drawable.ic_brightness_high)
     }
 
     @SuppressLint("SetTextI18n")
