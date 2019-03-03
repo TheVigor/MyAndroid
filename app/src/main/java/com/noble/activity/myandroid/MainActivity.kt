@@ -25,6 +25,7 @@ import android.widget.Switch
 import com.noble.activity.myandroid.adapters.DashboardAdapter
 import com.noble.activity.myandroid.extensions.*
 import com.noble.activity.myandroid.fragments.AndroidOSFragment
+import com.noble.activity.myandroid.fragments.CPUFragment
 import com.noble.activity.myandroid.fragments.DashboardFragment
 import com.noble.activity.myandroid.fragments.HomeFragment
 import com.noble.activity.myandroid.helpers.LocaleHelper
@@ -199,6 +200,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list = ArrayList()
         list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", DashboardFragment(), 0))
         list.add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
+        list.add(DashboardInfo(R.mipmap.ic_processor, "#9575cd", "CPU", CPUFragment.getInstance(0), 2))
     }
 
 

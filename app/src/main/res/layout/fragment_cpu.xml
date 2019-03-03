@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dashboard_background">
+
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="4dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_background"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/dashboard_background"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <include layout="@layout/toolbar" />
+
+                <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/card_view_bg"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                            android:id="@+id/llMainContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                        <RelativeLayout
+                                android:id="@+id/rlCpuContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <TableLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp">
+
+                                <TableRow
+                                        android:id="@+id/tlGraphicsContain"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:visibility="gone">
+
+                                    <ImageView
+                                            android:id="@+id/ivGraphics"
+                                            android:layout_width="50dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="0.2"
+                                            android:contentDescription="@null"
+                                            android:paddingStart="20dp"
+                                            android:src="@mipmap/ic_processor"
+                                            android:visibility="gone"
+                                            tools:ignore="RtlSymmetry,TooDeepLayout" />
+
+                                    <TextView
+                                            android:id="@+id/tvGraphicsName"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.8"
+                                            android:gravity="center"
+                                            android:maxLines="2"
+                                            android:textColor="@color/cpu"
+                                            android:textSize="22sp"
+                                            android:textStyle="bold"
+                                            android:visibility="gone" />
+                                </TableRow>
+
+                                <TableRow
+                                        android:id="@+id/tvHadrwareName"
+                                        android:visibility="gone">
+
+                                    <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start"
+                                            android:layout_weight=".4"
+                                            android:paddingStart="20dp"
+                                            android:text="@string/hardware"
+                                            android:textColor="@color/secondary_text"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:ignore="RtlSymmetry" />
+
+                                    <TextView
+                                            android:id="@+id/tvHadrwareValue"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight=".6"
+                                            android:gravity="center_vertical"
+                                            android:maxLines="2"
+                                            android:textColor="@color/primary_text"
+                                            android:textSize="16sp"
+                                            tools:ignore="MissingPrefix,RtlSymmetry" />
+                                </TableRow>
+
+                                <TableRow
+                                        android:id="@+id/tvCpuName"
+                                        android:visibility="gone">
+
+                                    <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start"
+                                            android:layout_weight=".4"
+                                            android:paddingStart="20dp"
+                                            android:text="@string/cpu"
+                                            android:textColor="@color/secondary_text"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:ignore="RtlSymmetry" />
+
+                                    <TextView
+                                            android:id="@+id/tvCpuValue"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".6"
+                                            android:gravity="center_vertical"
+                                            android:maxLines="2"
+                                            android:textColor="@color/primary_text"
+                                            android:textSize="16sp"
+                                            tools:ignore="MissingPrefix,RtlSymmetry" />
+                                </TableRow>
+
+                                <TableRow
+                                        android:id="@+id/tvProcessName"
+                                        android:visibility="gone">
+
+                                    <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start"
+                                            android:layout_weight=".4"
+                                            android:paddingStart="20dp"
+                                            android:text="@string/processor"
+                                            android:textColor="@color/secondary_text"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:ignore="RtlSymmetry" />
+
+                                    <TextView
+                                            android:id="@+id/tvProcessValue"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".6"
+                                            android:gravity="center_vertical"
+                                            android:textColor="@color/primary_text"
+                                            android:textSize="16sp"
+                                            tools:ignore="MissingPrefix,RtlSymmetry" />
+                                </TableRow>
+
+                                <TableRow
+                                        android:id="@+id/tvCoreName"
+                                        android:visibility="gone">
+
+                                    <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start"
+                                            android:layout_weight=".4"
+                                            android:paddingStart="20dp"
+                                            android:text="@string/cores"
+                                            android:textColor="@color/secondary_text"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:ignore="RtlSymmetry" />
+
+                                    <TextView
+                                            android:id="@+id/tvCoreValue"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".6"
+                                            android:gravity="center_vertical"
+                                            android:textColor="@color/primary_text"
+                                            android:textSize="16sp"
+                                            tools:ignore="MissingPrefix,RtlSymmetry" />
+                                </TableRow>
+
+                                <TableRow
+                                        android:id="@+id/tvFrequenciesName"
+                                        android:visibility="gone">
+
+                                    <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="start"
+                                            android:layout_weight=".4"
+                                            android:paddingStart="20dp"
+                                            android:text="@string/frequencies"
+                                            android:textColor="@color/secondary_text"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            tools:ignore="RtlSymmetry" />
+
+                                    <TextView
+                                            android:id="@+id/tvFrequenciesValue"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".6"
+                                            android:gravity="center_vertical"
+                                            android:textColor="@color/primary_text"
+                                            android:textSize="16sp"
+                                            tools:ignore="MissingPrefix,RtlSymmetry" />
+                                </TableRow>
+
+
+                            </TableLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                                android:id="@+id/cvCpuProcessor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:visibility="gone">
+
+
+                            <com.github.mikephil.charting.charts.LineChart
+                                    android:id="@+id/linechart_cpu_fragment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp" />
+
+                            <TextView
+                                    android:id="@+id/tv_cpu_fragment_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:paddingStart="20dp"
+                                    android:paddingTop="5dp"
+                                    android:text="@string/processor_data"
+                                    android:textColor="@color/secondary_font_text"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="RtlSymmetry" />
+
+                        </RelativeLayout>
+
+                        <View
+                                android:id="@+id/vSeparate"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/divider"
+                                android:visibility="visible" />
+
+                        <LinearLayout
+                                android:id="@+id/llCpuSeeHideContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:visibility="gone">
+
+                            <TextView
+                                    android:id="@+id/tvCpuHideSeeGraph"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="@string/see_graph"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/cpu_text"
+                                    android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:tabMode="fixed">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_cpu_feature_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

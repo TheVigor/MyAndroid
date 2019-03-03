@@ -74,5 +74,12 @@
     <string name="oreo">Oreo</string>
     <string name="pie">Pie</string>
     <string name="unknown_version">Unknown version</string>
+    <string name="cpu">CPU</string>
+    <string name="processor">Processor</string>
+    <string name="cores">Cores</string>
+    <string name="frequencies">Frequencies</string>
+    <string name="see_graph">See graph</string>
+    <string name="hide_graph">Hide graph</string>
+    <string name="core">Core</string>
 
 </resources>
