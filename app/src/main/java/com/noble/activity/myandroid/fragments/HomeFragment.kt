@@ -24,44 +24,30 @@ import java.util.*
 class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        (activity as MainActivity).setAdapterPosition(0)
+        return view
     }
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         initToolbar()
-        (activity as MainActivity).bottomSheetDisable(true)
 
         getBundleData()
         getDeviceInfo()
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-    }
 
-    override fun onDestroyView() {
-        activity!!.supportFragmentManager.popBackStack()
-        super.onDestroyView()
-    }
-
-    override fun onHiddenChanged(hidden: Boolean) {
-        super.onHiddenChanged(hidden)
-        if (!hidden && isAdded) {
-            initToolbar()
-        }
-    }
 
     private fun initToolbar() {
-        iv_back.visibility = View.VISIBLE
+        iv_back.visibility = View.GONE
         tv_title.text = activity!!.resources.getString(R.string.device)
         tv_title.setTextColor(activity!!.resources.getColor(R.color.dashboard))
         iv_back.setColorFilter(ContextCompat.getColor(activity!!, R.color.darkBlue))
-        iv_back.setOnClickListener { activity!!.onBackPressed() }
+        //iv_back.setOnClickListener { activity!!.onBackPressed() }
     }
 
     @SuppressLint("HardwareIds")

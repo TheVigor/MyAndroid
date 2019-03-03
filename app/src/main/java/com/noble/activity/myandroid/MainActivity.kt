@@ -71,7 +71,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         //getAppList().execute()
 
         clearBackStackFragments()
-        replaceFragment(DashboardFragment(), false, true)
+        replaceFragment(HomeFragment(), false, true)
 
         getFragmentData()
 
@@ -198,7 +198,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
     fun getFragmentData() {
         list = ArrayList()
-        list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", DashboardFragment(), 0))
+        list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", HomeFragment(), 0))
         list.add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
         list.add(DashboardInfo(R.mipmap.ic_processor, "#9575cd", "CPU", CPUFragment.getInstance(0), 2))
     }
