@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textAllCaps="false"
-                android:textColor="@color/dark_violet_one"
+                android:textColor="@color/dark_blue"
                 android:textSize="14sp"
                 tools:ignore="MissingPrefix"
                 tools:targetApi="jelly_bean" />
