@@ -1,46 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#e03755</color>
+    <color name="colorPrimaryDark">#9e2e44</color>
+    <color name="colorAccent">#97b5ca</color>
+    <color name="darkBlue">#add1f9</color>
 
-    <color name="white">#ffffff</color>
-    <color name="black">#000000</color>
-
-    <color name="dark_blue">#131a60</color>
-
-    <color name="primary_text">#212121</color>
+    <color name="primary_text">#e0fafafa</color>
     <color name="secondary_text">#757575</color>
+    <color name="thirdly_text">#a9a9a9</color>
+    <color name="divider">#9dd9d9d9</color>
 
-    <color name="dashboard_background">#F9F9F9</color>
-    <color name="bottom_sheet_background">#FFFFff</color>
+    <!-- Fonts color -->
+    <color name="font_black">#e9ffffff</color>
+    <color name="font_white">#73fffefe</color>
 
-    <color name="blink_color_2">#b0de338b</color>
-    <color name="blink_color_3">#45ef89be</color>
-    <color name="blink_color_1">#cee21467</color>
+    <color name="secondary_font_text">#dffaf9f9</color>
 
-    <color name="bottomsheet_card_bg">#F4F8FA</color>
-    <color name="card_view_bg">#FFFFFF</color>
+    <color name="white">#f4ffffff</color>
+    <color name="white1">#ffffff</color>
+    <color name="white_trans">#1effffff</color>
+
+    <!-- Donut circular progressbar color -->
+
+
+    <color name="dark_blue">#dc959bcf</color>
+    <color name="dark_violet_one">#2a233a</color>
+
+    <color name="red">#Ff0000</color>
+    <color name="green">#00ff00</color>
+    <color name="blue">#0000ff</color>
+    <color name="yello">#FFFF00</color>
+
+    <!--Dashboard -->
+    <color name="dashboard_text">#83838b</color>
+    <color name="dashboard_background">#26272F</color>
+    <color name="dashboard_status_bar">#000000</color>
+    <color name="dashboard_network_cardview">#3B3C49</color>
+    <color name="dashboard_processor_cardview">#3B3C49</color>
+    <color name="dashboard_battery_cardview">#3B3C49</color>
+    <color name="dashboard_compass_cardview">#3B3C49</color>
+    <color name="dashboard_arc_progress_bar_color_1">#02b7f6</color>
+    <color name="dashboard_arc_progress_bar_color_2">#02cfdd</color>
+    <color name="dashboard_arc_progress_bar_color_3">#02e9c3</color>
+    <color name="dashboard_arc_progress_bar_back_color">#cdddec</color>
+    <color name="dashboard_arc_progress_bar_text_color">#e9ffffff</color>
+    //
+    <color name="dashboard_pulsator_network">#bfe9a7a8</color>
+    //
+    <color name="dashboard_pulsator_blurtooth">#beb0dfbe</color>
+    <color name="dashboard_icon_color">#efeeee</color>
+    <color name="dashboard_network_graph_color_1">#359335</color>
+    <color name="dashboard_network_graph_color_2">#adec66</color>
+    <color name="dashboard_processor_graph_color_1">#b45cbb</color>
+    <color name="dashboard_processor_graph_color_2">#625fef</color>
+    <color name="line_chart_graph_color_1">#b45cbb</color>
+    <color name="line_chart_graph_color_2">#625fef</color>
+
+    <!-- Drawable -->
+    <color name="battery_drawable">#7baee7</color>
+    <color name="graph_color_1">#313145</color>
+    <color name="graph_color_2">#34357a</color>
+    <color name="blink_color_1">#cedc48</color>
+    <color name="blink_color_2">#a7b4bf53</color>
+    <color name="blink_color_3">#2d6f7157</color>
+
+
+    <!-- Battery-->
+
+    <!-- Cpu-->
+    <color name="cpu_text">#7baee7</color>
+    <color name="graph_left_axis_text_color">#c9f0f1f1</color>
+
+    <!-- Main Activity -->
+    <color name="bottom_sheet_background">#26272F</color>
+    <color name="dashboard">#e57373</color>
+    <color name="os">#f06292</color>
+    <color name="sensor">#ba68c8</color>
+    <color name="cpu">#9575cd</color>
+    <color name="battery">#7986cb</color>
+    <color name="network">#64b5f6</color>
+    <color name="sim">#4dd0e1</color>
+    <color name="camera">#4db6ac</color>
+    <color name="storage">#81c784</color>
+    <color name="bluetooth">#aed581</color>
+    <color name="display">#dce775</color>
+    <color name="features">#ffd54f</color>
+    <color name="user">#ffb74d</color>
+    <color name="system">#ff8a65</color>
+    <color name="touchtest">#a1887f</color>
+    <color name="gpu_ram">#90a4ae</color>
+    <!-- card -->
+    <color name="bottomsheet_card_bg">#3B3C49</color>
+    <color name="card_view_bg">#3B3C49</color>
 
     <color name="ic_sun_color">#ffd45c</color>
-
-    <color name="dashboard_icon_color">#757575</color>
-    <color name="dashboard_network_cardview">#81c784</color>
-    <color name="dashboard_text">#153d55</color>
-    <color name="dashboard_processor_cardview">#7986cb</color>
-    <color name="dashboard_battery_cardview">#4dd0e1</color>
-    <color name="dashboard_compass_cardview">#dce775</color>
-
-    <color name="dashboard_pulsator_network">#f8bbd0</color>
-    <color name="dashboard_pulsator_blurtooth">#bb52efc9</color>
-
-    <color name="dashboard_arc_progress_bar_color_1">#9850b7</color>
-    <color name="dashboard_arc_progress_bar_color_2">#e44597</color>
-    <color name="dashboard_arc_progress_bar_color_3">#f9582e</color>
-    <color name="dashboard_arc_progress_bar_back_color">#bac8d5</color>
-    <color name="dashboard_arc_progress_bar_text_color">#000000</color>
-
-    <color name="battery_drawable">#7986cb</color>
-
 
 </resources>

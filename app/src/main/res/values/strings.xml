@@ -33,4 +33,19 @@
     <string name="battery_health">Battery health</string>
     <string name="compass">Compass</string>
     <string name="no_magnection_senscer">No magnection sensor</string>
+    <string name="no_internet_connection">No Internet connection</string>
+    <string name="c_symbol">C</string>
+    <string name="wifi">WiFi</string>
+    <string name="unavailable">Unavaliable</string>
+    <string name="battery_capacity">Battery capacity</string>
+    <string name="unknown">Unknown</string>
+    <string name="good">Good</string>
+    <string name="over_heated">Over heated</string>
+    <string name="dead">Dead</string>
+    <string name="over_voltage">Over voltage</string>
+    <string name="failed">Failed</string>
+    <string name="cold">Cold</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="adjust_brightness">Adjust brightness</string>
 </resources>

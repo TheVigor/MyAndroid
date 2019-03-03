@@ -69,7 +69,7 @@ class DashboardAdapter(
             )
         } else {
             holder.cvDashboard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.bottomsheet_card_bg))
-            holder.tvFragmentName.setTextColor(ContextCompat.getColor(context, R.color.black))
+            holder.tvFragmentName.setTextColor(ContextCompat.getColor(context, R.color.font_black))
             holder.ivFragmentIcon.setColorFilter(
                 ContextCompat.getColor(context, R.color.dashboard_icon_color),
                 PorterDuff.Mode.SRC_ATOP

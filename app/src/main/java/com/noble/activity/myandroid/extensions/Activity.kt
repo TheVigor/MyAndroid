@@ -11,15 +11,15 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import com.noble.activity.myandroid.R
 
-fun AppCompatActivity.addFragment(fragment: Fragment, isAddToBackStack: Boolean, shouldAnimate: Boolean) {
+fun Context.addFragment(fragment: Fragment, isAddToBackStack: Boolean, shouldAnimate: Boolean) {
     pushFragment(fragment, R.id.fragment_container, isAddToBackStack, true, shouldAnimate)
 }
 
-fun AppCompatActivity.replaceFragment(fragment: Fragment, isAddToBackStack: Boolean, shouldAnimate: Boolean) {
+fun Context.replaceFragment(fragment: Fragment, isAddToBackStack: Boolean, shouldAnimate: Boolean) {
     pushFragment(fragment, R.id.fragment_container, isAddToBackStack, false, shouldAnimate)
 }
 
-private fun AppCompatActivity.pushFragment(
+private fun Context.pushFragment(
     fragment: Fragment?,
     containerId: Int,
     isAddToBackStack: Boolean,
@@ -27,7 +27,7 @@ private fun AppCompatActivity.pushFragment(
     shouldAnimate: Boolean
 ) {
     if (fragment == null) return
-    val fragmentManager: FragmentManager = this.supportFragmentManager
+    val fragmentManager: FragmentManager = (this as AppCompatActivity).supportFragmentManager
 
     val fragmentCurrent = fragmentManager.findFragmentById(R.id.fragment_container)
     val fragmentTransaction = fragmentManager.beginTransaction()
@@ -59,9 +59,9 @@ private fun AppCompatActivity.pushFragment(
 
 }
 
-fun AppCompatActivity.removeAllFragmentExceptDashboard() {
+fun Context.removeAllFragmentExceptDashboard() {
     try {
-        val fragmentManager = this.supportFragmentManager
+        val fragmentManager = (this as AppCompatActivity).supportFragmentManager
 
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         val fragmentList = fragmentManager.fragments
@@ -80,9 +80,9 @@ fun AppCompatActivity.removeAllFragmentExceptDashboard() {
 
 }
 
-fun AppCompatActivity.clearBackStackFragments() {
+fun Context.clearBackStackFragments() {
     try {
-        val fragmentManager = this.supportFragmentManager
+        val fragmentManager = (this as AppCompatActivity).supportFragmentManager
 
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         val fragmentList = fragmentManager.fragments

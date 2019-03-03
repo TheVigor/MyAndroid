@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="@color/card_view_bg">
+
+    <TextView
+        android:id="@+id/tv_brightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:text="@string/adjust_brightness"
+        android:textAlignment="center"
+        android:textColor="@color/primary_text"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        tools:ignore="RtlSymmetry" />
+
+    <SeekBar
+        android:id="@+id/sb_brightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_brightness"
+        android:background="@android:color/transparent"
+        android:max="255"
+        android:thumbTint="@color/colorAccent"
+        android:layout_marginTop="20dp"
+        android:thumb="@drawable/ic_brightness_high"
+        tools:targetApi="lollipop" />
+</RelativeLayout>
