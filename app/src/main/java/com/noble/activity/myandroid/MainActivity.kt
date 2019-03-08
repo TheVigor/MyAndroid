@@ -124,7 +124,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         tvRateUs.setOnClickListener(this)
 
         rv_dashboard_contain.setHasFixedSize(true)
-        rv_dashboard_contain.layoutManager = GridLayoutManager(this, 4)
+        rv_dashboard_contain.layoutManager = GridLayoutManager(this, 3)
         dashboardAdapter = DashboardAdapter(this, list)
         rv_dashboard_contain.adapter = dashboardAdapter
 
