@@ -171,6 +171,8 @@
     <string name="memory_type">Memory type</string>
     <string name="bandwidth">Bandwidth</string>
     <string name="channels">Channels</string>
+    <string name="graphics">Graphics</string>
+    <string name="graphics_empty_screen">No graphics information avaliable</string>
 
 
 </resources>

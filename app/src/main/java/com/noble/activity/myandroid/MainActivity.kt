@@ -188,7 +188,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             super.onBackPressed()
     }
 
-
     fun refreshApps() {
         //getAppList().execute()
     }
@@ -203,6 +202,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_display, "#dce775", "Display", DisplayFragment(), 5))
         list.add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
         list.add(DashboardInfo(R.mipmap.ic_ram, "#90a4ae", "RAM", RamFragment(), 7))
+        list.add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
 
     }
 

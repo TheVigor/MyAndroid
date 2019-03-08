@@ -1,9 +1,7 @@
 package com.noble.activity.myandroid.fragments
 
-import android.app.ActivityManager
 import android.content.Context
 import android.graphics.Point
-import android.opengl.GLSurfaceView
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
@@ -22,7 +20,7 @@ import com.noble.activity.myandroid.utilities.calculatePercentage
 import com.noble.activity.myandroid.utilities.freeRamMemorySize
 import com.noble.activity.myandroid.utilities.sizeConversion
 import com.noble.activity.myandroid.utilities.totalRamMemorySize
-import kotlinx.android.synthetic.main.fragment_graphics.*
+import kotlinx.android.synthetic.main.fragment_ram.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
 import org.json.JSONObject
 import java.io.File
@@ -41,7 +39,7 @@ class RamFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_graphics, container, false)
+        val view = inflater.inflate(R.layout.fragment_ram, container, false)
 
         (activity as MainActivity).setAdapterPosition(7)
 
