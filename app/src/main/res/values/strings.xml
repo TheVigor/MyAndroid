@@ -137,6 +137,32 @@
     <string name="xhdpi">xhdpi</string>
     <string name="xxhdpi">xxhdpi</string>
     <string name="xxxhdpi">xxxhdpi</string>
+    <string name="wifi_direct">WiFi Direct</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth_le">Bluetooth LE</string>
+    <string name="gps">GPS</string>
+    <string name="camera_flash">Camera Flash</string>
+    <string name="camera_front">Front camera</string>
+    <string name="microphone">Microphone</string>
+    <string name="nfc">NFC</string>
+    <string name="usb_host">USB host</string>
+    <string name="usb_accessory">USB accessory</string>
+    <string name="multitouch">Multitouch</string>
+    <string name="audio_low_latency">Audio low latency</string>
+    <string name="audio_output">Audio output</string>
+    <string name="professional_audio">Professional audio</string>
+    <string name="consumer_ir">Consumer IR</string>
+    <string name="gamepad_support">Gamepad support</string>
+    <string name="hifi_sensor">HiFi sensor</string>
+    <string name="printing">Printing</string>
+    <string name="cdma">CDMA</string>
+    <string name="gsm">GSM</string>
+    <string name="app_widgets">App widgets</string>
+    <string name="sip">SIP</string>
+    <string name="sip_based_voip">SIP based VOIP</string>
+    <string name="features">Features</string>
+    <string name="available">Avaliable</string>
+    <string name="not_supported">Not supported</string>
 
 
 </resources>

@@ -201,6 +201,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_battery, "#7986cb", "Battery", BatteryFragment.getInstance(0), 3))
         list.add(DashboardInfo(R.mipmap.ic_wifi, "#64b5f6", "Network", NetworkFragment.getInstance(0), 4))
         list.add(DashboardInfo(R.mipmap.ic_display, "#dce775", "Display", DisplayFragment(), 5))
+        list.add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
     }
 
 
