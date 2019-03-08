@@ -82,4 +82,12 @@
     <string name="hide_graph">Hide graph</string>
     <string name="core">Core</string>
 
+    <string name="battery_type">Battery type</string>
+    <string name="power_source">Power source</string>
+    <string name="battery_temperature">Battery temperature</string>
+    <string name="battery_voltage">Battery voltage</string>
+    <string name="battery_scale">Battery scale</string>
+    <string name="ac_power">AC power</string>
+
+
 </resources>

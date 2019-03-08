@@ -30,7 +30,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-
     <style name="MyProgressBarTwo" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
     </style>
@@ -39,4 +38,11 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
+
+    <style name="MyProgressBarTwoForBatteryFragment" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">
+            @drawable/custom_progressbar_horizontal_for_battery_fragment
+        </item>
+    </style>
+
 </resources>
