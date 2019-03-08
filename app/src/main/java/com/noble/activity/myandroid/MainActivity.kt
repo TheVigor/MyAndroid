@@ -1,11 +1,14 @@
 package com.noble.activity.myandroid
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.AnimationDrawable
+import android.os.AsyncTask
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -28,10 +31,13 @@ import com.noble.activity.myandroid.fragments.*
 import com.noble.activity.myandroid.helpers.LocaleHelper
 import com.noble.activity.myandroid.helpers.ThemeHelper
 import com.noble.activity.myandroid.models.DashboardInfo
+import com.noble.activity.myandroid.models.DeviceInfo
 import com.noble.activity.myandroid.models.LanguageInfo
+import com.noble.activity.myandroid.utilities.KeyUtil
 import com.noble.activity.myandroid.utilities.sharing
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
@@ -203,6 +209,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
         list.add(DashboardInfo(R.mipmap.ic_ram, "#90a4ae", "RAM", RamFragment(), 7))
         list.add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
+        list.add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9)
+        )
 
     }
 
@@ -227,6 +235,43 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
         }
     }
+
+
+    fun getAppList(): MutableList<DeviceInfo> {
+        val deviceInfo: MutableList<DeviceInfo> = ArrayList()
+
+        val flags = PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES
+        val applications = pm.getInstalledApplications(flags)
+
+        for (appInfo in applications) {
+            if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 1) {
+                // System application
+                val icon = pm.getApplicationIcon(appInfo)
+                deviceInfo.add(
+                    DeviceInfo(
+                        1,
+                        icon,
+                        pm.getApplicationLabel(appInfo).toString(),
+                        appInfo.packageName
+                    )
+                )
+            } else {
+                // Installed by User
+                val icon = pm.getApplicationIcon(appInfo)
+                deviceInfo.add(
+                    DeviceInfo(
+                        2,
+                        icon,
+                        pm.getApplicationLabel(appInfo).toString(),
+                        appInfo.packageName
+                    )
+                )
+            }
+        }
+
+        return deviceInfo
+    }
+
 
 
 
