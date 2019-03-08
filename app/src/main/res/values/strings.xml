@@ -163,6 +163,14 @@
     <string name="features">Features</string>
     <string name="available">Avaliable</string>
     <string name="not_supported">Not supported</string>
+    <string name="ram">RAM</string>
+    <string name="used_memory">Used memory</string>
+    <string name="zeroMB">0 MB</string>
+    <string name="free">Free</string>
+    <string name="total">Total</string>
+    <string name="memory_type">Memory type</string>
+    <string name="bandwidth">Bandwidth</string>
+    <string name="channels">Channels</string>
 
 
 </resources>
