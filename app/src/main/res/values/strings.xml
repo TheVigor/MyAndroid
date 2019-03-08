@@ -89,5 +89,16 @@
     <string name="battery_scale">Battery scale</string>
     <string name="ac_power">AC power</string>
 
+    <string name="connection_status">Connection Status</string>
+    <string name="data_type">Data type</string>
+    <string name="network_type">Network type</string>
+    <string name="ip_address">IP address</string>
+    <string name="mac_address">MAC address</string>
+    <string name="ssid">SSID</string>
+    <string name="link_speed">Link speed</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="mbps">Mb/s</string>
+
 
 </resources>

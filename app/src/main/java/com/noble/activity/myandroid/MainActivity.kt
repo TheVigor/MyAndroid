@@ -199,6 +199,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
         list.add(DashboardInfo(R.mipmap.ic_processor, "#9575cd", "CPU", CPUFragment.getInstance(0), 2))
         list.add(DashboardInfo(R.mipmap.ic_battery, "#7986cb", "Battery", BatteryFragment.getInstance(0), 3))
+        list.add(DashboardInfo(R.mipmap.ic_wifi, "#64b5f6", "Network", NetworkFragment.getInstance(0), 4))
     }
 
 
