@@ -209,8 +209,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
         list.add(DashboardInfo(R.mipmap.ic_ram, "#90a4ae", "RAM", RamFragment(), 7))
         list.add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
-        list.add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9)
-        )
+        list.add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9))
+        list.add(DashboardInfo(R.mipmap.ic_system, "#ff8a65", "System\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS), 10))
 
     }
 
