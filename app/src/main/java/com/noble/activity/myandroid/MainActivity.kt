@@ -95,9 +95,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         })
 
         cd_bottomsheet.setOnClickListener(this)
-
-        tvRateUs.setOnClickListener(this)
-
+        
         rv_dashboard_contain.setHasFixedSize(true)
         rv_dashboard_contain.layoutManager = GridLayoutManager(this, 3)
         dashboardAdapter = DashboardAdapter(this, listCollectors)
@@ -187,12 +185,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
                 else
                     behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
-            }
-
-            R.id.tvRateUs -> {
-                avoidDoubleClicks(tvRateUs)
-                hideBottomSheet()
-                rateUsApp()
             }
         }
     }
