@@ -68,7 +68,7 @@ fun Context.removeAllFragmentExceptDashboard() {
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         val fragmentList = fragmentManager.fragments
 
-        if (fragmentList != null && !fragmentList.isEmpty()) {
+        if (!fragmentList.isEmpty()) {
             val fragmentTransaction = fragmentManager.beginTransaction()
             for (i in fragmentList.size - 1 downTo 1) {
                 fragmentTransaction.remove(fragmentList[i])

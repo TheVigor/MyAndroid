@@ -98,7 +98,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         rv_dashboard_contain.setHasFixedSize(true)
         rv_dashboard_contain.layoutManager = GridLayoutManager(this, 3)
-        dashboardAdapter = DashboardAdapter(this, listCollectors)
+        dashboardAdapter = DashboardAdapter(listCollectors)
         rv_dashboard_contain.adapter = dashboardAdapter
     }
 
@@ -121,7 +121,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun setAdapterPosition(position: Int) {
-        dashboardAdapter.postion = position
+        dashboardAdapter.position = position
     }
 
     fun hideBottomSheet() {

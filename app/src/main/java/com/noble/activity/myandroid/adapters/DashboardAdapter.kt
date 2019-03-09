@@ -1,10 +1,7 @@
 package com.noble.activity.myandroid.adapters
 
-import android.annotation.SuppressLint
-import android.annotation.TargetApi
 import android.graphics.Color
 import android.graphics.PorterDuff
-import android.os.Build
 import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
@@ -21,89 +18,82 @@ import com.noble.activity.myandroid.extensions.removeAllFragmentExceptDashboard
 import com.noble.activity.myandroid.extensions.replaceFragment
 import com.noble.activity.myandroid.models.DashboardInfo
 
-class DashboardAdapter(
-    private val context: MainActivity,
-    private val list: List<DashboardInfo>
-) :
-    RecyclerView.Adapter<DashboardAdapter.MyViewHolder>() {
+class DashboardAdapter(private val dashboardList: List<DashboardInfo>) :
+    RecyclerView.Adapter<DashboardAdapter.DashboardViewHolder>() {
+
     private var currentFragmentIndex = 0
     private val handler = Handler()
 
-    var postion: Int
+    var position: Int
         get() = currentFragmentIndex
-        set(postion) {
-            currentFragmentIndex = postion
+        set(position) {
+            currentFragmentIndex = position
             notifyDataSetChanged()
         }
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivFragmentIcon: ImageView
-        val ivFragmentTemp: ImageView
-        val tvFragmentName: TextView
-        val cvDashboard: CardView
+    inner class DashboardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val ivFragmentIcon: ImageView = itemView.findViewById(R.id.iv_fragment_icon)
+        val ivFragmentTemp: ImageView = itemView.findViewById(R.id.iv_fragment_temp)
+        val tvFragmentName: TextView = itemView.findViewById(R.id.tv_fragment_name)
+        val cvDashboard: CardView = itemView.findViewById(R.id.cv_dashboard)
 
-        init {
-            ivFragmentIcon = itemView.findViewById(R.id.iv_fragment_icon)
-            tvFragmentName = itemView.findViewById(R.id.tv_fragment_name)
-            ivFragmentTemp = itemView.findViewById(R.id.iv_fragment_temp)
-            cvDashboard = itemView.findViewById(R.id.cv_dashboard)
-        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardAdapter.MyViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.row_dashboard_item, parent, false)
-        return MyViewHolder(view)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        DashboardViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_dashboard_item, parent, false))
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    override fun onBindViewHolder(holder: DashboardAdapter.MyViewHolder, @SuppressLint("RecyclerView") position: Int) {
-        val dashboardInfo = list[position]
+    override fun onBindViewHolder(holder: DashboardAdapter.DashboardViewHolder, position: Int) {
+        val dashboardInfo = dashboardList[position]
+
         holder.ivFragmentIcon.setImageResource(dashboardInfo.fragmentIcon)
+
         if (currentFragmentIndex == position) {
             holder.cvDashboard.elevation = 0f
+
             holder.cvDashboard.setCardBackgroundColor(Color.parseColor(dashboardInfo.fragmentColor))
-            holder.tvFragmentName.setTextColor(ContextCompat.getColor(context, R.color.white))
+
+            holder.tvFragmentName.setTextColor(
+                ContextCompat.getColor(holder.itemView.context, R.color.white))
+
             holder.ivFragmentIcon.setColorFilter(
-                ContextCompat.getColor(context, R.color.white),
-                PorterDuff.Mode.SRC_ATOP
-            )
+                ContextCompat.getColor(holder.itemView.context, R.color.white),
+                PorterDuff.Mode.SRC_ATOP)
+
         } else {
-            holder.cvDashboard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.bottomsheet_card_bg))
-            holder.tvFragmentName.setTextColor(ContextCompat.getColor(context, R.color.font_black))
+
+            holder.cvDashboard.setCardBackgroundColor(
+                ContextCompat.getColor(holder.itemView.context, R.color.bottomsheet_card_bg))
+
+            holder.tvFragmentName.setTextColor(
+                ContextCompat.getColor(holder.itemView.context, R.color.font_black))
+
             holder.ivFragmentIcon.setColorFilter(
-                ContextCompat.getColor(context, R.color.dashboard_icon_color),
-                PorterDuff.Mode.SRC_ATOP
-            )
+                ContextCompat.getColor(holder.itemView.context, R.color.dashboard_icon_color),
+                PorterDuff.Mode.SRC_ATOP)
         }
+
         holder.tvFragmentName.text = dashboardInfo.fragmentName
         holder.ivFragmentTemp.setBackgroundColor(Color.parseColor(dashboardInfo.fragmentColor))
-        holder.cvDashboard.setOnClickListener(View.OnClickListener {
+        holder.cvDashboard.setOnClickListener{
             avoidDoubleClicks(holder.cvDashboard)
-            context.hideBottomSheet()
+            (holder.itemView.context as MainActivity).hideBottomSheet()
+
             if (currentFragmentIndex == dashboardInfo.fragmentIndex) {
-//                val fragment = context.supportFragmentManager
-//                    .findFragmentByTag(AboutUsFragment::class.java!!.getCanonicalName())
-//                if (fragment != null) {
-//                    context.getSupportFragmentManager().beginTransaction().remove(fragment).commit()
-//                    context.getSupportFragmentManager().popBackStackImmediate()
-//                }
-//                return@OnClickListener
+                return@setOnClickListener
             }
             currentFragmentIndex = dashboardInfo.fragmentIndex
+
             handler.postDelayed({
                 if (position == 0) {
-                    context.supportFragmentManager.popBackStackImmediate()
+                    (holder.itemView.context as MainActivity)
+                        .supportFragmentManager.popBackStackImmediate()
                 } else {
-                    context.removeAllFragmentExceptDashboard()
-                    context.replaceFragment(dashboardInfo.fragment, true, false)
+                    (holder.itemView.context).removeAllFragmentExceptDashboard()
+                    (holder.itemView.context).replaceFragment(dashboardInfo.fragment, true, false)
                 }
             }, 300)
-        })
+        }
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
-
-
+    override fun getItemCount() = dashboardList.size
 }
