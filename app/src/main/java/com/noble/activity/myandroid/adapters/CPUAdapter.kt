@@ -7,22 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.models.FeaturesHW
 
-class CPUAdapter(private var appsList: ArrayList<FeaturesHW>, internal var mActivity: MainActivity) : RecyclerView.Adapter<CPUAdapter.DeviceVH>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceVH {
-        val itemView = LayoutInflater.from(mActivity).inflate(R.layout.row_cpu_item, parent, false)
-        return DeviceVH(itemView)
-    }
+class CPUAdapter(private var cpuList: ArrayList<FeaturesHW>)
+    : RecyclerView.Adapter<CPUAdapter.DeviceVH>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        DeviceVH(LayoutInflater.from(parent.context).inflate(R.layout.row_cpu_item, parent, false))
 
     override fun onBindViewHolder(holder: DeviceVH, position: Int) {
-        holder.bindData(appsList[position], position)
-
+        holder.bindData(cpuList[position], position)
     }
 
-    override fun getItemCount(): Int = appsList.size
+    override fun getItemCount(): Int = cpuList.size
 
     inner class DeviceVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         @SuppressLint("SetTextI18n")
@@ -40,7 +38,8 @@ class CPUAdapter(private var appsList: ArrayList<FeaturesHW>, internal var mActi
                 try {
                     if (featureHW.featureValue.toInt() >= 0) {
                         llCoreGrouper.visibility = View.VISIBLE
-                        tvCoreTitle.text = mActivity.resources.getString(R.string.core) +"\u0020"+ featureHW.featureValue
+                        tvCoreTitle.text =
+                            itemView.context.resources.getString(R.string.core) +"\u0020"+ featureHW.featureValue
                     }
                 } catch (e: Exception) {
                     llCoreGrouper.visibility = View.GONE

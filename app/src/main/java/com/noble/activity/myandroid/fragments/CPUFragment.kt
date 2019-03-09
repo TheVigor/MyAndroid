@@ -367,7 +367,7 @@ class CPUFragment : Fragment(), View.OnClickListener {
             e.printStackTrace()
         }
 
-        val adapter = CPUAdapter(lists, activity as MainActivity)
+        val adapter = CPUAdapter(lists)
 
         //now adding the adapter to RecyclerView
         rv_cpu_feature_list.adapter = adapter
