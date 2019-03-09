@@ -104,10 +104,7 @@ class SensorsFragment : Fragment() {
             lists.add(SensorInfo(s.name, s.type))
         }
 
-        //creating our adapter
-        val adapter = SensorAdapter(activity!! as MainActivity, lists)
-
-        //now adding the adapter to RecyclerView
+        val adapter = SensorAdapter(lists)
         rv_sensors_list.adapter = adapter
     }
 

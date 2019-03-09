@@ -10,13 +10,10 @@ import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.models.ItemInfo
 
 
-class ItemAdapter(private val mainActivity: MainActivity,
-                  private var itemInformationData: ArrayList<ItemInfo>):
+class ItemAdapter(private var itemInformationData: ArrayList<ItemInfo>):
     RecyclerView.Adapter<ItemAdapter.ItemVH>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemVH {
-        val itemView = LayoutInflater.from(mainActivity).inflate(R.layout.row_item_item, parent, false)
-        return ItemVH(itemView)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        ItemVH(LayoutInflater.from(parent.context).inflate(R.layout.row_item_item, parent, false))
 
     override fun onBindViewHolder(holder: ItemVH, position: Int) {
         holder.bindData(itemInformationData[position])

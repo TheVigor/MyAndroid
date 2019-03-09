@@ -17,21 +17,19 @@ import com.noble.activity.myandroid.models.SensorInfo
 import com.noble.activity.myandroid.utilities.getBitmapFromVectorDrawable
 import java.io.ByteArrayOutputStream
 
-class SensorAdapter(private var context: MainActivity, private var sensorList: ArrayList<SensorInfo>)
+class SensorAdapter(private var sensorList: ArrayList<SensorInfo>)
     : RecyclerView.Adapter<SensorAdapter.SensorVH>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SensorVH {
-        val v = LayoutInflater.from(context).inflate(R.layout.row_sensors, parent, false)
-        return SensorVH(v)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        SensorVH(LayoutInflater.from(parent.context).inflate(R.layout.row_sensors, parent, false))
 
     override fun onBindViewHolder(holder: SensorVH, position: Int) {
-        holder.bindData(sensorList[position], context)
+        holder.bindData(sensorList[position])
     }
 
     override fun getItemCount(): Int = sensorList.size
 
     class SensorVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindData(sensorInfo: SensorInfo, c: MainActivity) {
+        fun bindData(sensorInfo: SensorInfo) {
 
             val tvSensorNameRow: TextView = itemView.findViewById(R.id.tv_sensor_name_row)
             val ivSensorImage: ImageView = itemView.findViewById(R.id.iv_sensor_image)
@@ -53,7 +51,7 @@ class SensorAdapter(private var context: MainActivity, private var sensorList: A
             } else if (sensorInfo.sensorType == Sensor.TYPE_MAGNETIC_FIELD) {
                 ivSensorImage.setImageResource(R.drawable.ic_inclined_magnet)
             } else if (sensorInfo.sensorType == Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED) {
-                ivSensorImage?.setImageResource(R.drawable.ic_magnet_with_bolt)
+                ivSensorImage.setImageResource(R.drawable.ic_magnet_with_bolt)
             } else if (sensorInfo.sensorType == Sensor.TYPE_PROXIMITY) {
                 ivSensorImage.setImageResource(R.drawable.ic_if_ibeacon_proximity_1613770)
             } else if (sensorInfo.sensorType == Sensor.TYPE_ORIENTATION) {
@@ -83,7 +81,7 @@ class SensorAdapter(private var context: MainActivity, private var sensorList: A
                 bitmap?.compress(Bitmap.CompressFormat.PNG, 100, stream)
                 val byteArray = stream.toByteArray()
 
-                c.addFragment(sensorDetailFragment.getInstance(sensorInfo.sensorName, sensorInfo.sensorType, byteArray), true, true)
+                itemView.context.addFragment(sensorDetailFragment.getInstance(sensorInfo.sensorName, sensorInfo.sensorType, byteArray), true, true)
             }
         }
     }

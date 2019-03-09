@@ -59,7 +59,7 @@ class GraphicsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         graphicsInfoList = ArrayList()
 
-        adapter = ItemAdapter((activity as MainActivity?)!!, graphicsInfoList!!)
+        adapter = ItemAdapter(graphicsInfoList!!)
         rvGraphicsData!!.setHasFixedSize(true)
         rvGraphicsData!!.layoutManager = LinearLayoutManager(activity!!)
         loadGPUData()
