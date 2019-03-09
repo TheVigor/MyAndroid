@@ -21,36 +21,38 @@ fun Context.replaceFragment(fragment: Fragment, isAddToBackStack: Boolean, shoul
     pushFragment(fragment, R.id.fragment_container, isAddToBackStack, false, shouldAnimate)
 }
 
-private fun Context.pushFragment(
-    fragment: Fragment?,
-    containerId: Int,
-    isAddToBackStack: Boolean,
-    isJustAdd: Boolean,
-    shouldAnimate: Boolean
-) {
+private fun Context.pushFragment(fragment: Fragment?, containerId: Int, isAddToBackStack: Boolean,
+    isJustAdd: Boolean, shouldAnimate: Boolean) {
     if (fragment == null) return
     val fragmentManager: FragmentManager = (this as AppCompatActivity).supportFragmentManager
 
     val fragmentCurrent = fragmentManager.findFragmentById(R.id.fragment_container)
     val fragmentTransaction = fragmentManager.beginTransaction()
 
-    if (shouldAnimate)
+    if (shouldAnimate) {
         fragmentTransaction.setCustomAnimations(
-            android.R.anim.fade_in,
-            android.R.anim.fade_out,
-            android.R.anim.fade_in,
-            android.R.anim.fade_out
+            android.R.anim.fade_in, android.R.anim.fade_out,
+            android.R.anim.fade_in, android.R.anim.fade_out
         )
-    else
+    }
+    else {
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+    }
 
-    if (fragmentCurrent != null) fragmentTransaction.hide(fragmentCurrent)
-    if (isAddToBackStack)
+    if (fragmentCurrent != null) {
+        fragmentTransaction.hide(fragmentCurrent)
+    }
+
+    if (isAddToBackStack) {
         fragmentTransaction.addToBackStack(fragment.javaClass.canonicalName)
-    if (isJustAdd)
+    }
+
+    if (isJustAdd) {
         fragmentTransaction.add(containerId, fragment, fragment.javaClass.canonicalName)
-    else
+    }
+    else {
         fragmentTransaction.replace(containerId, fragment, fragment.javaClass.canonicalName)
+    }
 
     try {
         fragmentTransaction.commitAllowingStateLoss()
@@ -89,7 +91,7 @@ fun Context.clearBackStackFragments() {
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         val fragmentList = fragmentManager.fragments
 
-        if (fragmentList != null && !fragmentList.isEmpty()) {
+        if (!fragmentList.isEmpty()) {
             val fragmentTransaction = fragmentManager.beginTransaction()
             for (fragment in fragmentList) {
                 if (fragment != null) {
@@ -107,25 +109,28 @@ fun Context.clearBackStackFragments() {
 
 
 fun Context.hideKeyboard() {
-    (this as AppCompatActivity).window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+    (this as AppCompatActivity).window
+        .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
 
     val view = this.currentFocus
 
     if (view != null) {
-        val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val imm =
+            this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
 
+const val DELAY_IN_MS: Long = 400
+
 fun avoidDoubleClicks(view: View) {
-    val DELAY_IN_MS: Long = 400
     if (!view.isClickable) {
         return
     }
+
     view.isClickable = false
     view.postDelayed({ view.isClickable = true }, DELAY_IN_MS)
 }
-
 
 fun Context.rateUsApp() {
     val uri = Uri.parse("market://details?id=com.noble.activity.artifactcards")
