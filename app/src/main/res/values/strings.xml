@@ -177,6 +177,8 @@
     <string name="system_apps">System apps</string>
     <string name="package_name">Package name</string>
     <string name="required_permissions">Required permissions</string>
+    <string name="sensors">Sensors</string>
+    <string name="available_sensor">Avaliable sensors</string>
 
 
 </resources>

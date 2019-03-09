@@ -211,6 +211,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         list.add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
         list.add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9))
         list.add(DashboardInfo(R.mipmap.ic_system, "#ff8a65", "System\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS), 10))
+        list.add(DashboardInfo(R.mipmap.ic_sensors, "#ba68c8", "Mobile\nSensors", SensorsFragment.getInstance(0), 11))
 
     }
 
