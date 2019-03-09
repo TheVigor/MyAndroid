@@ -1,6 +1,5 @@
 package com.noble.activity.myandroid
 
-import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
@@ -26,31 +25,23 @@ import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
-    private lateinit var pm: PackageManager
-
     private lateinit var drawable: AnimatedVectorDrawable
     private lateinit var drawableBack: AnimatedVectorDrawable
 
     private lateinit var behavior: BottomSheetBehavior<*>
 
-    private var isLang: Boolean = false
+    private lateinit var listCollectors: MutableList<DashboardInfo>
 
-    private lateinit var list: MutableList<DashboardInfo>
-
-    private var dashboardAdapter: DashboardAdapter? = null
-
+    private lateinit var dashboardAdapter: DashboardAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        pm = packageManager
-
         drawable = (ContextCompat.getDrawable(this, R.drawable.ic_menu_animatable)
-                as AnimatedVectorDrawable?)!!
+                as AnimatedVectorDrawable)
         drawableBack = (ContextCompat.getDrawable(this, R.drawable.ic_menu_animatable_back)
-                    as AnimatedVectorDrawable?)!!
-
+                    as AnimatedVectorDrawable)
 
         behavior = BottomSheetBehavior.from<RelativeLayout>(bottom_sheet)
 
@@ -61,39 +52,31 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         clearBackStackFragments()
         replaceFragment(HomeFragment(), false, true)
 
-        getFragmentData()
+        initFragmentCollectors()
 
         val fadeIn = AlphaAnimation(0f, 1f)
-        fadeIn.interpolator = AccelerateDecelerateInterpolator() // add this
+        fadeIn.interpolator = AccelerateDecelerateInterpolator()
         fadeIn.duration = 1500
 
         val fadeOut = AlphaAnimation(1f, 0f)
-        fadeOut.interpolator = AccelerateDecelerateInterpolator() // add this
+        fadeOut.interpolator = AccelerateDecelerateInterpolator()
         fadeOut.duration = 1500
 
         behavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 when (newState) {
                     BottomSheetBehavior.STATE_EXPANDED -> {
-                        if (!isLang) {
-                            tv_bottomsheet_category_name.animation = fadeOut
-                            tv_bottomsheet_category_name.setText(R.string.hide_category)
-                            tv_bottomsheet_category_name.animation = fadeIn
-                        }
-                            iv_bottomsheet_category_icon.setImageDrawable(drawable)
-                            drawable.start()
+                        tv_bottomsheet_category_name.animation = fadeOut
+                        tv_bottomsheet_category_name.setText(R.string.hide_category)
+                        tv_bottomsheet_category_name.animation = fadeIn
+
+                        iv_bottomsheet_category_icon.setImageDrawable(drawable)
+                        drawable.start()
                     }
                     BottomSheetBehavior.STATE_COLLAPSED -> {
-
                         tv_bottomsheet_category_name.animation = fadeOut
                         tv_bottomsheet_category_name.setText(R.string.view_category)
                         tv_bottomsheet_category_name.animation = fadeIn
-
-                        if (isLang) {
-                            isLang = false
-
-                            llBottomSheetFragments.visibility = View.VISIBLE
-                        }
 
                         iv_bottomsheet_category_icon.setImageDrawable(drawableBack)
                         drawableBack.start()
@@ -116,14 +99,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         rv_dashboard_contain.setHasFixedSize(true)
         rv_dashboard_contain.layoutManager = GridLayoutManager(this, 3)
-        dashboardAdapter = DashboardAdapter(this, list)
+        dashboardAdapter = DashboardAdapter(this, listCollectors)
         rv_dashboard_contain.adapter = dashboardAdapter
-
     }
 
 
     fun getFragment(pos: Int): Fragment {
-        return list[pos].fragment
+        return listCollectors[pos].fragment
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -140,11 +122,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun setAdapterPosition(position: Int) {
-        dashboardAdapter?.postion = position
-    }
-
-    fun getAdapterPostion(): Int {
-        return if (dashboardAdapter != null) dashboardAdapter!!.postion else 0
+        dashboardAdapter.postion = position
     }
 
     fun hideBottomSheet() {
@@ -178,23 +156,24 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         //getAppList().execute()
     }
 
-    fun getFragmentData() {
-        list = ArrayList()
-        list.add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", HomeFragment(), 0))
-        list.add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
-        list.add(DashboardInfo(R.mipmap.ic_processor, "#9575cd", "CPU", CPUFragment.getInstance(0), 2))
-        list.add(DashboardInfo(R.mipmap.ic_battery, "#7986cb", "Battery", BatteryFragment.getInstance(0), 3))
-        list.add(DashboardInfo(R.mipmap.ic_wifi, "#64b5f6", "Network", NetworkFragment.getInstance(0), 4))
-        list.add(DashboardInfo(R.mipmap.ic_display, "#dce775", "Display", DisplayFragment(), 5))
-        list.add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
-        list.add(DashboardInfo(R.mipmap.ic_ram, "#90a4ae", "RAM", RamFragment(), 7))
-        list.add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
-        list.add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9))
-        list.add(DashboardInfo(R.mipmap.ic_system, "#ff8a65", "System\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS), 10))
-        list.add(DashboardInfo(R.mipmap.ic_sensors, "#ba68c8", "Mobile\nSensors", SensorsFragment.getInstance(0), 11))
+    private fun initFragmentCollectors() {
+        listCollectors = ArrayList()
 
+        listCollectors.apply {
+            add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", HomeFragment(), 0))
+            add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
+            add(DashboardInfo(R.mipmap.ic_processor, "#9575cd", "CPU", CPUFragment.getInstance(0), 2))
+            add(DashboardInfo(R.mipmap.ic_battery, "#7986cb", "Battery", BatteryFragment.getInstance(0), 3))
+            add(DashboardInfo(R.mipmap.ic_wifi, "#64b5f6", "Network", NetworkFragment.getInstance(0), 4))
+            add(DashboardInfo(R.mipmap.ic_display, "#dce775", "Display", DisplayFragment(), 5))
+            add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
+            add(DashboardInfo(R.mipmap.ic_ram, "#90a4ae", "RAM", RamFragment(), 7))
+            add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
+            add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9))
+            add(DashboardInfo(R.mipmap.ic_system, "#ff8a65", "System\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS), 10))
+            add(DashboardInfo(R.mipmap.ic_sensors, "#ba68c8", "Mobile\nSensors", SensorsFragment.getInstance(0), 11))
+        }
     }
-
 
     override fun onClick(v: View) {
         when (v.id) {
@@ -217,43 +196,20 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-
     fun getAppList(): MutableList<DeviceInfo> {
         val deviceInfo: MutableList<DeviceInfo> = ArrayList()
 
         val flags = PackageManager.GET_META_DATA or PackageManager.GET_SHARED_LIBRARY_FILES
-        val applications = pm.getInstalledApplications(flags)
+        val applications = packageManager.getInstalledApplications(flags)
 
-        for (appInfo in applications) {
-            if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 1) {
-                // System application
-                val icon = pm.getApplicationIcon(appInfo)
-                deviceInfo.add(
-                    DeviceInfo(
-                        1,
-                        icon,
-                        pm.getApplicationLabel(appInfo).toString(),
-                        appInfo.packageName
-                    )
-                )
-            } else {
-                // Installed by User
-                val icon = pm.getApplicationIcon(appInfo)
-                deviceInfo.add(
-                    DeviceInfo(
-                        2,
-                        icon,
-                        pm.getApplicationLabel(appInfo).toString(),
-                        appInfo.packageName
-                    )
-                )
-            }
+        applications.forEach{
+            var appType = if (it.flags and ApplicationInfo.FLAG_SYSTEM == 1) 1 else 2
+
+            val icon = packageManager.getApplicationIcon(it)
+            deviceInfo.add(DeviceInfo(appType, icon,
+                packageManager.getApplicationLabel(it).toString(), it.packageName))
         }
 
         return deviceInfo
     }
-
-
-
-
 }
