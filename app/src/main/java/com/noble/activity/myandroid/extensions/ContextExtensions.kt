@@ -1,6 +1,5 @@
 package com.noble.activity.myandroid.extensions
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
@@ -107,16 +106,16 @@ fun Context.clearBackStackFragments() {
 }
 
 
-fun AppCompatActivity.hideKeyboard() {
-        this.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+fun Context.hideKeyboard() {
+    (this as AppCompatActivity).window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
 
-        val view = this.currentFocus
+    val view = this.currentFocus
 
-        if (view != null) {
-            val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view.windowToken, 0)
-        }
+    if (view != null) {
+        val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
+}
 
 fun avoidDoubleClicks(view: View) {
     val DELAY_IN_MS: Long = 400
