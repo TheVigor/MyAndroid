@@ -15,13 +15,14 @@ import com.noble.activity.myandroid.extensions.avoidDoubleClicks
 import com.noble.activity.myandroid.fragments.AppInfoFragment
 import com.noble.activity.myandroid.models.DeviceInfo
 
-class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mActivity: MainActivity,
-                    internal var mode: Int) : RecyclerView.Adapter<DeviceAdapter.DeviceVH>(), Filterable {
+class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mode: Int)
+    : RecyclerView.Adapter<DeviceAdapter.DeviceVH>(), Filterable {
+
     private val itemsList:ArrayList<DeviceInfo> = appsList
     private var itemsListFiltered: List<DeviceInfo>
 
     init {
-        this.itemsListFiltered = appsList
+        itemsListFiltered = appsList
     }
 
     override fun getFilter(): Filter {
@@ -50,10 +51,9 @@ class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mActivity: Mai
             }
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceVH {
-        val itemView = LayoutInflater.from(mActivity).inflate(R.layout.row_infomation, parent, false)
-        return DeviceVH(itemView)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        DeviceVH(LayoutInflater.from(parent.context).inflate(R.layout.row_infomation, parent, false))
+
 
     override fun onBindViewHolder(holder: DeviceVH, position: Int) {
         holder.bindData(itemsListFiltered[position], position)
@@ -76,7 +76,7 @@ class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mActivity: Mai
 
             itemView.setOnClickListener {
                 avoidDoubleClicks(itemView)
-                mActivity.addFragment(AppInfoFragment.getInstance(mode, deviceInfo.packageName, position), true, true)
+                itemView.context.addFragment(AppInfoFragment.getInstance(mode, deviceInfo.packageName, position), true, true)
             }
         }
     }

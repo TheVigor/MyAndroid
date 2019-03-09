@@ -119,7 +119,7 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
         (activity as MainActivity).getAppList().filterTo(lists) { it.flags == mode }
 
         //creating our adapter
-        adapter = mode?.let { DeviceAdapter(lists, activity as MainActivity, it) }
+        adapter = mode?.let { DeviceAdapter(lists, it) }
 
         if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS)
             snackBarCustom(coordinatorLayout,
