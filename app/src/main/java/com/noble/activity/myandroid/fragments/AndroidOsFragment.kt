@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.OS_INDEX
 import com.noble.activity.myandroid.utilities.getDate
 import kotlinx.android.synthetic.main.fragment_os.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
@@ -16,7 +17,7 @@ class AndroidOSFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_os, container, false)
-        (activity as MainActivity).setAdapterPosition(1)
+        (activity as MainActivity).setAdapterPosition(OS_INDEX)
         return view
     }
 

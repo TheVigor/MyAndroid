@@ -26,6 +26,7 @@ import com.github.mikephil.charting.charts.LineChart
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.adapters.CPUAdapter
+import com.noble.activity.myandroid.constants.CPU_INDEX
 import com.noble.activity.myandroid.models.*
 import com.noble.activity.myandroid.utilities.KeyUtil
 import kotlinx.android.synthetic.main.fragment_cpu.*
@@ -63,7 +64,7 @@ class CPUFragment : Fragment(), View.OnClickListener {
         animationUp = AnimationUtils.loadAnimation(activity, R.anim.slide_up)
         animationDown = AnimationUtils.loadAnimation(activity, R.anim.slide_down)
 
-        (activity as MainActivity).setAdapterPosition(2)
+        (activity as MainActivity).setAdapterPosition(CPU_INDEX)
 
         return view
     }

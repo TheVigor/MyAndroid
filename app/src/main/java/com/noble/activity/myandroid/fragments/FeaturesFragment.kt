@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.FEATURES_INDEX
 import kotlinx.android.synthetic.main.fragment_features.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
 
@@ -23,7 +24,7 @@ class FeaturesFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_features, container, false)
 
-        (activity as MainActivity).setAdapterPosition(6)
+        (activity as MainActivity).setAdapterPosition(FEATURES_INDEX)
         packageManager = activity!!.packageManager
 
         return view

@@ -15,6 +15,8 @@ import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.adapters.DeviceAdapter
+import com.noble.activity.myandroid.constants.SYSTEM_APPS_INDEX
+import com.noble.activity.myandroid.constants.USER_APPS_INDEX
 import com.noble.activity.myandroid.models.DeviceInfo
 import com.noble.activity.myandroid.utilities.KeyUtil
 import kotlinx.android.synthetic.main.fragment_apps.*
@@ -61,9 +63,9 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
         getBundleData()
 
         if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS)
-            (activity as MainActivity).setAdapterPosition(9)
+            (activity as MainActivity).setAdapterPosition(USER_APPS_INDEX)
         else
-            (activity as MainActivity).setAdapterPosition(10)
+            (activity as MainActivity).setAdapterPosition(SYSTEM_APPS_INDEX)
 
         initToolbar()
 

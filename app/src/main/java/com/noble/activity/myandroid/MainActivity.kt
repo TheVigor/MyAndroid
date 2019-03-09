@@ -15,6 +15,7 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
 import android.widget.RelativeLayout
 import com.noble.activity.myandroid.adapters.DashboardAdapter
+import com.noble.activity.myandroid.constants.*
 import com.noble.activity.myandroid.extensions.*
 import com.noble.activity.myandroid.fragments.*
 import com.noble.activity.myandroid.models.DashboardInfo
@@ -160,18 +161,18 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         listCollectors = ArrayList()
 
         listCollectors.apply {
-            add(DashboardInfo(R.mipmap.ic_home, "#e57373", "Home", HomeFragment(), 0))
-            add(DashboardInfo(R.mipmap.ic_android, "#f06292", "Android", AndroidOSFragment(), 1))
-            add(DashboardInfo(R.mipmap.ic_processor, "#9575cd", "CPU", CPUFragment.getInstance(0), 2))
-            add(DashboardInfo(R.mipmap.ic_battery, "#7986cb", "Battery", BatteryFragment.getInstance(0), 3))
-            add(DashboardInfo(R.mipmap.ic_wifi, "#64b5f6", "Network", NetworkFragment.getInstance(0), 4))
-            add(DashboardInfo(R.mipmap.ic_display, "#dce775", "Display", DisplayFragment(), 5))
-            add(DashboardInfo(R.mipmap.ic_features, "#ffd54f", "Features", FeaturesFragment(), 6))
-            add(DashboardInfo(R.mipmap.ic_ram, "#90a4ae", "RAM", RamFragment(), 7))
-            add(DashboardInfo(R.mipmap.ic_graphics, "#90a4ae", "Graphics", GraphicsFragment(), 8))
-            add(DashboardInfo(R.mipmap.ic_user, "#ffb74d", "User\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), 9))
-            add(DashboardInfo(R.mipmap.ic_system, "#ff8a65", "System\nApps", AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS), 10))
-            add(DashboardInfo(R.mipmap.ic_sensors, "#ba68c8", "Mobile\nSensors", SensorsFragment.getInstance(0), 11))
+            add(DashboardInfo(R.mipmap.ic_home, HOME_COLOR, getString(R.string.home_title), HomeFragment(), HOME_INDEX))
+            add(DashboardInfo(R.mipmap.ic_android, OS_COLOR, getString(R.string.os_title), AndroidOSFragment(), OS_INDEX))
+            add(DashboardInfo(R.mipmap.ic_processor, CPU_COLOR, getString(R.string.cpu_title), CPUFragment.getInstance(0), CPU_INDEX))
+            add(DashboardInfo(R.mipmap.ic_battery, BATTERY_COLOR, getString(R.string.battery_title), BatteryFragment.getInstance(0), BATTERY_INDEX))
+            add(DashboardInfo(R.mipmap.ic_wifi, NETWORK_COLOR, getString(R.string.network_title), NetworkFragment.getInstance(0), NETWORK_INDEX))
+            add(DashboardInfo(R.mipmap.ic_display, DISPLAY_COLOR, getString(R.string.display_title), DisplayFragment(), DISPLAY_INDEX))
+            add(DashboardInfo(R.mipmap.ic_features, FEATURES_COLOR, getString(R.string.features_title), FeaturesFragment(), FEATURES_INDEX))
+            add(DashboardInfo(R.mipmap.ic_ram, RAM_COLOR, getString(R.string.ram_title), RamFragment(), RAM_INDEX))
+            add(DashboardInfo(R.mipmap.ic_graphics, GRAPHICS_COLOR, getString(R.string.graphics_title), GraphicsFragment(), GRAPHICS_INDEX))
+            add(DashboardInfo(R.mipmap.ic_user, USER_APPS_COLOR, getString(R.string.user_apps_title), AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS), USER_APPS_INDEX))
+            add(DashboardInfo(R.mipmap.ic_system, SYSTEM_APPS_COLOR, getString(R.string.system_apps_title), AppsFragment.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS), SYSTEM_APPS_INDEX))
+            add(DashboardInfo(R.mipmap.ic_sensors, SENSORS_COLOR, getString(R.string.sensors_title), SensorsFragment.getInstance(0), SENSORS_INDEX))
         }
     }
 

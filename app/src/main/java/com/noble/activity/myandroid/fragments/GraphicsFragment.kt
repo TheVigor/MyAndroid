@@ -19,6 +19,7 @@ import android.view.WindowManager
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.adapters.ItemAdapter
+import com.noble.activity.myandroid.constants.GRAPHICS_INDEX
 import com.noble.activity.myandroid.models.ItemInfo
 import kotlinx.android.synthetic.main.fragment_graphics.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
@@ -44,7 +45,7 @@ class GraphicsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_graphics, container, false)
-        (activity as MainActivity).setAdapterPosition(8)
+        (activity as MainActivity).setAdapterPosition(GRAPHICS_INDEX)
         return view
     }
 

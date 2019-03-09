@@ -17,6 +17,7 @@ import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.adapters.SensorAdapter
+import com.noble.activity.myandroid.constants.SENSORS_INDEX
 import com.noble.activity.myandroid.models.SensorInfo
 import com.noble.activity.myandroid.utilities.KeyUtil
 import kotlinx.android.synthetic.main.fragment_sensors.*
@@ -41,7 +42,7 @@ class SensorsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_sensors, container, false)
 
-        (activity as MainActivity).setAdapterPosition(11)
+        (activity as MainActivity).setAdapterPosition(SENSORS_INDEX)
 
         return view
     }

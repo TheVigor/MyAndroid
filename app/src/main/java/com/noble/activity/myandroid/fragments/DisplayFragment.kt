@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.DISPLAY_INDEX
 import com.noble.activity.myandroid.utilities.pxToDp
 import kotlinx.android.synthetic.main.fragment_display.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
@@ -25,9 +26,8 @@ class DisplayFragment : Fragment() {
     private val dm = DisplayMetrics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        (activity as MainActivity).setAdapterPosition(5)
         val view = inflater.inflate(R.layout.fragment_display, container, false)
-
+        (activity as MainActivity).setAdapterPosition(DISPLAY_INDEX)
         return view
     }
 

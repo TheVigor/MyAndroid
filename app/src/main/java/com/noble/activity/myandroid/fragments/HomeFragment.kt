@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.HOME_INDEX
 import com.noble.activity.myandroid.utilities.KeyUtil
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
@@ -25,7 +26,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        (activity as MainActivity).setAdapterPosition(0)
+        (activity as MainActivity).setAdapterPosition(HOME_INDEX)
         return view
     }
 

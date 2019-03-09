@@ -16,6 +16,7 @@ import android.view.WindowManager
 
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.RAM_INDEX
 import com.noble.activity.myandroid.utilities.calculatePercentage
 import com.noble.activity.myandroid.utilities.freeRamMemorySize
 import com.noble.activity.myandroid.utilities.sizeConversion
@@ -41,7 +42,7 @@ class RamFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_ram, container, false)
 
-        (activity as MainActivity).setAdapterPosition(7)
+        (activity as MainActivity).setAdapterPosition(RAM_INDEX)
 
         return view
     }

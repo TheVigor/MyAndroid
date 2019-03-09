@@ -209,4 +209,18 @@
     <string name="ms">ms</string>
 
 
+    <string name="home_title">Home</string>
+    <string name="os_title">Android</string>
+    <string name="cpu_title">CPU</string>
+    <string name="battery_title">Battery</string>
+    <string name="network_title">Network</string>
+    <string name="display_title">Display</string>
+    <string name="features_title">Features</string>
+    <string name="ram_title">RAM</string>
+    <string name="graphics_title">Graphics</string>
+    <string name="user_apps_title">User\nApps</string>
+    <string name="system_apps_title">System\nApps</string>
+    <string name="sensors_title">Mobile\nSensors</string>
+
+
 </resources>

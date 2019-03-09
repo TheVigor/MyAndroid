@@ -21,6 +21,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.NETWORK_INDEX
 import com.noble.activity.myandroid.models.addEntry
 import com.noble.activity.myandroid.models.initCupGraph
 import com.noble.activity.myandroid.models.setupGradient
@@ -62,7 +63,7 @@ class NetworkFragment : Fragment() {
         inflater.cloneInContext(contextThemeWrapper)
         val view = inflater.inflate(R.layout.fragment_network, container, false)
 
-        (activity as MainActivity).setAdapterPosition(4)
+        (activity as MainActivity).setAdapterPosition(NETWORK_INDEX)
 
         return view
     }

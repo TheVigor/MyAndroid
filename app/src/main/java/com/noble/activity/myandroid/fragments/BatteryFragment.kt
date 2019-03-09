@@ -20,6 +20,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.constants.BATTERY_INDEX
 import com.noble.activity.myandroid.utilities.KeyUtil
 import com.noble.activity.myandroid.utilities.getBatteryCapacity
 import com.noble.activity.myandroid.utilities.isRequiredField
@@ -94,7 +95,7 @@ class BatteryFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_battery, container, false)
-        (activity as MainActivity).setAdapterPosition(3)
+        (activity as MainActivity).setAdapterPosition(BATTERY_INDEX)
         return view
     }
 
