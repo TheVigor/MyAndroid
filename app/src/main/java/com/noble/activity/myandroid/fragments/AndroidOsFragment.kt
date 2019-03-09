@@ -25,7 +25,7 @@ class AndroidOSFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         initToolbar()
-        getOSInfo()
+        updateOsInfo()
     }
 
     private fun initToolbar() {
@@ -34,7 +34,7 @@ class AndroidOSFragment : Fragment() {
         tv_title.setTextColor(activity!!.resources.getColor(R.color.os))
     }
 
-    private fun getOSInfo() {
+    private fun updateOsInfo() {
         val androidVersion = android.os.Build.VERSION.SDK_INT
 
         tv_api_level.text = Build.VERSION.SDK_INT.toString()

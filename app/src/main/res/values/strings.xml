@@ -221,6 +221,9 @@
     <string name="user_apps_title">User\nApps</string>
     <string name="system_apps_title">System\nApps</string>
     <string name="sensors_title">Mobile\nSensors</string>
+    <string name="installed">Installed:</string>
+    <string name="updated">Updated:</string>
+    <string name="version_app">Version:</string>
 
 
 </resources>
