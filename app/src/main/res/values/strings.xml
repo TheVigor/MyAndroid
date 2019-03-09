@@ -179,6 +179,34 @@
     <string name="required_permissions">Required permissions</string>
     <string name="sensors">Sensors</string>
     <string name="available_sensor">Avaliable sensors</string>
+    <string name="sensor_id">Sensor ID</string>
+    <string name="sensor_name">Sensor name</string>
+    <string name="int_type">Sensor type</string>
+    <string name="vendor">Vendor</string>
+    <string name="power">Power</string>
+    <string name="maximum_range">Maximum range</string>
+    <string name="is_dynamic">isDynamicSensor</string>
+    <string name="is_wakeup_sensor">isWakeUpSensor</string>
+    <string name="reporting_mode">Reporting mode</string>
+
+    <string name="mu_tesla">\u0020µT</string>
+    <string name="degree_icon">\u0020\u00B0</string>
+    <string name="rad">\u0020rad/s</string>
+    <string name="cm">\u0020cm</string>
+    <string name="percentage">%</string>
+    <string name="lx">\u0020lx</string>
+    <string name="ma">\u0020mA</string>
+    <string name="pressure">Pressure:\u0020</string>
+    <string name="hpa">\u0020hPa</string>
+    <string name="geomagnetic_field">Geomagnetic field: \n\n</string>
+    <string name="proximity_sensor">Proximity:\u0020</string>
+    <string name="humidity_sensor">Humidity:\u0020</string>
+    <string name="illuminance">Illuminance:\u0020</string>
+    <string name="steps">Steps:\u0020</string>
+    <string name="absolute_humidity_temperature_sensor">Absolute Humidity at Temperature:\u0020</string>
+    <string name="due_point_temperature">Dew point:\u0020</string>
+    <string name="angular_speed">Angular speed \n\n</string>
+    <string name="ms">ms</string>
 
 
 </resources>

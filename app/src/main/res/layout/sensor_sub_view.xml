@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/card_view_bg"
+            app:cardUseCompatPadding="true">
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+            <TableRow>
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/sensor_id"
+                        android:textColor="@color/secondary_text"
+                        tools:targetApi="jelly_bean" />
+
+                <TextView
+                        android:id="@+id/tv_sensor_id"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/sensor_name"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_sensor_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/int_type"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_int_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/vendor"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_vendor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry"/>
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/version"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_version"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight="0.7"
+                        android:gravity="center|start"
+                        android:text="@string/resolution"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_resolution"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/power"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_power"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/maximum_range"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_maximum_range"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/is_dynamic"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_is_dynamic_sensor"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/is_wakeup_sensor"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_is_wakeup_sensor"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight=".7"
+                        android:gravity="center|start"
+                        android:text="@string/reporting_mode"
+                        tools:targetApi="jelly_bean"
+                        android:textColor="@color/secondary_text" />
+
+                <TextView
+                        android:id="@+id/tv_reporting_mode"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/primary_text"
+                        tools:ignore="MissingPrefix,RtlSymmetry" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
