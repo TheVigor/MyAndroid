@@ -175,6 +175,8 @@
     <string name="graphics_empty_screen">No graphics information avaliable</string>
     <string name="user_apps">User apps</string>
     <string name="system_apps">System apps</string>
+    <string name="package_name">Package name</string>
+    <string name="required_permissions">Required permissions</string>
 
 
 </resources>

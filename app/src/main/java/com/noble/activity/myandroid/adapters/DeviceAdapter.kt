@@ -10,7 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
+import com.noble.activity.myandroid.extensions.addFragment
 import com.noble.activity.myandroid.extensions.avoidDoubleClicks
+import com.noble.activity.myandroid.fragments.AppInfoFragment
 import com.noble.activity.myandroid.models.DeviceInfo
 
 class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mActivity: MainActivity,
@@ -74,8 +76,7 @@ class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mActivity: Mai
 
             itemView.setOnClickListener {
                 avoidDoubleClicks(itemView)
-                //val sensorDetailFragment = AppInfoFragment()
-                //mActivity.fragmentUtil.addFragment(sensorDetailFragment.getInstance(mode, deviceInfo.packageName, position), true, true)
+                mActivity.addFragment(AppInfoFragment.getInstance(mode, deviceInfo.packageName, position), true, true)
             }
         }
     }
