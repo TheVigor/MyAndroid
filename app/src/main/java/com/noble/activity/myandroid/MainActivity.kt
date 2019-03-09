@@ -1,18 +1,11 @@
 package com.noble.activity.myandroid
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.drawable.AnimatedVectorDrawable
-import android.graphics.drawable.AnimationDrawable
-import android.os.AsyncTask
-import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.support.design.widget.BottomSheetBehavior
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -21,22 +14,14 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.widget.CompoundButton
 import android.widget.RelativeLayout
-import android.widget.Switch
 import com.noble.activity.myandroid.adapters.DashboardAdapter
 import com.noble.activity.myandroid.extensions.*
 import com.noble.activity.myandroid.fragments.*
-import com.noble.activity.myandroid.helpers.LocaleHelper
-import com.noble.activity.myandroid.helpers.ThemeHelper
 import com.noble.activity.myandroid.models.DashboardInfo
 import com.noble.activity.myandroid.models.DeviceInfo
-import com.noble.activity.myandroid.models.LanguageInfo
 import com.noble.activity.myandroid.utilities.KeyUtil
-import com.noble.activity.myandroid.utilities.sharing
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -134,13 +119,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         dashboardAdapter = DashboardAdapter(this, list)
         rv_dashboard_contain.adapter = dashboardAdapter
 
-        LocaleHelper.setLocale(this, Locale.getDefault().language)
     }
 
-
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(LocaleHelper.onAttach(newBase))
-    }
 
     fun getFragment(pos: Int): Fragment {
         return list[pos].fragment

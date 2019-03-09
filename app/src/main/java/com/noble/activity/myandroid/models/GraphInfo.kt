@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.AxisBase
@@ -19,7 +18,6 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IAxisValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.noble.activity.myandroid.R
-import com.noble.activity.myandroid.helpers.ThemeHelper
 
 import com.github.mikephil.charting.components.YAxis.YAxisLabelPosition.INSIDE_CHART
 
@@ -58,13 +56,13 @@ private fun Context.createSet(flag: Int): LineDataSet {
     set.setDrawCircles(false)
     set.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
     set.cubicIntensity = 0.2f
-    if (ThemeHelper.isNightModeEnabled((this as AppCompatActivity).baseContext, false)) {
-        set.setDrawFilled(true)
-        if (flag == 1)
-            set.fillDrawable = ContextCompat.getDrawable(this, R.drawable.network_graph_gradient)
-        if (flag == 2)
-            set.fillDrawable = ContextCompat.getDrawable(this, R.drawable.cpu_graph_gradient)
-    }
+
+    set.setDrawFilled(true)
+    if (flag == 1)
+        set.fillDrawable = ContextCompat.getDrawable(this, R.drawable.network_graph_gradient)
+    if (flag == 2)
+        set.fillDrawable = ContextCompat.getDrawable(this, R.drawable.cpu_graph_gradient)
+
     if (flag == 3) {
         set.setDrawFilled(true)
         set.fillDrawable = ContextCompat.getDrawable(this, R.drawable.cpu_graph_gradient)
