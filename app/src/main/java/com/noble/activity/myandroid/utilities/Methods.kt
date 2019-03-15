@@ -12,17 +12,8 @@ import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Build
-import android.os.Environment
-import android.preference.PreferenceManager
-import android.provider.MediaStore
-import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.DisplayMetrics
-import android.view.View
-import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
-import android.webkit.MimeTypeMap
-import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import java.io.File
@@ -31,12 +22,6 @@ import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-var picturesCount = 0
-var audiosCount = 0
-var videosCount = 0
-var zipCount = 0
-var appsCount = 0
-var documentsCount = 0
 private val CURRENT_FRAGMENT = "CURRENT_FRAGMENT"
 private val IS_FIRST_TIME = "isFirstTime"
 
@@ -44,59 +29,6 @@ fun isRequiredField(strText: String?): Boolean {
     return strText != null && !strText.trim { it <= ' ' }.isEmpty()
 }
 
-fun getCurrentSelectedFragmentPosition(context: Context): Int {
-    val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-    return preferences.getInt(CURRENT_FRAGMENT, -1)
-}
-
-fun setCurrentSelectedFragmentPosition(context: Context, position: Int) {
-    val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-    val editor = preferences.edit()
-    editor.putInt(CURRENT_FRAGMENT, position)
-    editor.apply()
-}
-
-fun isFirstTime(context: Context): Boolean {
-    val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-    return preferences.getBoolean(IS_FIRST_TIME, false)
-}
-
-fun setNotFirstTime(context: Context, position: Boolean) {
-    val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-    val editor = preferences.edit()
-    editor.putBoolean(IS_FIRST_TIME, position)
-    editor.apply()
-}
-
-/**
- * HideKeyBoard
- *
- * @param mActivity: Main activity object.
- */
-fun hideKeyboard(mActivity: Activity?) {
-    if (mActivity != null) {
-        mActivity.window.setSoftInputMode(
-            WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
-        )
-        val view = mActivity.currentFocus
-        if (view != null) {
-            val imm = mActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view.windowToken, 0)
-        }
-    }
-}
-
-/***
- * To prevent from double clicking the row item and so prevents overlapping fragment.
- */
-fun avoidDoubleClicks(view: View) {
-    val DELAY_IN_MS: Long = 400
-    if (!view.isClickable) {
-        return
-    }
-    view.isClickable = false
-    view.postDelayed({ view.isClickable = true }, DELAY_IN_MS)
-}
 
 /**
  * @param mainActivity use for get applicationContext
@@ -108,17 +40,6 @@ fun pxToDp(mainActivity: MainActivity, px: Int): Int {
     return Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT))
 }
 
-/**
- * Share using intent.
- *
- * @param message: message
- */
-fun Context.sharing(message: String) {
-    val sendIntent = Intent(Intent.ACTION_SEND)
-    sendIntent.type = "text/plain"
-    sendIntent.putExtra(Intent.EXTRA_TEXT, message)
-    this.startActivity(Intent.createChooser(sendIntent, "Sharing"))
-}
 
 fun getDate(timeStamp: Long): String {
     try {
@@ -168,48 +89,6 @@ fun sizeConversion(size: Long): String {
     } else
         return "0B"
 }
-
-fun getExtension(uri: String?): String? {
-    if (uri == null) {
-        return null
-    }
-
-    val dot = uri.lastIndexOf(".")
-    return if (dot >= 0) {
-        uri.substring(dot + 1)
-    } else {
-        // No extension.
-        ""
-    }
-}
-
-/**
- * Set string with spannable.
- *
- * @return: string with two different color
- */
-@android.support.annotation.RequiresApi(api = Build.VERSION_CODES.O)
-//fun Context.getSpannableSensorText(text: String): SpannableStringBuilder {
-//
-//
-//    val result = text.split("\n\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-//    val first = result[0]
-//    val second = result[1]
-//
-//    val font1 = this.resources.getFont(R.font.lato_light)
-//    val font2 = this.resources.getFont(R.font.lato_regular)
-//
-//    val builder = SpannableStringBuilder()
-//
-//    val dkgraySpannable = SpannableString("$first\n\n ")
-//    dkgraySpannable.setSpan(CustomTypefaceSpan("", font1), 0, second.length, 0)
-//    builder.append(dkgraySpannable)
-//
-//    val blackSpannable = SpannableString(second)
-//    blackSpannable.setSpan(CustomTypefaceSpan("", font2), 0, second.length, 0)
-//    builder.append(blackSpannable)
-//    return builder
-//}
 
 /*** Meaning of the constants
  * Dv: Absolute humidity in grams/meter3
@@ -372,151 +251,4 @@ fun getBitmapFromVectorDrawable(draw: Drawable): Bitmap {
     return bitmap
 }
 
-fun getExternalMounts(): HashSet<String> {
-    val out = HashSet<String>()
-    val reg = "(?i).*vold.*(vfat|ntfs|exfat|fat32|ext3|ext4).*rw.*"
-    val s = StringBuilder()
-    try {
-        val process = ProcessBuilder().command("mount")
-            .redirectErrorStream(true).start()
-        process.waitFor()
-        val `is` = process.inputStream
-        val buffer = ByteArray(1024)
-        while (`is`.read(buffer) != -1) {
-            s.append(String(buffer))
-        }
-        `is`.close()
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
 
-    // parse output
-    val lines = s.toString().split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-    for (line in lines) {
-        if (!line.toLowerCase(Locale.US).contains("asec")) {
-            if (line.matches(reg.toRegex())) {
-                //                    Toast.makeText(mActivity, line, Toast.LENGTH_LONG).show();
-                val parts = line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                for (part in parts) {
-                    if (part.startsWith("/"))
-                        if (!part.toLowerCase(Locale.US).contains("vold"))
-                            out.add(part)
-                }
-            }
-        }
-    }
-    return out
-}
-
-@SuppressLint("Recycle")
-private fun Context.getMediaSizeFromUri(uri: Uri, column: String): Int {
-    val cursor: Cursor?
-    val columns = arrayOf(column)
-    cursor = this.contentResolver.query(
-        uri, columns, null, null, null
-    )
-    assert(cursor != null)
-    return cursor!!.count
-}
-
-@SuppressLint("Recycle")
-private fun Context.getNonMediaSizeFromUri(uri: Uri, column: String, selectionArgs: Array<String>): Int {
-    val cursor: Cursor?
-    val columns = arrayOf(column)
-
-    val selectionMimeType = MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-    cursor = this.contentResolver.query(
-        uri, columns,
-        selectionMimeType, selectionArgs, null
-    )
-    return if (cursor != null) cursor!!.count else 0
-}
-
-@SuppressLint("Recycle")
-private fun Context.getAllDocumentsSizeFromUri(uri: Uri, column: String, selectionArgs: Array<String>): Int {
-    val cursor: Cursor?
-    val columns = arrayOf(column)
-
-    val where = (MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?"
-            + " OR " + MediaStore.Files.FileColumns.MIME_TYPE + "=?")
-    cursor = this.contentResolver.query(
-        uri, columns,
-        where, selectionArgs, null
-    )
-    assert(cursor != null)
-    return cursor!!.count
-}
-
-
-fun getAllFiles1(path: String): List<File> {
-    val files = File(path).listFiles()
-    val flist = ArrayList<File>()
-    val dlist = ArrayList<File>()
-    for (file in files) {
-        if (!file.name.startsWith("."))
-            if (file.isDirectory)
-                dlist.add(file)
-            else
-                flist.add(file)
-    }
-    Collections.sort(flist) { o1, o2 -> o1.name.compareTo(o2.name) }
-    Collections.sort(dlist) { o1, o2 -> o1.name.compareTo(o2.name) }
-    dlist.addAll(flist)
-    if (path != Environment.getExternalStorageDirectory().absolutePath)
-        dlist.add(0, File(path))
-    return dlist
-}
-
-fun Context.getDataCount() {
-    picturesCount =
-        getMediaSizeFromUri(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, MediaStore.Images.Media._ID)
-    audiosCount =
-        getMediaSizeFromUri(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, MediaStore.Audio.Media._ID)
-    videosCount =
-        getMediaSizeFromUri(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, MediaStore.Video.Media._ID)
-    zipCount = getNonMediaSizeFromUri(
-        MediaStore.Files.getContentUri("external"), MediaStore.Files.FileColumns.DATA, arrayOf(
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("zip")
-        )
-    )
-    appsCount = getNonMediaSizeFromUri(
-        MediaStore.Files.getContentUri("external"), MediaStore.Files.FileColumns.DATA, arrayOf(
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("apk")
-        )
-    )
-    documentsCount = getAllDocumentsSizeFromUri(
-        MediaStore.Files.getContentUri("external"), MediaStore.Files.FileColumns.DATA, arrayOf(
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("pdf"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("doc"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("docx"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("xls"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("xlsx"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("ppt"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("pptx"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("txt"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("rtx"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("rtf"),
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension("html")
-        )
-    )
-
-}
-
-fun Context.tabSelector(textview1: TextView, textview2: TextView,
-                color: Int, background_fill: Int, background_unfill: Int) {
-    textview1.setTextColor(ContextCompat.getColor(this, R.color.dashboard_background))
-    textview1.setBackgroundResource(background_fill)
-    textview1.setBackgroundColor(ContextCompat.getColor(this, color))
-    textview2.setTextColor(ContextCompat.getColor(this, color))
-    textview2.setBackgroundColor(ContextCompat.getColor(this, R.color.font_white))
-    textview2.setBackgroundResource(background_unfill)
-}
