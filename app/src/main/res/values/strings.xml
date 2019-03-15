@@ -224,6 +224,7 @@
     <string name="installed">Installed:</string>
     <string name="updated">Updated:</string>
     <string name="version_app">Version:</string>
+    <string name="pixels">Pixels</string>
 
 
 </resources>

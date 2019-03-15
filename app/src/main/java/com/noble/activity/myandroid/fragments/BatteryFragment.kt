@@ -35,7 +35,7 @@ class BatteryFragment : Fragment() {
     private var level: Int = 0
     private var plugged: Int = 0
     private var scale: Int = 0
-    private var technology: String? = null
+    private var technology: String = ""
     private var temperature: Int = 0
     private var voltage: Int = 0
     private var deviceStatus: Int = 0
@@ -53,11 +53,9 @@ class BatteryFragment : Fragment() {
     private val mBatLow = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             try {
-                iv_battery_charging.setImageResource(R.mipmap.ic_low_battery)
+                iv_battery_charging?.setImageResource(R.mipmap.ic_low_battery)
             } catch (e: Exception) {
-
             }
-
         }
     }
 
@@ -86,11 +84,23 @@ class BatteryFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+
         val filter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
         activity!!.registerReceiver(mBatInfoReceiver, filter)
 
         val filter2 = IntentFilter(Intent.ACTION_BATTERY_LOW)
         activity!!.registerReceiver(mBatLow, filter2)
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        activity!!.unregisterReceiver(mBatInfoReceiver)
+        activity!!.unregisterReceiver(mBatLow)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -151,32 +161,32 @@ class BatteryFragment : Fragment() {
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
-        tv_battery_fragment_percentage.text = styledString
-        pb_battery_fragment.progress = level
+        tv_battery_fragment_percentage?.text = styledString
+        pb_battery_fragment?.progress = level
 
-        tv_battery_temperature.text = temperature.toString() + activity!!.resources.getString(R.string.c_symbol)
+        tv_battery_temperature?.text = temperature.toString() + activity!!.resources.getString(R.string.c_symbol)
 
         if (isRequiredField(technology)) {
-            tv_battery_type.text = technology
+            tv_battery_type?.text = technology
         }
 
-        tv_battery_voltage.text = voltage.toString() + "mV"
-        tv_battery_scale.text = scale.toString()
+        tv_battery_voltage?.text = voltage.toString() + "mV"
+        tv_battery_scale?.text = scale.toString()
 
         when (health) {
-            1 -> tv_battery_health.text = activity!!.resources.getString(R.string.unknown)
-            2 -> tv_battery_health.text = activity!!.resources.getString(R.string.good)
-            3 -> tv_battery_health.text = activity!!.resources.getString(R.string.over_heated)
-            4 -> tv_battery_health.text = activity!!.resources.getString(R.string.dead)
-            5 -> tv_battery_health.text = activity!!.resources.getString(R.string.over_voltage)
-            6 -> tv_battery_health.text = activity!!.resources.getString(R.string.failed)
-            else -> tv_battery_health.text = activity!!.resources.getString(R.string.cold)
+            1 -> tv_battery_health?.text = activity!!.resources.getString(R.string.unknown)
+            2 -> tv_battery_health?.text = activity!!.resources.getString(R.string.good)
+            3 -> tv_battery_health?.text = activity!!.resources.getString(R.string.over_heated)
+            4 -> tv_battery_health?.text = activity!!.resources.getString(R.string.dead)
+            5 -> tv_battery_health?.text = activity!!.resources.getString(R.string.over_voltage)
+            6 -> tv_battery_health?.text = activity!!.resources.getString(R.string.failed)
+            else -> tv_battery_health?.text = activity!!.resources.getString(R.string.cold)
         }
 
         if (plugged == 1)
-            tv_power_source.text = activity!!.resources.getString(R.string.ac_power)
+            tv_power_source?.text = activity!!.resources.getString(R.string.ac_power)
         else
-            tv_power_source.text = activity!!.resources.getString(R.string.battery)
+            tv_power_source?.text = activity!!.resources.getString(R.string.battery)
     }
 
     private fun initToolbar(mode: Int) {
@@ -191,13 +201,6 @@ class BatteryFragment : Fragment() {
 
         tv_title.text = activity!!.resources.getString(R.string.battery)
         tv_title.setTextColor(activity!!.resources.getColor(R.color.battery))
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-
-        LocalBroadcastManager.getInstance(activity!!).unregisterReceiver(mBatInfoReceiver)
-        LocalBroadcastManager.getInstance(activity!!).unregisterReceiver(mBatLow)
     }
 
 }

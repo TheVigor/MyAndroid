@@ -37,18 +37,13 @@ class HomeFragment : Fragment() {
 
         getBundleData()
         getDeviceInfo()
-
     }
-
-
-
 
     private fun initToolbar() {
         iv_back.visibility = View.GONE
         tv_title.text = activity!!.resources.getString(R.string.device)
         tv_title.setTextColor(activity!!.resources.getColor(R.color.dashboard))
         iv_back.setColorFilter(ContextCompat.getColor(activity!!, R.color.darkBlue))
-        //iv_back.setOnClickListener { activity!!.onBackPressed() }
     }
 
     @SuppressLint("HardwareIds")
@@ -63,21 +58,24 @@ class HomeFragment : Fragment() {
         tv_build_date.text =
             DateFormat.format("MMMM dd, yyyy\nh:mm:ss aa", Date(Build.TIME)).toString()
         tv_kernel.text = System.getProperty("os.version")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            tv_security_patch_level.text = "" + Build.VERSION.SECURITY_PATCH
-        else
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            tv_security_patch_level.text = Build.VERSION.SECURITY_PATCH
+        }
+        else {
             tl_security_patch_level_contain.visibility = View.GONE
+        }
 
         @SuppressLint("HardwareIds") val androidID =
             Settings.Secure.getString(activity!!.contentResolver, Settings.Secure.ANDROID_ID)
-        tv_android_id.text = "" + androidID
+        tv_android_id.text = androidID
 
         val wm = activity!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val size = Point()
 
         wm.defaultDisplay.getRealSize(size)
 
-        tv_screen_resolution.text = size.x.toString() + " * " + size.y + " " + "Pixels"
+        tv_screen_resolution.text = "${size.x} * ${size.y} ${getString(R.string.pixels)}"
         tv_boot_loader.text = Build.BOOTLOADER
         tv_host.text = Build.HOST
         tv_user.text = Build.USER

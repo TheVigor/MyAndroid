@@ -1,6 +1,5 @@
 package com.noble.activity.myandroid.fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
@@ -24,18 +23,18 @@ import kotlinx.android.synthetic.main.toolbar_ui.*
 
 class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
 
-    var mode: Int? = 0
-    var adapter: DeviceAdapter? = null
+    var mode: Int = 0
+    private lateinit var adapter: DeviceAdapter
 
-    private val lists = ArrayList<DeviceInfo>()
+    private val appsList = ArrayList<DeviceInfo>()
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        adapter?.filter?.filter(query)
+        adapter.filter.filter(query)
         return false
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-        adapter?.filter?.filter(newText)
+        adapter.filter.filter(newText)
         return false
     }
 
@@ -96,7 +95,7 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
         iv_back.visibility = View.GONE
         (activity as MainActivity).bottomSheetDisable(false)
 
-        if (mode?.equals(KeyUtil.IS_USER_COME_FROM_USER_APPS)!!) {
+        if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS) {
             tv_title.text = activity!!.resources.getString(R.string.user_apps)
             tv_title.setTextColor(ContextCompat.getColor(activity!!, R.color.user))
         } else {
@@ -105,29 +104,25 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
         }
     }
 
-    fun refreshList(position: Int) {
-        if (lists.isNotEmpty() && rv_apps_list != null && rv_apps_list!!.adapter != null) {
-            lists.removeAt(position)
-            rv_apps_list.adapter!!.notifyDataSetChanged()
-        }
-    }
-
     private fun initAppsList() {
-        lists.clear()
+        appsList.clear()
 
         // TODO: need do in async way !!!!!!!!!!!!!!!!!!!!!!!!!
-        (activity as MainActivity).getAppList().filterTo(lists) { it.flags == mode }
+        (activity as MainActivity).getAppList().filterTo(appsList) { it.flags == mode }
 
         //creating our adapter
-        adapter = mode?.let { DeviceAdapter(lists, it) }
+        adapter = DeviceAdapter(appsList, mode)
 
-        if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS)
+        if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS) {
             snackBarCustom(coordinatorLayout,
-                lists.size.toString() + " " + activity!!.resources.getString(R.string.user_apps), true)
-        else
+                    appsList.size.toString() + " " + activity!!.resources.getString(R.string.user_apps), true)
+        }
+        else {
             snackBarCustom(coordinatorLayout,
-                lists.size.toString() + " " + activity!!.resources.getString(R.string.system_apps), false)
-        //now adding the adapter to RecyclerView
+                    appsList.size.toString() + " " + activity!!.resources.getString(R.string.system_apps), false)
+        }
+
+
         rv_apps_list.adapter = adapter
     }
 
@@ -140,8 +135,12 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
         ViewCompat.setElevation(snackBar.view, 6f)
 
         val sbView = snackBar.view
-        if (flag) snackBar.view.background = ContextCompat.getDrawable(activity!!, R.drawable.material_snackbar_user_apps)
-        else snackBar.view.background = ContextCompat.getDrawable(activity!!, R.drawable.material_snackbar_system_apps)
+
+        if (flag) {
+            snackBar.view.background = ContextCompat.getDrawable(activity!!, R.drawable.material_snackbar_user_apps)
+        } else {
+            snackBar.view.background = ContextCompat.getDrawable(activity!!, R.drawable.material_snackbar_system_apps)
+        }
 
         val textView = sbView.findViewById<View>(android.support.design.R.id.snackbar_text) as TextView
         textView.setTextColor(ContextCompat.getColor(activity!!, R.color.white))

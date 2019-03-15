@@ -36,8 +36,8 @@ class NetworkFragment : Fragment() {
     private var tStartTX: Long = 0
     private var txBytes: Long = 0
     private var rxBytes: Long = 0
-    private var mHandler: Handler? = null
-    internal var x = ""
+    private lateinit var mHandler: Handler
+    private var x = ""
     private var networkStatus = 0
 
     companion object {
@@ -54,8 +54,6 @@ class NetworkFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
-        activity!!.registerReceiver(mNetworkReceiver, filter)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -85,8 +83,11 @@ class NetworkFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
+
+        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        activity!!.registerReceiver(mNetworkReceiver, filter)
 
         mStartRX = TrafficStats.getTotalRxBytes()
         mStartTX = TrafficStats.getTotalTxBytes()
@@ -96,16 +97,17 @@ class NetworkFragment : Fragment() {
             linechart_network_fragment.visibility = View.GONE
             tv_network_fragment_data.visibility = View.GONE
         } else {
-            if (mHandler == null) {
-                mHandler = Handler()
-                mHandler!!.postDelayed(mRunnable, 1)
-            }
+            mHandler = Handler()
+            mHandler.postDelayed(mRunnable, 1)
         }
+
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onStop() {
+        super.onStop()
+
         activity!!.unregisterReceiver(mNetworkReceiver)
+        mHandler.removeCallbacks(mRunnable)
     }
 
     private val mRunnable: Runnable = object : Runnable {
@@ -136,7 +138,7 @@ class NetworkFragment : Fragment() {
                 mStartRX = rxBytes
                 mStartTX = txBytes
             }
-            mHandler!!.postDelayed(this, 1200)
+            mHandler.postDelayed(this, 1200)
         }
     }
 
@@ -175,6 +177,7 @@ class NetworkFragment : Fragment() {
             iv_back.visibility = View.GONE
             (activity as MainActivity).bottomSheetDisable(false)
         }
+
         tv_title.text = activity!!.resources.getString(R.string.network)
         tv_title.setTextColor(ContextCompat.getColor(activity!!, R.color.network))
     }

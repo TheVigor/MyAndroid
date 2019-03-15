@@ -29,12 +29,12 @@ import javax.microedition.khronos.opengles.GL10
 
 class GraphicsFragment : Fragment() {
 
-    private var graphicsInfoList: ArrayList<ItemInfo>? = null
-    private var adapter: ItemAdapter? = null
+    private lateinit var graphicsInfoList: ArrayList<ItemInfo>
+    private lateinit var adapter: ItemAdapter
 
     private var myGlSurfaceView: GLSurfaceView? = null
 
-    val resolution: String
+    private val resolution: String
         get() {
             val wm = activity!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             val size = Point()
@@ -52,18 +52,16 @@ class GraphicsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initToolbar()
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         graphicsInfoList = ArrayList()
 
-        adapter = ItemAdapter(graphicsInfoList!!)
+        adapter = ItemAdapter(graphicsInfoList)
         rvGraphicsData!!.setHasFixedSize(true)
         rvGraphicsData!!.layoutManager = LinearLayoutManager(activity!!)
         loadGPUData()
-
     }
 
     private fun initToolbar() {
@@ -76,14 +74,14 @@ class GraphicsFragment : Fragment() {
         val configurationInfo = activityManager
             .deviceConfigurationInfo
         if (!resolution.isEmpty())
-            graphicsInfoList!!.add(ItemInfo("Resolution", resolution))
+            graphicsInfoList.add(ItemInfo("Resolution", resolution))
 
         val supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000
 
         if (supportsEs2) {
             // Request an OpenGL ES 2.0 compatible context.
             myGlSurfaceView = GLSurfaceView(activity!!)
-            framelayout!!.addView(myGlSurfaceView)
+            framelayout.addView(myGlSurfaceView)
             myGlSurfaceView!!.setEGLContextClientVersion(2)
 
             val displayMetrics = DisplayMetrics()
@@ -94,8 +92,8 @@ class GraphicsFragment : Fragment() {
             myGlSurfaceView!!.setRenderer(myRenderer)
             myGlSurfaceView!!.renderMode = GLSurfaceView.RENDERMODE_CONTINUOUSLY
         } else {
-            llEmptyStateGraphics!!.visibility = View.VISIBLE
-            cvGraphicsDataParent!!.visibility = View.GONE
+            llEmptyStateGraphics.visibility = View.VISIBLE
+            cvGraphicsDataParent.visibility = View.GONE
             // This is where you could create an OpenGL ES 1.x compatible
             // renderer if you wanted to support both ES 1 and ES 2.
         }
@@ -105,22 +103,22 @@ class GraphicsFragment : Fragment() {
 
         override fun onSurfaceCreated(gl: GL10, config: EGLConfig) {
 
-            graphicsInfoList!!.add(
+            graphicsInfoList.add(
                 ItemInfo("Graphics Device Name", "" + gl.glGetString(GL10.GL_RENDERER)))
 
-            graphicsInfoList!!.add(
+            graphicsInfoList.add(
                 ItemInfo("Graphics Device Vendor", "" + gl.glGetString(GL10.GL_VENDOR)))
 
-            graphicsInfoList!!.add(
+            graphicsInfoList.add(
                 ItemInfo("Graphics Device Version", "" + gl.glGetString(GL10.GL_VERSION)))
 
-            graphicsInfoList!!.add(
+            graphicsInfoList.add(
                 ItemInfo("Graphics Device Extensions", "" + gl.glGetString(GL10.GL_EXTENSIONS)))
 
             val maxSize = IntArray(1)
             gl.glGetIntegerv(GL10.GL_MAX_TEXTURE_SIZE, maxSize, 0)
 
-            graphicsInfoList!!.add(ItemInfo("Max Texture  SIze", "" + maxSize[0]))
+            graphicsInfoList.add(ItemInfo("Max Texture  SIze", "" + maxSize[0]))
 
             activity!!.runOnUiThread {
                 llEmptyStateGraphics!!.visibility = View.GONE
@@ -132,11 +130,9 @@ class GraphicsFragment : Fragment() {
         }
 
         override fun onSurfaceChanged(gl: GL10, width: Int, height: Int) {
-
         }
 
         override fun onDrawFrame(gl: GL10) {
-
         }
     }
 

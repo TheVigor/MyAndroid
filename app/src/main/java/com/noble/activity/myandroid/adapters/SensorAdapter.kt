@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import com.noble.activity.myandroid.extensions.addFragment
 import com.noble.activity.myandroid.extensions.avoidDoubleClicks

@@ -30,6 +30,8 @@ import java.util.*
 
 class RamFragment : Fragment() {
 
+    private lateinit var ramHandler: Handler
+
     val resolution: String
         get() {
             val wm = activity!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
@@ -159,22 +161,19 @@ class RamFragment : Fragment() {
         val total = activity!!.totalRamMemorySize()
         tv_total_memory_value.text = sizeConversion(total)
 
-        val handler = Handler()
-        val runnable = object : Runnable {
-            override fun run() {
-                tv_used_memory_value.text =
-                    sizeConversion(total - activity!!.freeRamMemorySize())
+    }
 
-                tv_free_memory_value.text = sizeConversion(activity!!.freeRamMemorySize())
+    override fun onStart() {
+        super.onStart()
 
-                arc_graphics_ram.setCurrentValues(
-                    calculatePercentage((total - activity!!.freeRamMemorySize()).toDouble(),
-                        total.toDouble()).toFloat())
-                handler.postDelayed(this, 1000)
-            }
-        }
-        handler.postDelayed(runnable, 1000)
+        ramHandler = Handler()
+        ramHandler.postDelayed(ramRunnable, 1000)
+    }
 
+    override fun onStop() {
+        super.onStop()
+
+        ramHandler.removeCallbacks(ramRunnable)
     }
 
     private fun initToolbar() {
@@ -194,4 +193,23 @@ class RamFragment : Fragment() {
         }
         return json
     }
+
+    private val ramRunnable: Runnable = object : Runnable {
+        override fun run() {
+
+            val total = activity!!.totalRamMemorySize()
+
+            tv_used_memory_value?.text =
+                    sizeConversion(total - activity!!.freeRamMemorySize())
+
+            tv_free_memory_value?.text = sizeConversion(activity!!.freeRamMemorySize())
+
+            arc_graphics_ram?.setCurrentValues(
+                    calculatePercentage((total - activity!!.freeRamMemorySize()).toDouble(),
+                            total.toDouble()).toFloat())
+            ramHandler.postDelayed(this, 1000)
+        }
+    }
+
+
 }

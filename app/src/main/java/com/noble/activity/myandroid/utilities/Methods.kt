@@ -17,8 +17,6 @@ import android.preference.PreferenceManager
 import android.provider.MediaStore
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.WindowManager
@@ -28,7 +26,6 @@ import android.widget.TextView
 import com.noble.activity.myandroid.MainActivity
 import com.noble.activity.myandroid.R
 import java.io.File
-import java.net.InetAddress
 import java.net.NetworkInterface
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
@@ -136,22 +133,21 @@ fun getDate(timeStamp: Long): String {
 
 /* get Battery Capacity in mAh*/
 fun Context.getBatteryCapacity(): Double? {
-    var mPowerProfile_: Any? = null
+    var powerProfile: Any? = null
     var batteryCapacity = java.lang.Double.valueOf(-1.0)
-    val POWER_PROFILE_CLASS = "com.android.internal.os.PowerProfile"
+    val powerProfileClass = "com.android.internal.os.PowerProfile"
 
     try {
-        mPowerProfile_ = Class.forName(POWER_PROFILE_CLASS)
+        powerProfile = Class.forName(powerProfileClass)
             .getConstructor(Context::class.java).newInstance(this)
     } catch (e: Exception) {
         e.printStackTrace()
     }
 
     try {
-        batteryCapacity = Class
-            .forName(POWER_PROFILE_CLASS)
+        batteryCapacity = Class.forName(powerProfileClass)
             .getMethod("getAveragePower", java.lang.String::class.java)
-            .invoke(mPowerProfile_, "battery.capacity") as Double
+            .invoke(powerProfile, "battery.capacity") as Double
     } catch (e: Exception) {
         e.printStackTrace()
     }

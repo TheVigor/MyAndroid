@@ -66,13 +66,13 @@ class DeviceAdapter(appsList: ArrayList<DeviceInfo>, internal var mode: Int)
     inner class DeviceVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindData(deviceInfo: DeviceInfo, position: Int) {
 
-            val ivAppLogo: ImageView? = itemView.findViewById(R.id.iv_app_icon)
-            val tvAppName: TextView? = itemView.findViewById(R.id.appname)
-            val tvAppPackageName: TextView? = itemView.findViewById(R.id.tv_app_package_name)
+            val ivAppLogo: ImageView = itemView.findViewById(R.id.iv_app_icon)
+            val tvAppName: TextView = itemView.findViewById(R.id.appname)
+            val tvAppPackageName: TextView = itemView.findViewById(R.id.tv_app_package_name)
 
-            tvAppName?.text = deviceInfo.appLabel
-            tvAppPackageName?.text = deviceInfo.packageName
-            ivAppLogo?.setImageDrawable(deviceInfo.appLogo)
+            tvAppName.text = deviceInfo.appLabel
+            tvAppPackageName.text = deviceInfo.packageName
+            ivAppLogo.setImageDrawable(deviceInfo.appLogo)
 
             itemView.setOnClickListener {
                 avoidDoubleClicks(itemView)

@@ -237,7 +237,7 @@ class CPUFragment : Fragment(), View.OnClickListener {
                     val cc = getCpuMaxFreq("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq")
                     if (bb != -1 && cc != -1) {
                         tvFrequenciesName.visibility = View.VISIBLE
-                        tvFrequenciesValue.text = cc.toString() + " MHz - " + bb.toString() + " MHz"
+                        tvFrequenciesValue.text = "$cc MHz - $bb MHz"
                     }
 
                     try {
