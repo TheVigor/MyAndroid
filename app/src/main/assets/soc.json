@@ -1,0 +1,2848 @@
+{
+  "list": {
+    "msm8994": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 810",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR4 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "msm 8994": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 810",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR4 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM8994": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 810",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR4 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM 8994": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 810",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR4 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "msm8992": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 808",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n2 x Cortex-A57",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "msm 8992": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 808",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n2 x Cortex-A57",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM8992": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 808",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n2 x Cortex-A57",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM  8992": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 808",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n2 x Cortex-A57",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "apq8084": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 805",
+      "FAB": "28 nm",
+      "CPU": "Krait 450",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "apq 8084": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 805",
+      "FAB": "28 nm",
+      "CPU": "Krait 450",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "APQ 8084": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 805",
+      "FAB": "28 nm",
+      "CPU": "Krait 450",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "APQ8084": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 805",
+      "FAB": "28 nm",
+      "CPU": "Krait 450",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "8074": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 801",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8274-AA": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 800",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8274-AC": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 801",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8674": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 801",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM8974PRO-AB": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 801",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM8974PRO-AC": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 801",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM8974PRO-AA": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 801",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM8974": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 800",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "msm8974": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 800",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8956": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 650",
+      "FAB": "28 nm",
+      "CPU": "4 x Cortex-A53\n2 x Cortex-A72",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8976": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 652",
+      "FAB": "28 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A72",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8976pro": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 653",
+      "FAB": "28 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A72",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8952": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 617",
+      "FAB": "28 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8953": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 625",
+      "FAB": "14 nm",
+      "CPU": "8 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8953pro": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 626",
+      "FAB": "14 nm",
+      "CPU": "8 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "SDA 845": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 845",
+      "FAB": "10 nm",
+      "CPU": "4 x Cortex-A75\n4 x Kryo 385",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.9 GB/s",
+      "CHANNELS": "16-bit quad channel"
+    },
+    "SDM 845": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 845",
+      "FAB": "10 nm",
+      "CPU": "4 x Cortex-A75\n4 x Kryo 385",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.9 GB/s",
+      "CHANNELS": "16-bit quad channel"
+    },
+    "SDM845": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 845",
+      "FAB": "10 nm",
+      "CPU": "4 x Cortex-A75\n4 x Kryo 385",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.9 GB/s",
+      "CHANNELS": "16-bit quad channel"
+    },
+    "SDA845": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 845",
+      "FAB": "10 nm",
+      "CPU": "4 x Cortex-A75\n4 x Kryo 385",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.9 GB/s",
+      "CHANNELS": "16-bit quad channel"
+    },
+    "SDM640": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 640",
+      "FAB": "10 nm",
+      "CPU": "6 x Kryo 360\n2 x Kryo 360",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "Dual channel"
+    },
+    "SDM670": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 670",
+      "FAB": "10 nm",
+      "CPU": "4 x Kryo 385\n4 x Kryo 360",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "22.4 GB/s",
+      "CHANNELS": "Triple channel"
+    },
+    "SDM630": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 630",
+      "FAB": "14 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR4 1333 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "Dual channel"
+    },
+    "SDM636": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 636",
+      "FAB": "14 nm",
+      "CPU": "4 x Kryo 260\n4 x Kryo 260",
+      "MEMORY": "LPDDR4 1333 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "Dual channel"
+    },
+    "SDM660": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 660",
+      "FAB": "14 nm",
+      "CPU": "4 x Kryo 260\n4 x Kryo 260",
+      "MEMORY": "LPDDR4 1866 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "Dual channel"
+    },
+    "SDM450": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 450",
+      "FAB": "14 nm",
+      "CPU": "8 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "Single channel"
+    },
+    "SDM429": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 429",
+      "FAB": "12 nm",
+      "CPU": "4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "SDM 429": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 429",
+      "FAB": "12 nm",
+      "CPU": "4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "SDM439": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 439",
+      "FAB": "12 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "SDM 439": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 439",
+      "FAB": "12 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "SDM632": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 632",
+      "FAB": "14 nm",
+      "CPU": "4 x Kryo 250\n4 x Kryo 250",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "SDM 632": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 632",
+      "FAB": "14 nm",
+      "CPU": "4 x Kryo 250\n4 x Kryo 250",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "SDM710": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 710",
+      "FAB": "10 nm",
+      "CPU": "6 x Kryo 360\n2 x Kryo 360",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "Dual channel"
+    },
+    "SDM 710": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 710",
+      "FAB": "10 nm",
+      "CPU": "6 x Kryo 360\n2 x Kryo 360",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "Dual channel"
+    },
+    "SDM850": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 850",
+      "FAB": "10 nm",
+      "CPU": "4 x Kryo 385\n4 x Kryo 385",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.9 GB/s",
+      "CHANNELS": "16-bit Quad channel"
+    },
+    "SDM 850": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 850",
+      "FAB": "10 nm",
+      "CPU": "4 x Kryo 385\n4 x Kryo 385",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.9 GB/s",
+      "CHANNELS": "16-bit Quad channel"
+    },
+    "SDM460": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 460",
+      "FAB": "14 nm",
+      "CPU": "4 x Kryo 360\n4 x Kryo 360",
+      "MEMORY": "LPDDR4 1866 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "Dual channel"
+    },
+    "8998": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 835",
+      "FAB": "10 nm",
+      "CPU": "4 x Kryo 280\n4 x Kryo 280",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8996lite": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 820",
+      "FAB": "14 nm",
+      "CPU": "2 x Kryo\n2 x Kryo",
+      "MEMORY": "LPDDR4 1333 MHz",
+      "BANDWIDTH": "21.3 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8996pro": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 821",
+      "FAB": "14 nm",
+      "CPU": "2 x Kryo\n2 x Kryo",
+      "MEMORY": "LPDDR4 1866 MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "32-bit quad channel"
+    },
+    "8996": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 820",
+      "FAB": "14 nm",
+      "CPU": "2 x Kryo\n2 x Kryo",
+      "MEMORY": "LPDDR4 1866 MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8916v2": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 412",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 600 MHz",
+      "BANDWIDTH": "4.8 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "8929": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 415",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 667 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8917": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 425",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 667 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8937": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 430",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8940": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 435",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8974": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 800",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MSM 8974": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 800",
+      "FAB": "28 nm",
+      "CPU": "Krait 400",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8939v2": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 616",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "8939": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 615",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "8936": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 610",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit single channel"
+    },
+    "m7": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 600",
+      "FAB": "28 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "LPDDR3 600 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8064": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 600",
+      "FAB": "28 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "LPDDR3 600 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "APQ8064 MAKO": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "S4 Pro",
+      "FAB": "28 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": ""
+    },
+    "APQ8064 DEB": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "S4 Pro",
+      "FAB": "28 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": ""
+    },
+    "APQ8064 FLO": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "S4 Pro",
+      "FAB": "28 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": ""
+    },
+    "APQ8064 MTP": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "S4 Pro",
+      "FAB": "28 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8916": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "msm 8916": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MSM8916": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MSM 8916": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "apq8016": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "apq 8016": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "APQ8016": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "APQ 8016": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 410",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8026": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8226": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8228": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8228": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8228": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8228": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8626": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8628": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8230": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8930": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8630": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 400",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8909": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 210",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8208": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 208",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR3 400 MHz",
+      "BANDWIDTH": "3.2 GB/s",
+      "CHANNELS": "16-bit single channel"
+    },
+    "msm8210": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8210": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8210": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8210": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8610": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8610": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8610": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8610": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8212": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8212": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8212": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8212": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8612": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8612": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8612": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8612": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 200",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8225": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8225": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8225": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8225": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8625": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8625": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8625": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8625": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Play",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A5",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8227": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8627": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8627": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8627": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8627": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8030": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8230": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8230": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8230": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8230": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8630": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8930": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8930": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8930": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8930": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8060A": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8X60": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8X60": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8X60": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8X60": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm8960": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "msm 8960": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM8960": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MSM 8960": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "elite": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "evita": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "ville": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "M8260A": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8960T": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Plus",
+      "FAB": "45 nm",
+      "CPU": "Krait",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8960AB": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ S4 Pro",
+      "FAB": "45 nm",
+      "CPU": "Krait 300",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "8920": {
+      "VENDOR": "Qualcomm®",
+      "NAME": "Snapdragon™ 427",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 667 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "3470": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 3 Quad",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "4210": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 4 Dual",
+      "FAB": "45 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "4212": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 4 Dual",
+      "FAB": "32nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "4412": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 4 Quad",
+      "FAB": "32nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "5250": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Dual",
+      "FAB": "32nm",
+      "CPU": "Cortex-A15",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "Exynos 5410": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "UNIVERSAL5410": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "5420": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "5422": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "Exynos 5410": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "UNIVERSAL5410": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "5260": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Hexa",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "5430": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 5 Octa",
+      "FAB": "20 nm",
+      "CPU": "Cortex-A7\nCortex-A15",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "5433": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 7 Octa",
+      "FAB": "20 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR3 825 MHz",
+      "BANDWIDTH": "13.2 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "7420": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 7 Octa",
+      "FAB": "14 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR4 1555 MHz",
+      "BANDWIDTH": "24.8 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "7580": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 7 Octa",
+      "FAB": "14 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A57",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "7870": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 7 Octa",
+      "FAB": "14 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8890": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 8 Octa",
+      "FAB": "14 nm",
+      "CPU": "4 x Cortex-A53\n4 x Exynos M1",
+      "MEMORY": "LPDDR4 1794 MHz",
+      "BANDWIDTH": "28.7 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "8895": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 9 Octa",
+      "FAB": "10 nm",
+      "CPU": "4 x Cortex-A53\n4 x Exynos M2",
+      "MEMORY": "LPDDR4X",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "9810": {
+      "VENDOR": "Samsung",
+      "NAME": "Exynos 9 Octa",
+      "FAB": "10 nm LPP",
+      "CPU": "4 x Cortex-A55\n4 x Exynos M3",
+      "MEMORY": "LPDDR4X",
+      "BANDWIDTH": "26.82 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "ventana": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 2",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "LPDDR2 300 MHz",
+      "BANDWIDTH": "2.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "everest": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 2",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "LPDDR2 300 MHz",
+      "BANDWIDTH": "2.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "stingray": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 2",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "LPDDR2 300 MHz",
+      "BANDWIDTH": "2.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "wingray": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 2",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "LPDDR2 300 MHz",
+      "BANDWIDTH": "2.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "tilapia": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 3",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "DDR3 666 MHz",
+      "BANDWIDTH": "5.34 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "grouper": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 3",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "DDR3 666 MHz",
+      "BANDWIDTH": "5.34 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "cardhu": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 3",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "4.26 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "endeavour": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra 3",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "4.26 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "tn8": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A15",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": ""
+    },
+    "2450": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A15",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": ""
+    },
+    "shieldtablet": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A15",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": ""
+    },
+    "roth": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A15",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": ""
+    },
+    "Flounder": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Denver",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "flounder": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Denver",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "tegra132": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra K1",
+      "FAB": "28 nm",
+      "CPU": "Denver",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17 GB/s",
+      "CHANNELS": "64-bit dual channel"
+    },
+    "TEGRA X1": {
+      "VENDOR": "Nvidia",
+      "NAME": "Tegra X1",
+      "FAB": "20 nm",
+      "CPU": "Cortex-A53 + Cortex-A57",
+      "MEMORY": "",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": ""
+    },
+    "MT67": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT65": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6235": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "ARM9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6513": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "65 nm",
+      "CPU": "ARM11",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6516": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "ARM9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6572": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 266 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6573": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "65 nm",
+      "CPU": "ARM11",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6515": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6575": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6575M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "65 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6577": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6577T": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6517": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6517T": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "40 nm",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6571": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 266 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6572": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 266 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6572M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6589": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "4.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6589M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6589T": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6580": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "",
+      "MEMORY": "LPDDR2 533 MHz",
+      "BANDWIDTH": "4.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6582": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2/LPDDR3 533 MHz",
+      "BANDWIDTH": "4.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6582M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR2/LPDDR3 533 MHz",
+      "BANDWIDTH": "4.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6588": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6592": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR3 666 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6592M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR3 666 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6591": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A7",
+      "MEMORY": "LPDDR3 666 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6595": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A17 + Cortex-A7",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6595M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A17 + Cortex-A7",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6595Turbo": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A17 + Cortex-A7",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6732": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6732M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6735": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 640 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6735P": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6735M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 533 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6738": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 666 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6738T": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 666 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6739": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 666 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6763T": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio P23",
+      "FAB": "16 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR4X 1600 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "16-bit dual channel"
+    },
+    "MT6771": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio P60",
+      "FAB": "12 nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A73",
+      "MEMORY": "LPDDR4X 1800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "16-bit dual channel"
+    },
+    "MT6737": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 733 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6752": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6753": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6755": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPC+",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "7.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6752M": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPM",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6750": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm HPC+",
+      "CPU": "Cortex-A53",
+      "MEMORY": "LPDDR3 667 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6920": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "28 nm",
+      "CPU": "",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT6795": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio X10",
+      "FAB": "28 nm HPM",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6797": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio X20",
+      "FAB": "20 nm HPM",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53\n2 x Cortex-A72",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6797X": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio X27",
+      "FAB": "20 nm HPM",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53\n2 x Cortex-A72",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6797T": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio X25",
+      "FAB": "20 nm HPM",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53\n2 x Cortex-A72",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6797D": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio X23",
+      "FAB": "20 nm HPM",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53\n2 x Cortex-A72",
+      "MEMORY": "LPDDR3 800 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT6755T": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio P15",
+      "FAB": "16 nm FFC",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "16-bit dual channel"
+    },
+    "MT6757": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio P20",
+      "FAB": "16 nm FFC",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR4X 1600 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "16-bit dual channel"
+    },
+    "MT6757CD": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio P25",
+      "FAB": "16 nm FFC",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR4X 1600 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "16-bit dual channel"
+    },
+    "MT6755": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio P10",
+      "FAB": "28 nm HPC+",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3 933 MHz",
+      "BANDWIDTH": "14.9 GB/s",
+      "CHANNELS": "32-bit single channel"
+    },
+    "MT6799": {
+      "VENDOR": "Mediatek",
+      "NAME": "Helio X30",
+      "FAB": "10 nm FF+",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53\n2 x Cortex-A73",
+      "MEMORY": "LPDDR4X 1866 MHz",
+      "BANDWIDTH": "",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "MT8127": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "DDR3 666 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "32-bit"
+    },
+    "MT8317": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8752": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8163": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8317T": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A9",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8135": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A15 + Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8135V": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A15 + Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8117": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8125": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8389": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8389T": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8312": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8121": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8392": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8382": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A7",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8732": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8752": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8173": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A72 + Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "",
+      "CHANNELS": ""
+    },
+    "MT8176": {
+      "VENDOR": "Mediatek",
+      "NAME": "",
+      "FAB": "",
+      "CPU": "Cortex-A72 + Cortex-A53",
+      "MEMORY": "",
+      "BANDWIDTH": "LPDDR3 933 MHz",
+      "CHANNELS": "32-bit dual channel"
+    },
+    "Kirin 970": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 970",
+      "FAB": "10nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A73",
+      "MEMORY": "LPDDR4X 1833MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "kirin970": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 970",
+      "FAB": "10nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A73",
+      "MEMORY": "LPDDR4X 1833MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "Kirin 960": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 960",
+      "FAB": "16nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A73",
+      "MEMORY": "LPDDR4 1800MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "kirin960": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 960",
+      "FAB": "16nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A73",
+      "MEMORY": "LPDDR4 1800MHz",
+      "BANDWIDTH": "29.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "Kirin 955": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 955",
+      "FAB": "16nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A72",
+      "MEMORY": "LPDDR4",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "kirin955": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 955",
+      "FAB": "16nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A72",
+      "MEMORY": "LPDDR4",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "Kirin 950": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 950",
+      "FAB": "16nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A72",
+      "MEMORY": "LPDDR4",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "kirin950": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 950",
+      "FAB": "16nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A72",
+      "MEMORY": "LPDDR4",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "Kirin 935": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 935",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "kirin935": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 935",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "Kirin 930": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 930",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "kirin930": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 930",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A53\n4 x Cortex-A53",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "64-bit DualChannel"
+    },
+    "Kirin 935": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 925",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A7\n4 x Cortex-A15",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit DualChannel"
+    },
+    "kirin935": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 925",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A7\n4 x Cortex-A15",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit DualChannel"
+    },
+    "Kirin 920": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 920",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A7\n4 x Cortex-A15",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit DualChannel"
+    },
+    "kirin920": {
+      "VENDOR": "HiSilicon",
+      "NAME": "Kirin 920",
+      "FAB": "28nm",
+      "CPU": "4 x Cortex-A7\n4 x Cortex-A15",
+      "MEMORY": "LPDDR3",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "32-bit DualChannel"
+    },
+    "Z3580": {
+      "VENDOR": "Intel",
+      "NAME": "Atom",
+      "FAB": "22 nm",
+      "CPU": "Moorefield",
+      "MEMORY": "LPDDR3 1600 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z8700": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x7",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "LPDDR3 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z8750": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x7",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "LPDDR3 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z8500": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x5",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "LPDDR3 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z8300": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x5",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "DDR3L-RS 1600 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z8330": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x5",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "DDR3L-RS 1600 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z8350": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x5",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "DDR3L-RS 1600 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z8550": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x5",
+      "FAB": "14 nm",
+      "CPU": "Cherry Trail",
+      "MEMORY": "LPDDR3 1600 MHz",
+      "BANDWIDTH": "25.6 GB/s",
+      "CHANNELS": "2"
+    },
+    "C3445": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x3",
+      "FAB": "28 nm",
+      "CPU": "x3",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "1"
+    },
+    "C3405": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x3",
+      "FAB": "28 nm",
+      "CPU": "x3",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "1"
+    },
+    "C3230RK": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x3",
+      "FAB": "28 nm",
+      "CPU": "x3",
+      "MEMORY": "",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "1"
+    },
+    "C3200RK": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x3",
+      "FAB": "28 nm",
+      "CPU": "x3",
+      "MEMORY": "",
+      "BANDWIDTH": "4.2 GB/s",
+      "CHANNELS": "1"
+    },
+    "C3130": {
+      "VENDOR": "Intel",
+      "NAME": "Atom x3",
+      "FAB": "28 nm",
+      "CPU": "x3",
+      "MEMORY": "LPDDR2 800 MHz",
+      "BANDWIDTH": "3.2 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3795": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17.1 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3785": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "LPDDR3 1333 MHz",
+      "BANDWIDTH": "21.3 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3775D": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3775": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17.1 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3770D": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3770": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17.1 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3745D": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3745": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17.1 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3740D": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3740": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "17.1 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3736G": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3736F": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3735G": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3735F": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3735E": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "5.3 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3735D": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Bay Trail",
+      "MEMORY": "DDR3L-RS 1333 MHz",
+      "BANDWIDTH": "10.6 GB/s",
+      "CHANNELS": "1"
+    },
+    "Z3580": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Moorefield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3570": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Moorefield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3560": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Moorefield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3530": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Moorefield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3590": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Moorefield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "12.8 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3480": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Merrifield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "8.5 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z3460": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "22 nm",
+      "CPU": "Merrifield",
+      "MEMORY": "LPDDR3 1066 MHz",
+      "BANDWIDTH": "8.5 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2760": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Cloverview",
+      "MEMORY": "LPDDR2 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2580": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Cloverview",
+      "MEMORY": "LPDDR2 1066 MHz",
+      "BANDWIDTH": "8.5 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2560": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Cloverview",
+      "MEMORY": "LPDDR2 1066 MHz",
+      "BANDWIDTH": "8.5 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2520": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Cloverview",
+      "MEMORY": "LPDDR2 1066 MHz",
+      "BANDWIDTH": "8.5 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2480": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Penwell",
+      "MEMORY": "LPDDR2 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2460": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Penwell",
+      "MEMORY": "LPDDR2 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "2"
+    },
+    "Z2420": {
+      "VENDOR": "Intel",
+      "NAME": "Atom ",
+      "FAB": "32 nm",
+      "CPU": "Penwell",
+      "MEMORY": "LPDDR2 800 MHz",
+      "BANDWIDTH": "6.4 GB/s",
+      "CHANNELS": "2"
+    }
+  }
+}

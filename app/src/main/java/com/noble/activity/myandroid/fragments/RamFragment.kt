@@ -185,7 +185,7 @@ class RamFragment : Fragment() {
     fun readJSONFromAsset(): String? {
         val json: String?
         try {
-            val inputStream: InputStream = activity!!.assets.open("device_info_soc.json")
+            val inputStream: InputStream = activity!!.assets.open("soc.json")
             json = inputStream.bufferedReader().use { it.readText() }
         } catch (ex: Exception) {
             ex.printStackTrace()
