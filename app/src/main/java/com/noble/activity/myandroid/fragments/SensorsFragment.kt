@@ -28,11 +28,11 @@ class SensorsFragment : Fragment() {
     private var navMode: Int = 0
 
     companion object {
-        fun getInstance(mode: Int?): SensorsFragment {
+        fun getInstance(mode: Int): SensorsFragment {
             val sensorsFragment = SensorsFragment()
 
             val bundle = Bundle()
-            bundle.putInt(KeyUtil.IS_USER_COME_FROM_DASHBOARD, mode!!)
+            bundle.putInt(KeyUtil.IS_USER_COME_FROM_DASHBOARD, mode)
             sensorsFragment.arguments = bundle
 
             return sensorsFragment
