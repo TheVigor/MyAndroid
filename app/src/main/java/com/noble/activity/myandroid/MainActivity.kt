@@ -1,5 +1,6 @@
 package com.noble.activity.myandroid
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
@@ -16,11 +17,14 @@ import android.view.animation.AlphaAnimation
 import android.widget.RelativeLayout
 import com.noble.activity.myandroid.adapters.DashboardAdapter
 import com.noble.activity.myandroid.constants.*
+import com.noble.activity.myandroid.executors.runOnIoThread
 import com.noble.activity.myandroid.extensions.*
 import com.noble.activity.myandroid.fragments.*
 import com.noble.activity.myandroid.models.DashboardInfo
 import com.noble.activity.myandroid.models.DeviceInfo
 import com.noble.activity.myandroid.utilities.KeyUtil
+import com.noble.activity.myandroid.utilities.LoadStatus
+import com.noble.activity.myandroid.viewmodel.AppsViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.collections.ArrayList
 
@@ -38,6 +42,17 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val model = ViewModelProviders.of(this).get(AppsViewModel::class.java)
+        runOnIoThread {
+            try {
+                model.isAppsLoaded.postValue(LoadStatus.LOADING)
+                model.apps.postValue(getAppList())
+                model.isAppsLoaded.postValue(LoadStatus.LOADED)
+            } catch (e: Exception) {
+                model.isAppsLoaded.postValue(LoadStatus.LOADED)
+            }
+        }
 
         drawable = (ContextCompat.getDrawable(this, R.drawable.ic_menu_animatable)
                 as AnimatedVectorDrawable)

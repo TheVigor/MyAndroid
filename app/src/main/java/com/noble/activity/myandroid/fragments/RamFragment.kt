@@ -31,7 +31,7 @@ import java.util.*
 class RamFragment : Fragment() {
 
     private lateinit var ramHandler: Handler
-    
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_ram, container, false)

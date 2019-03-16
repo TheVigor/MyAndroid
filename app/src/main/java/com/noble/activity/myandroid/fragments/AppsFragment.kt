@@ -1,5 +1,7 @@
 package com.noble.activity.myandroid.fragments
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
@@ -18,6 +20,8 @@ import com.noble.activity.myandroid.constants.SYSTEM_APPS_INDEX
 import com.noble.activity.myandroid.constants.USER_APPS_INDEX
 import com.noble.activity.myandroid.models.DeviceInfo
 import com.noble.activity.myandroid.utilities.KeyUtil
+import com.noble.activity.myandroid.utilities.LoadStatus
+import com.noble.activity.myandroid.viewmodel.AppsViewModel
 import kotlinx.android.synthetic.main.fragment_apps.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
 
@@ -107,23 +111,35 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
     private fun initAppsList() {
         appsList.clear()
 
-        // TODO: need do in async way !!!!!!!!!!!!!!!!!!!!!!!!!
-        (activity as MainActivity).getAppList().filterTo(appsList) { it.flags == mode }
+        val model = ViewModelProviders.of(activity!!).get(AppsViewModel::class.java)
 
-        //creating our adapter
-        adapter = DeviceAdapter(appsList, mode)
+        model.isAppsLoaded.observe(viewLifecycleOwner, Observer { isAppsLoaded ->
+            isAppsLoaded?.let{
+                if (isAppsLoaded == LoadStatus.LOADING) {
+                    loadingProgressBar.visibility = View.VISIBLE
+                } else {
+                    loadingProgressBar.visibility = View.GONE
+                }
+            }
+        })
 
-        if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS) {
-            snackBarCustom(coordinatorLayout,
-                    appsList.size.toString() + " " + activity!!.resources.getString(R.string.user_apps), true)
-        }
-        else {
-            snackBarCustom(coordinatorLayout,
-                    appsList.size.toString() + " " + activity!!.resources.getString(R.string.system_apps), false)
-        }
+        model.apps.observe(viewLifecycleOwner, Observer { apps ->
+            apps?.filterTo(appsList) { it.flags == mode}
 
+            adapter = DeviceAdapter(appsList, mode)
 
-        rv_apps_list.adapter = adapter
+            if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS) {
+                snackBarCustom(coordinatorLayout,
+                        appsList.size.toString() + " " + activity!!.resources.getString(R.string.user_apps), true)
+            }
+            else {
+                snackBarCustom(coordinatorLayout,
+                        appsList.size.toString() + " " + activity!!.resources.getString(R.string.system_apps), false)
+            }
+
+            rv_apps_list.adapter = adapter
+
+        })
     }
 
     private fun snackBarCustom(view: View, message: String, flag: Boolean) {
