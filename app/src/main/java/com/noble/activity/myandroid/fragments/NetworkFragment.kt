@@ -178,7 +178,7 @@ class NetworkFragment : Fragment() {
             (activity as MainActivity).bottomSheetDisable(false)
         }
 
-        tv_title.text = activity!!.resources.getString(R.string.network)
+        tv_title.text = activity!!.resources.getString(R.string.network_title)
         tv_title.setTextColor(ContextCompat.getColor(activity!!, R.color.network))
     }
 

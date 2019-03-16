@@ -9,244 +9,208 @@
 
     <include layout="@layout/toolbar" />
 
-    <android.support.v7.widget.CardView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="8dp"
-            app:cardUseCompatPadding="true">
+            android:layout_height="wrap_content">
 
-        <RelativeLayout
-                android:id="@+id/ll_network_fragment"
+        <android.support.constraint.ConstraintLayout
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/touch_test_background"
-                android:padding="10dp">
+                android:layout_height="wrap_content">
 
-            <TextView
-                    android:id="@+id/tv_network_fragment_data_not_available"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="@string/no_magnection_senscer"
-                    android:textColor="@color/white"
-                    android:visibility="visible" />
-
-            <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/linechart_network_fragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-            <TextView
-                    android:id="@+id/tv_network_fragment_data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:includeFontPadding="false"
-                    android:text="@string/network_data"
-                    android:textColor="@color/font_white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/card_view_bg"
-            app:cardUseCompatPadding="true">
-
-        <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none">
-
-            <TableLayout
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cv_network_data"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="20dp">
+                    app:cardBackgroundColor="@color/card_view_bg"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TableRow>
+                <android.support.constraint.ConstraintLayout
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="start"
-                            android:layout_weight=".8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_connection_status_label"
+                            style="@style/textViewLabel"
                             android:text="@string/connection_status"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                     <TextView
                             android:id="@+id/tv_connection_status"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="10dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_connection_status_label"/>
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_weight=".8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_data_type_label"
+                            style="@style/textViewLabel"
                             android:text="@string/data_type"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_connection_status"/>
 
                     <TextView
                             android:id="@+id/tv_data_type"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="10dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_data_type_label"/>
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="start"
-                            android:layout_weight=".8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_network_type_label"
+                            style="@style/textViewLabel"
                             android:text="@string/network_type"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_data_type"/>
 
                     <TextView
                             android:id="@+id/tv_network_type"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="10dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_network_type_label"/>
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="start"
-                            android:layout_weight=".8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_ip_address_label"
+                            style="@style/textViewLabel"
                             android:text="@string/ip_address"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_network_type"/>
 
                     <TextView
                             android:id="@+id/tv_ip_address"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="10dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ip_address_label"/>
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="start"
-                            android:layout_weight=".8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_mac_address_label"
+                            style="@style/textViewLabel"
                             android:text="@string/mac_address"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ip_address"/>
 
                     <TextView
                             android:id="@+id/tv_mac_address"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="10dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_mac_address_label"/>
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="start"
-                            android:layout_weight="0.8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_ssid_label"
+                            style="@style/textViewLabel"
                             android:text="@string/ssid"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_mac_address"/>
 
                     <TextView
                             android:id="@+id/tv_ssid"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="10dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ssid_label"/>
 
                     <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="start"
-                            android:layout_weight=".8"
-                            android:gravity="center|start"
+                            android:id="@+id/tv_link_speed_label"
+                            style="@style/textViewLabel"
                             android:text="@string/link_speed"
-                            android:textColor="@color/secondary_text"
-                            tools:targetApi="jelly_bean" />
+                            android:textColor="@color/network"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ssid"/>
 
                     <TextView
                             android:id="@+id/tv_link_speed"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.2"
-                            android:gravity="center_vertical"
-                            android:paddingStart="20dp"
+                            style="@style/textViewData"
                             android:textColor="@color/primary_text"
-                            tools:ignore="MissingPrefix,RtlSymmetry"
-                            tools:targetApi="jelly_bean" />
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_link_speed_label"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
 
-                </TableRow>
-            </TableLayout>
-        </ScrollView>
-    </android.support.v7.widget.CardView>
 
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cv_network_graphic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_network_data"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                <RelativeLayout
+                        android:id="@+id/ll_network_fragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/touch_test_background"
+                        android:padding="10dp">
+
+                    <TextView
+                            android:id="@+id/tv_network_fragment_data_not_available"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="@string/no_magnection_senscer"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                    <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/linechart_network_fragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" />
+
+                    <TextView
+                            android:id="@+id/tv_network_fragment_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:includeFontPadding="false"
+                            android:text="@string/network_data"
+                            android:textColor="@color/font_white"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

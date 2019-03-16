@@ -24,7 +24,7 @@
     <string name="choose_language">Выберите язык</string>
     <string name="en_us">США</string>
 
-    <string name="network">Сеть</string>
+    <string name="network">Мобильный интернет</string>
     <string name="no_traffic_state_monitoring_support">Нет поддержки мониторинга состояния трафика</string>
     <string name="network_data">Данные сети</string>
     <string name="processor_label">Процессор</string>
