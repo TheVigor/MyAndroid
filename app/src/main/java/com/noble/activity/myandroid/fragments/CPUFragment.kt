@@ -272,10 +272,9 @@ class CPUFragment : Fragment(), View.OnClickListener {
         try {
             statFile = RandomAccessFile("/proc/stat", "r")
             if (statFile != null) {
-                if (cHandler == null) {
-                    cHandler = Handler()
-                    cHandler!!.postDelayed(cRunnable, 1000)
-                }
+                cHandler = Handler()
+                cHandler!!.postDelayed(cRunnable, 1000)
+
             }
         } catch (e: IOException) {
             // rlCpuFragment!!.visibility = View.GONE
