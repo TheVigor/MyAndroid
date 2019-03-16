@@ -37,7 +37,7 @@
     <string name="compass">Компас</string>
     <string name="no_magnection_senscer">Нет датчика магнитного поля</string>
     <string name="no_internet_connection">Нет Интернет соединения</string>
-    <string name="c_symbol">C</string>
+    <string name="c_symbol">\u00B0C</string>
     <string name="wifi">WiFi</string>
     <string name="unavailable">Недоступно</string>
 
@@ -200,15 +200,15 @@
     <string name="is_wakeup_sensor">Датчик пробуждения</string>
     <string name="reporting_mode">Режим отчетности</string>
 
-    <string name="mu_tesla"> µT</string>
-    <string name="degree_icon"> \u00B0</string>
-    <string name="rad"> rad/s</string>
-    <string name="cm"> cm</string>
+    <string name="mu_tesla">\u0020µT</string>
+    <string name="degree_icon">\u0020\u00B0</string>
+    <string name="rad">\u0020rad/s</string>
+    <string name="cm">\u0020cm</string>
     <string name="percentage">%</string>
-    <string name="lx"> lx</string>
-    <string name="ma"> mA</string>
+    <string name="lx">\u0020lx</string>
+    <string name="ma">\u0020mA</string>
     <string name="pressure">Давление:\u0020</string>
-    <string name="hpa"> hPa</string>
+    <string name="hpa">\u0020hPa</string>
     <string name="geomagnetic_field">Геомагнитное поле:\u0020\n\n</string>
     <string name="proximity_sensor">Близость:\u0020</string>
     <string name="humidity_sensor">Влажность:\u0020</string>
