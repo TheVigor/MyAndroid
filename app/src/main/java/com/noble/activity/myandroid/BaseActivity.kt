@@ -34,8 +34,4 @@ open class BaseActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
     }
 
-    companion object {
-        var isAppListLoaded = false
-        var deviceInfos: List<DeviceInfo> = ArrayList<DeviceInfo>()
-    }
 }
