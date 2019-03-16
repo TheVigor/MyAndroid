@@ -9,43 +9,6 @@
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-        <ImageView
-                android:id="@+id/iv_os_ver_ic"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center_horizontal"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_android"
-                android:tint="@color/os" />
-
-        <TextView
-                android:id="@+id/tv_version_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:textAllCaps="true"
-                android:textColor="@color/darkBlue"
-                android:textSize="17sp"
-                tools:ignore="MissingPrefix" />
-
-        <TextView
-                android:id="@+id/tv_release_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/darkBlue"
-                android:textSize="12sp"
-                tools:ignore="MissingPrefix" />
-
-    </LinearLayout>
-
     <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,239 +16,177 @@
             app:cardBackgroundColor="@color/card_view_bg"
             app:cardUseCompatPadding="true">
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_height="match_parent">
 
-            <TableLayout
+            <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:ignore="UselessParent">
+                    android:layout_height="wrap_content">
 
-                <TableRow android:gravity="start">
+                <ImageView
+                    android:id="@+id/iv_os_ver_ic"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/ic_android"
+                    android:tint="@color/os"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/api_level"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp"
-                            tools:targetApi="jelly_bean" />
+                <TextView
+                        android:id="@+id/tv_version_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="@id/iv_os_ver_ic"
+                        app:layout_constraintEnd_toEndOf="@id/iv_os_ver_ic"
+                        app:layout_constraintTop_toBottomOf="@id/iv_os_ver_ic"/>
 
-                    <TextView
-                            android:id="@+id/tv_api_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="4"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix" />
-                </TableRow>
+                <TextView
+                        android:id="@+id/tv_release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/iv_os_ver_ic"
+                        app:layout_constraintEnd_toEndOf="@id/iv_os_ver_ic"
+                        app:layout_constraintTop_toBottomOf="@id/tv_version_name"/>
 
-                <TableRow
-                        android:layout_marginTop="10dp"
-                        android:gravity="start">
+                <TextView
+                        android:id="@+id/tv_api_level_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/api_level"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_release_date"/>
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/build_id"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp"
-                            tools:targetApi="jelly_bean" />
+                <TextView
+                        android:id="@+id/tv_api_level"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_api_level_label"/>
 
-                    <TextView
-                            android:id="@+id/tv_build_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="4"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix" />
-                </TableRow>
+                <TextView
+                        android:id="@+id/tv_build_id_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/build_id"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_api_level"/>
 
-                <TableRow
-                        android:layout_marginTop="10dp"
-                        android:gravity="start">
+                <TextView
+                        android:id="@+id/tv_build_id"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_build_id_label"/>
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/build_time"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp" />
+                <TextView
+                        android:id="@+id/tv_build_time_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/build_time"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_build_id"/>
 
-                    <TextView
-                            android:id="@+id/tv_build_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="4"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix" />
-                </TableRow>
+                <TextView
+                        android:id="@+id/tv_build_time"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_build_time_label"/>
 
-                <TableRow
-                        android:layout_marginTop="10dp"
-                        android:gravity="start">
+                <TextView
+                        android:id="@+id/tv_fingerprint_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/fingerprint"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_build_time"/>
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/fingerprint"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp" />
+                <TextView
+                        android:id="@+id/tv_fingerprint"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_fingerprint_label"/>
 
-                    <TextView
-                            android:id="@+id/tv_fingerprint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="6"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix"
-                            tools:targetApi="jelly_bean" />
-                </TableRow>
+                <TextView
+                        android:id="@+id/tv_Product_name_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/product"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_fingerprint"/>
 
-                <TableRow
-                        android:layout_marginTop="10dp"
-                        android:gravity="start">
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/product"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp" />
-
-                    <TextView
-                            android:id="@+id/tv_Product_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="4"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix" />
-                </TableRow>
+                <TextView
+                        android:id="@+id/tv_Product_name"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_Product_name_label"/>
 
 
-                <TableRow
-                        android:layout_marginTop="10dp"
-                        android:gravity="start">
+                <TextView
+                        android:id="@+id/tv_version_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/version"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_Product_name"/>
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/version"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp" />
+                <TextView
+                        android:id="@+id/tv_version"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_version_label"/>
 
-                    <TextView
-                            android:id="@+id/tv_version"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="4"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix" />
+                <TextView
+                        android:id="@+id/tv_sdk_name_label"
+                        style="@style/textViewLabel"
+                        android:text="@string/version_name"
+                        android:textColor="@color/os"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_version"/>
 
-                </TableRow>
+                <TextView
+                        android:id="@+id/tv_sdk_name"
+                        style="@style/textViewData"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sdk_name_label"/>
 
-                <TableRow
-                        android:layout_marginTop="10dp"
-                        android:gravity="start">
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="5"
-                            android:maxLines="4"
-                            android:text="@string/version_name"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="14sp" />
 
-                    <TextView
-                            android:id="@+id/tv_sdk_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:gravity="start"
-                            android:maxEms="4"
-                            android:maxLines="4"
-                            android:textColor="@color/primary_text"
-                            android:textSize="14sp"
-                            tools:ignore="MissingPrefix" />
-                </TableRow>
+            </android.support.constraint.ConstraintLayout>
 
-            </TableLayout>
-
-        </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
     </android.support.v7.widget.CardView>
+
+
 </LinearLayout>
