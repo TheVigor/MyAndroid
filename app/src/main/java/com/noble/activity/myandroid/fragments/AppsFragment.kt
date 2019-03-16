@@ -100,10 +100,10 @@ class AppsFragment : Fragment(), SearchView.OnQueryTextListener {
         (activity as MainActivity).bottomSheetDisable(false)
 
         if (mode == KeyUtil.IS_USER_COME_FROM_USER_APPS) {
-            tv_title.text = activity!!.resources.getString(R.string.user_apps)
+            tv_title.text = activity!!.resources.getString(R.string.user_apps_title)
             tv_title.setTextColor(ContextCompat.getColor(activity!!, R.color.user))
         } else {
-            tv_title.text = activity!!.resources.getString(R.string.system_apps)
+            tv_title.text = activity!!.resources.getString(R.string.system_apps_title)
             tv_title.setTextColor(ContextCompat.getColor(activity!!, R.color.system))
         }
     }

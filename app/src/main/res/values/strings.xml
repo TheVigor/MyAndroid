@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyAndroid</string>
+    <string name="app_name">My Android Device</string>
 
     <string name="home">Home</string>
     <string name="manufacturer">Manufacturer</string>
@@ -13,12 +13,12 @@
     <string name="host">Host</string>
     <string name="model">Model</string>
     <string name="device">Device</string>
-    <string name="view_category">Category</string>
+    <string name="view_category">Open Category</string>
     <string name="change_theme">Change theme</string>
     <string name="about_us">About us</string>
     <string name="share">Share</string>
     <string name="rate_us">Rate us</string>
-    <string name="hide_category">Hide</string>
+    <string name="hide_category">Close Category</string>
     <string name="choose_language">Choose language</string>
     <string name="en_us">USA</string>
     <string name="network">Network</string>
