@@ -14,6 +14,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             app:cardBackgroundColor="@color/card_view_bg"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
         <android.support.v4.widget.NestedScrollView

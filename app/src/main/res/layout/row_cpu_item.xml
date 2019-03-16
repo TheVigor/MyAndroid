@@ -26,11 +26,6 @@
                 android:textSize="12sp"
                 tools:ignore="RtlSymmetry" />
 
-        <View
-                android:layout_width="match_parent"
-                android:layout_height="1.4dp"
-                android:layout_gravity="center_vertical"
-                android:background="@color/cpu"/>
 
     </LinearLayout>
 
