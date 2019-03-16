@@ -63,7 +63,8 @@ class HomeFragment : Fragment() {
             tv_security_patch_level.text = Build.VERSION.SECURITY_PATCH
         }
         else {
-            tl_security_patch_level_contain.visibility = View.GONE
+            tv_security_patch_level.visibility = View.GONE
+            tv_security_patch_level_label.visibility = View.GONE
         }
 
         @SuppressLint("HardwareIds") val androidID =

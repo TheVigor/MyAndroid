@@ -9,534 +9,287 @@
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_smartphone"
-                android:tint="@color/dashboard" />
-
-        <TextView
-                android:id="@+id/tv_brand_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:textAllCaps="true"
-                android:textColor="@color/darkBlue"
-                android:textSize="17sp"
-                tools:ignore="MissingPrefix"
-                tools:targetApi="jelly_bean" />
-
-        <TextView
-                android:id="@+id/tv_model_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textAllCaps="false"
-                android:textColor="@color/dark_blue"
-                android:textSize="14sp"
-                tools:ignore="MissingPrefix"
-                tools:targetApi="jelly_bean" />
-
-        <LinearLayout
-                android:id="@+id/root_access"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:visibility="gone"
-                android:weightSum="2">
-
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="@string/root_access"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    tools:targetApi="jelly_bean" />
-
-            <TextView
-                    android:id="@+id/tv_root_status"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:textColor="@color/primary_text"
-                    android:textSize="16sp"
-                    tools:ignore="MissingPrefix"
-                    tools:targetApi="jelly_bean" />
-        </LinearLayout>
-
-    </LinearLayout>
-
     <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="@color/card_view_bg"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
-        <ScrollView
-                android:background="@color/bottomsheet_card_bg"
+    <android.support.v4.widget.NestedScrollView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
-            <LinearLayout
-                    android:layout_width="match_parent"
+            <ImageView
+                    android:id="@+id/iv_smartphone_icon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/ic_smartphone"
+                    android:tint="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                    android:id="@+id/tv_brand_name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="@id/iv_smartphone_icon"
+                    app:layout_constraintEnd_toEndOf="@id/iv_smartphone_icon"
+                    app:layout_constraintTop_toBottomOf="@id/iv_smartphone_icon"/>
 
-                <TableLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        tools:ignore="UselessParent">
+            <TextView
+                    android:id="@+id/tv_model_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/iv_smartphone_icon"
+                    app:layout_constraintEnd_toEndOf="@id/iv_smartphone_icon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_brand_name"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/manufacturer"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_manufacturer_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/manufacturer"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_model_number"/>
 
-                        <TextView
-                                android:id="@+id/tv_manufacturer"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_manufacturer"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_manufacturer_label"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_board_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/board"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_manufacturer"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/board"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_board"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_board_label"/>
 
-                        <TextView
-                                android:id="@+id/tv_board"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_architecture_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/architecture"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_board"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_architecture"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_architecture_label"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/architecture"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_build_date_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/build_date"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_architecture"/>
 
-                        <TextView
-                                android:id="@+id/tv_architecture"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_build_date"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_build_date_label"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_hardware_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/hardware"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_build_date"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/build_date"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_hardware"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_hardware_label"/>
 
-                        <TextView
-                                android:id="@+id/tv_build_date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_serial_no_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/serial_no"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_hardware"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_serial_no"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_serial_no_label"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/hardware"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_android_id_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/android_id"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_serial_no"/>
 
-                        <TextView
-                                android:id="@+id/tv_hardware"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_android_id"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_android_id_label"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_screen_resolution_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/screen_resolution"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_android_id"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/serial_no"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_screen_resolution"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_screen_resolution_label"/>
 
-                        <TextView
-                                android:id="@+id/tv_serial_no"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_boot_loader_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/boot_loader"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_screen_resolution"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_boot_loader"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_boot_loader_label"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/android_id"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_user_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/user"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_boot_loader"/>
 
-                        <TextView
-                                android:id="@+id/tv_android_id"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_user"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_user_label"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_host_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/host"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_user"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/screen_resolution"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_host"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_host_label"/>
 
-                        <TextView
-                                android:id="@+id/tv_screen_resolution"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_security_patch_level_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/security_patch_level"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_host"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
+            <TextView
+                    android:id="@+id/tv_security_patch_level"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_security_patch_level_label"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/boot_loader"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+            <TextView
+                    android:id="@+id/tv_kernel_label"
+                    style="@style/textViewLabel"
+                    android:text="@string/kernel"
+                    android:textColor="@color/dashboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_security_patch_level"/>
 
-                        <TextView
-                                android:id="@+id/tv_boot_loader"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
+            <TextView
+                    android:id="@+id/tv_kernel"
+                    style="@style/textViewData"
+                    android:textColor="@color/primary_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_kernel_label"/>
 
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/user"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
 
-                        <TextView
-                                android:id="@+id/tv_user"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
-
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/host"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
-
-                        <TextView
-                                android:id="@+id/tv_host"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
-
-                    <TableRow
-                            android:id="@+id/tl_security_patch_level_contain"
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/security_patch_level"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
-
-                        <TextView
-                                android:id="@+id/tv_security_patch_level"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
-
-                    <TableRow
-                            android:layout_marginTop="10dp"
-                            android:gravity="start">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="5"
-                                android:maxLines="4"
-                                android:text="@string/kernel"
-                                android:textColor="@color/secondary_text"
-                                android:textSize="14sp"
-                                tools:targetApi="jelly_bean" />
-
-                        <TextView
-                                android:id="@+id/tv_kernel"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:maxEms="4"
-                                android:maxLines="4"
-                                android:textColor="@color/primary_text"
-                                android:textSize="14sp"
-                                tools:ignore="MissingPrefix"
-                                tools:targetApi="jelly_bean" />
-                    </TableRow>
-                </TableLayout>
-
-            </LinearLayout>
-        </ScrollView>
     </android.support.v7.widget.CardView>
+
 </LinearLayout>
