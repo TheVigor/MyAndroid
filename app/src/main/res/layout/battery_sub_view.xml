@@ -1,170 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+<android.support.constraint.ConstraintLayout
+        android:layout_margin="5dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <TextView
+            android:id="@+id/tv_battery_type_label"
+            style="@style/textViewLabel"
+            android:text="@string/battery_type"
+            android:textColor="@color/battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:drawableStart="@mipmap/ic_battery"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorAccent"
-                android:gravity="center|start"
-                android:text="@string/battery_type"
-                android:textColor="@color/secondary_text"
-                tools:targetApi="m" />
+    <TextView
+            android:id="@+id/tv_battery_type"
+            style="@style/textViewData"
+            android:textColor="@color/primary_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_type_label"/>
 
-        <TextView
-                android:id="@+id/tv_battery_type"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                android:textColor="@color/primary_text"
-                tools:targetApi="jelly_bean" />
+    <TextView
+            android:id="@+id/tv_power_source_label"
+            style="@style/textViewLabel"
+            android:text="@string/power_source"
+            android:textColor="@color/battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_type"/>
 
-    </LinearLayout>
+    <TextView
+            android:id="@+id/tv_power_source"
+            style="@style/textViewData"
+            android:textColor="@color/primary_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_power_source_label"/>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+    <TextView
+            android:id="@+id/tv_battery_temperature_label"
+            style="@style/textViewLabel"
+            android:text="@string/battery_temperature"
+            android:textColor="@color/battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_power_source"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:drawableStart="@mipmap/ic_battery"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorAccent"
-                android:gravity="center|start"
-                android:text="@string/power_source"
-                android:textColor="@color/secondary_text"
-                tools:targetApi="m" />
+    <TextView
+            android:id="@+id/tv_battery_temperature"
+            style="@style/textViewData"
+            android:textColor="@color/primary_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_temperature_label"/>
 
-        <TextView
-                android:id="@+id/tv_power_source"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                android:textColor="@color/primary_text"
-                tools:targetApi="jelly_bean" />
-    </LinearLayout>
+    <TextView
+            android:id="@+id/tv_battery_voltage_label"
+            style="@style/textViewLabel"
+            android:text="@string/battery_voltage"
+            android:textColor="@color/battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_temperature"/>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+    <TextView
+            android:id="@+id/tv_battery_voltage"
+            style="@style/textViewData"
+            android:textColor="@color/primary_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_voltage_label"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:drawableStart="@mipmap/ic_battery"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorAccent"
-                android:gravity="center|start"
-                android:text="@string/battery_temperature"
-                android:textColor="@color/secondary_text"
-                tools:targetApi="m" />
+    <TextView
+            android:id="@+id/tv_battery_scale_label"
+            style="@style/textViewLabel"
+            android:text="@string/battery_scale"
+            android:textColor="@color/battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_voltage"/>
 
-        <TextView
-                android:id="@+id/tv_battery_temperature"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                android:textColor="@color/primary_text"
-                tools:targetApi="jelly_bean" />
-    </LinearLayout>
+    <TextView
+            android:id="@+id/tv_battery_scale"
+            style="@style/textViewData"
+            android:textColor="@color/primary_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_scale_label"/>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+    <TextView
+            android:id="@+id/tv_battery_health_label"
+            style="@style/textViewLabel"
+            android:text="@string/battery_health"
+            android:textColor="@color/battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_scale"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorAccent"
-                android:gravity="center|start"
-                android:text="@string/battery_voltage"
-                android:textColor="@color/secondary_text"
-                tools:targetApi="m" />
+    <TextView
+            android:id="@+id/tv_battery_health"
+            style="@style/textViewData"
+            android:textColor="@color/primary_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_health_label"/>
 
-        <TextView
-                android:id="@+id/tv_battery_voltage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                android:textColor="@color/primary_text"
-                tools:targetApi="jelly_bean" />
-    </LinearLayout>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:drawableTint="@color/colorAccent"
-            android:orientation="horizontal"
-            tools:targetApi="m">
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:drawableStart="@mipmap/ic_battery"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorAccent"
-                android:gravity="center|start"
-                android:text="@string/battery_scale"
-                android:textColor="@color/secondary_text"
-                tools:targetApi="m" />
-
-        <TextView
-                android:id="@+id/tv_battery_scale"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                android:textColor="@color/primary_text"
-                tools:targetApi="jelly_bean" />
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:drawableStart="@mipmap/ic_battery"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorAccent"
-                android:gravity="center|start"
-                android:text="@string/battery_health"
-                android:textColor="@color/secondary_text"
-                tools:targetApi="m" />
-
-        <TextView
-                android:id="@+id/tv_battery_health"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                android:textColor="@color/primary_text"
-                tools:targetApi="jelly_bean" />
-    </LinearLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

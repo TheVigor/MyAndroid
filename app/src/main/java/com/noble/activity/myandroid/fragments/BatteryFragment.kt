@@ -159,13 +159,13 @@ class BatteryFragment : Fragment() {
         tv_battery_fragment_percentage?.text = styledString
         pb_battery_fragment?.progress = level
 
-        tv_battery_temperature?.text = temperature.toString() + activity!!.resources.getString(R.string.c_symbol)
+        tv_battery_temperature?.text = temperature.toString() + " " + activity!!.resources.getString(R.string.c_symbol)
 
         if (isRequiredField(technology)) {
             tv_battery_type?.text = technology
         }
 
-        tv_battery_voltage?.text = voltage.toString() + "mV"
+        tv_battery_voltage?.text = voltage.toString() + " mV"
         tv_battery_scale?.text = scale.toString()
 
         when (health) {
