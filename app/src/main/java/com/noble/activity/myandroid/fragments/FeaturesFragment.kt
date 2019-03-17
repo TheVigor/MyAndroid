@@ -50,12 +50,8 @@ class FeaturesFragment : Fragment() {
     }
 
     private fun getDeviceFeatures() {
-        /** WIFI feature */
-        val connManager = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
-
         // WIFI
-        if (mWifi.isAvailable) {
+        if (packageManager?.hasSystemFeature(PackageManager.FEATURE_WIFI)!!) {
             tv_wifi.text = activity!!.resources.getString(R.string.available)
         } else {
             tv_wifi.text = activity!!.resources.getString(R.string.not_supported)

@@ -41,7 +41,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/wifi"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -75,7 +75,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/wifi_direct"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -109,7 +109,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/bluetooth"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -143,7 +143,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/bluetooth_le"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -177,7 +177,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/gps"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -211,7 +211,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/camera_flash"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -245,7 +245,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/camera_front"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -279,7 +279,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/microphone"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -313,7 +313,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/nfc"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -347,7 +347,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/usb_host"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -381,7 +381,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/usb_accessory"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -415,7 +415,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/multitouch"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -449,7 +449,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/audio_low_latency"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -483,7 +483,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/audio_output"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -517,7 +517,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/professional_audio"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -551,7 +551,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/consumer_ir"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -585,7 +585,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/gamepad_support"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -619,7 +619,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/hifi_sensor"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -653,7 +653,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/printing"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -687,7 +687,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/cdma"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -721,7 +721,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/gsm"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -755,7 +755,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/fingerprint"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -789,7 +789,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/app_widgets"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -823,7 +823,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/sip"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
@@ -857,7 +857,7 @@
                             android:maxEms="5"
                             android:maxLines="4"
                             android:text="@string/sip_based_voip"
-                            android:textColor="@color/secondary_text"
+                            android:textColor="@color/features"
                             android:textSize="14sp"
                             tools:targetApi="jelly_bean" />
 
