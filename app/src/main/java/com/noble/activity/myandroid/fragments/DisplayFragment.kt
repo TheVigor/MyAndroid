@@ -31,16 +31,12 @@ class DisplayFragment : Fragment() {
         return view
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         initToolbar()
         getDisplayInfo()
 
-        fabDisplay.setOnClickListener {
-            //fragmentUtil.addFragment(MultiTouchTestFragment.newInstance("DisplayView"), true, true)
-        }
     }
 
     override fun onHiddenChanged(hidden: Boolean) {
