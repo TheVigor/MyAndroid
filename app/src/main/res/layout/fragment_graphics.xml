@@ -35,6 +35,8 @@
                 android:layout_marginStart="10dp"
                 android:visibility="gone"
                 app:cardBackgroundColor="@color/card_view_bg"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
             <android.support.v7.widget.RecyclerView
