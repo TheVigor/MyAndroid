@@ -19,8 +19,8 @@
             android:maxEms="11"
             android:maxLines="4"
             tools:targetApi="jelly_bean"
-            android:textColor="@color/secondary_text"
-            android:textSize="14sp" />
+            android:textColor="@color/gpu_ram"
+            android:textSize="16sp" />
 
     <TextView
             android:id="@+id/tvData"
@@ -32,7 +32,7 @@
             android:maxLines="4"
             tools:targetApi="jelly_bean"
             android:textColor="@color/primary_text"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="MissingPrefix" />
 
 </LinearLayout>

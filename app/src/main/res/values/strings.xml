@@ -228,5 +228,11 @@
     <string name="consumption">Consumption</string>
     <string name="statistics">Statistics</string>
 
+    <string name="graphics_device_name">Graphics Device Name</string>
+    <string name="graphics_device_vendor">Graphics Device Vendor</string>
+    <string name="graphics_device_version">Graphics Device Version</string>
+    <string name="graphics_device_extensions">Graphics Device Extensions</string>
+    <string name="max_texture_size">Max Texture Size</string>
+
 
 </resources>

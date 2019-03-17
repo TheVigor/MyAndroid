@@ -74,7 +74,7 @@ class GraphicsFragment : Fragment() {
         val configurationInfo = activityManager
             .deviceConfigurationInfo
         if (!resolution.isEmpty())
-            graphicsInfoList.add(ItemInfo("Resolution", resolution))
+            graphicsInfoList.add(ItemInfo(getString(R.string.resolution), resolution))
 
         val supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000
 
@@ -104,21 +104,21 @@ class GraphicsFragment : Fragment() {
         override fun onSurfaceCreated(gl: GL10, config: EGLConfig) {
 
             graphicsInfoList.add(
-                ItemInfo("Graphics Device Name", "" + gl.glGetString(GL10.GL_RENDERER)))
+                ItemInfo(getString(R.string.graphics_device_name), "" + gl.glGetString(GL10.GL_RENDERER)))
 
             graphicsInfoList.add(
-                ItemInfo("Graphics Device Vendor", "" + gl.glGetString(GL10.GL_VENDOR)))
+                ItemInfo(getString(R.string.graphics_device_vendor), "" + gl.glGetString(GL10.GL_VENDOR)))
 
             graphicsInfoList.add(
-                ItemInfo("Graphics Device Version", "" + gl.glGetString(GL10.GL_VERSION)))
+                ItemInfo(getString(R.string.graphics_device_version), "" + gl.glGetString(GL10.GL_VERSION)))
 
             graphicsInfoList.add(
-                ItemInfo("Graphics Device Extensions", "" + gl.glGetString(GL10.GL_EXTENSIONS)))
+                ItemInfo(getString(R.string.graphics_device_extensions), "" + gl.glGetString(GL10.GL_EXTENSIONS)))
 
             val maxSize = IntArray(1)
             gl.glGetIntegerv(GL10.GL_MAX_TEXTURE_SIZE, maxSize, 0)
 
-            graphicsInfoList.add(ItemInfo("Max Texture  SIze", "" + maxSize[0]))
+            graphicsInfoList.add(ItemInfo(getString(R.string.max_texture_size), "" + maxSize[0]))
 
             activity!!.runOnUiThread {
                 llEmptyStateGraphics!!.visibility = View.GONE

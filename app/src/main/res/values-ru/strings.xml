@@ -241,5 +241,11 @@
     <string name="consumption">Потребление</string>
     <string name="statistics">Статистика</string>
 
+    <string name="graphics_device_name">Название графического устройства</string>
+    <string name="graphics_device_vendor">Поставщик графического устройства</string>
+    <string name="graphics_device_version">Версия графического устройства</string>
+    <string name="graphics_device_extensions">Расширения графического устройства</string>
+    <string name="max_texture_size">Максимальный размер текстуры</string>
+
 
 </resources>
