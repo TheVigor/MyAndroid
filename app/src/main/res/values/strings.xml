@@ -225,6 +225,8 @@
     <string name="updated">Updated:</string>
     <string name="version_app">Version:</string>
     <string name="pixels">Pixels</string>
+    <string name="consumption">Consumption</string>
+    <string name="statistics">Statistics</string>
 
 
 </resources>

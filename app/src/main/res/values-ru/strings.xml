@@ -238,5 +238,8 @@
     <string name="version_app">Версия:\u0020</string>
     <string name="pixels">Пикселей</string>
 
+    <string name="consumption">Потребление</string>
+    <string name="statistics">Статистика</string>
+
 
 </resources>
