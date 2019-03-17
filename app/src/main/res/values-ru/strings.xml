@@ -217,7 +217,7 @@
     <string name="absolute_humidity_temperature_sensor">Абсолютная влажность:\u0020</string>
     <string name="due_point_temperature">Температура таяния:\u0020</string>
     <string name="angular_speed">Угловая скорость \n\n</string>
-    <string name="ms">ms</string>
+    <string name="ms">\u0020ms</string>
 
 
     <string name="home_title">Стартовая</string>

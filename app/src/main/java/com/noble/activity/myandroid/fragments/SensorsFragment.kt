@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewCompat
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -52,7 +53,7 @@ class SensorsFragment : Fragment() {
 
         getBundleData()
 
-        rv_sensors_list.layoutManager = LinearLayoutManager(activity)
+        rv_sensors_list.layoutManager = GridLayoutManager(activity, 2)
         rv_sensors_list.hasFixedSize()
 
         initSensorsList()

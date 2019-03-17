@@ -22,7 +22,6 @@ import com.noble.activity.myandroid.utilities.KeyUtil
 import com.noble.activity.myandroid.utilities.calculateAbsoluteHumidity
 import com.noble.activity.myandroid.utilities.calculateDewPoint
 import kotlinx.android.synthetic.main.fragment_sensors_detail.*
-import kotlinx.android.synthetic.main.sensor_sub_view.*
 import kotlinx.android.synthetic.main.toolbar_ui.*
 import java.text.DecimalFormat
 

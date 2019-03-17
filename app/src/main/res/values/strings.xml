@@ -206,7 +206,7 @@
     <string name="absolute_humidity_temperature_sensor">Absolute Humidity at Temperature:\u0020</string>
     <string name="due_point_temperature">Dew point:\u0020</string>
     <string name="angular_speed">Angular speed \n\n</string>
-    <string name="ms">ms</string>
+    <string name="ms">\u0020ms</string>
 
 
     <string name="home_title">Home</string>

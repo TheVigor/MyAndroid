@@ -1,77 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
+              android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
               android:background="@color/dashboard_background"
               android:layout_height="match_parent"
               android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
             android:id="@+id/ll_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            android:padding="20dp"
-            tools:targetApi="lollipop">
+            android:layout_height="wrap_content">
 
-        <ImageView
-                android:id="@+id/iv_sensor_ic"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_launcher"
-                android:tint="@color/colorAccent" />
+        <android.support.constraint.ConstraintLayout
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:gravity="left"
-                android:orientation="vertical"
-                tools:ignore="RtlHardcoded">
+            <ImageView
+                    android:id="@+id/iv_sensor_ic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/ic_launcher"
+                    android:tint="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                    android:id="@+id/tv_x"
-                    android:layout_width="wrap_content"
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cv_sensor_info"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="16sp"
-                    tools:ignore="MissingPrefix" />
+                    app:cardBackgroundColor="@color/card_view_bg"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_sensor_ic">
 
-            <TextView
-                    android:id="@+id/tv_y"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:ignore="RtlHardcoded">
+
+                <TextView
+                        android:id="@+id/tv_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix" />
+
+                <TextView
+                        android:id="@+id/tv_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="2dp"
+                        android:gravity="left"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix" />
+
+                <TextView
+                        android:id="@+id/tv_z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="2dp"
+                        android:gravity="left"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="2dp"
-                    android:gravity="left"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="16sp"
-                    tools:ignore="MissingPrefix" />
+                    app:cardBackgroundColor="@color/card_view_bg"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_sensor_info">
 
-            <TextView
-                    android:id="@+id/tv_z"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="2dp"
-                    android:gravity="left"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="16sp"
-                    tools:ignore="MissingPrefix" />
 
-        </LinearLayout>
-    </LinearLayout>
+                <android.support.constraint.ConstraintLayout
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                            android:id="@+id/tv_sensor_id_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/sensor_id"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
-        <include layout="@layout/sensor_sub_view" />
-    </ScrollView>
+                    <TextView
+                            android:id="@+id/tv_sensor_id"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sensor_id_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_sensor_name_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/sensor_name"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sensor_id"/>
+
+                    <TextView
+                            android:id="@+id/tv_sensor_name"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sensor_name_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_int_type_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/int_type"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sensor_name"/>
+
+                    <TextView
+                            android:id="@+id/tv_int_type"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_int_type_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_vendor_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/vendor"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_int_type"/>
+
+                    <TextView
+                            android:id="@+id/tv_vendor"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_vendor_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_version_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/version"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_vendor"/>
+
+                    <TextView
+                            android:id="@+id/tv_version"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_version_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_resolution_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/resolution"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_version"/>
+
+                    <TextView
+                            android:id="@+id/tv_resolution"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_resolution_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_power_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/power"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_resolution"/>
+
+                    <TextView
+                            android:id="@+id/tv_power"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_power_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_maximum_range_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/maximum_range"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_power"/>
+
+                    <TextView
+                            android:id="@+id/tv_maximum_range"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_maximum_range_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_is_dynamic_sensor_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/is_dynamic"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_maximum_range"/>
+
+                    <TextView
+                            android:id="@+id/tv_is_dynamic_sensor"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_is_dynamic_sensor_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_is_wakeup_sensor_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/is_wakeup_sensor"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_is_dynamic_sensor"/>
+
+                    <TextView
+                            android:id="@+id/tv_is_wakeup_sensor"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_is_wakeup_sensor_label"/>
+
+                    <TextView
+                            android:id="@+id/tv_reporting_mode_label"
+                            style="@style/textViewLabel"
+                            android:text="@string/reporting_mode"
+                            android:textColor="@color/sensor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_is_wakeup_sensor"/>
+
+                    <TextView
+                            android:id="@+id/tv_reporting_mode"
+                            style="@style/textViewData"
+                            android:textColor="@color/primary_text"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_reporting_mode_label"/>
+
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>
