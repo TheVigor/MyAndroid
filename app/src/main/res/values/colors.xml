@@ -39,9 +39,11 @@
     <color name="dashboard_processor_cardview">#3B3C49</color>
     <color name="dashboard_battery_cardview">#3B3C49</color>
     <color name="dashboard_compass_cardview">#3B3C49</color>
-    <color name="dashboard_arc_progress_bar_color_1">#02b7f6</color>
-    <color name="dashboard_arc_progress_bar_color_2">#02cfdd</color>
-    <color name="dashboard_arc_progress_bar_color_3">#02e9c3</color>
+
+    <color name="dashboard_arc_progress_bar_color_1">#dbffff</color>
+    <color name="dashboard_arc_progress_bar_color_2">#a7ffeb</color>
+    <color name="dashboard_arc_progress_bar_color_3">#75ccb9</color>
+
     <color name="dashboard_arc_progress_bar_back_color">#cdddec</color>
     <color name="dashboard_arc_progress_bar_text_color">#e9ffffff</color>
     //
@@ -49,17 +51,22 @@
     //
     <color name="dashboard_pulsator_blurtooth">#beb0dfbe</color>
     <color name="dashboard_icon_color">#efeeee</color>
+
     <color name="dashboard_network_graph_color_1">#359335</color>
     <color name="dashboard_network_graph_color_2">#adec66</color>
-    <color name="dashboard_processor_graph_color_1">#b45cbb</color>
-    <color name="dashboard_processor_graph_color_2">#625fef</color>
-    <color name="line_chart_graph_color_1">#b45cbb</color>
-    <color name="line_chart_graph_color_2">#625fef</color>
+
+    <color name="dashboard_processor_graph_color_1">#ffb2ff</color>
+    <color name="dashboard_processor_graph_color_2">#b64fc8</color>
+
+    <color name="line_chart_graph_color_1">#ffb2ff</color>
+    <color name="line_chart_graph_color_2">#b64fc8</color>
 
     <!-- Drawable -->
-    <color name="battery_drawable">#7baee7</color>
+    <color name="battery_drawable">#b388ff</color>
+
     <color name="graph_color_1">#313145</color>
     <color name="graph_color_2">#34357a</color>
+
     <color name="blink_color_1">#cedc48</color>
     <color name="blink_color_2">#a7b4bf53</color>
     <color name="blink_color_3">#2d6f7157</color>
