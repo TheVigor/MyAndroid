@@ -1,6 +1,7 @@
 package com.noble.activity.myandroid
 
 import android.arch.lifecycle.ViewModelProviders
+import android.content.pm.ActivityInfo
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
@@ -42,6 +43,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val model = ViewModelProviders.of(this).get(AppsViewModel::class.java)
         runOnIoThread {
